@@ -1,0 +1,183 @@
+/* pages/home/home.wxss */
+
+/* logo部分 */
+.logoContainer{
+  margin-left: 18%;
+  display: flex;
+  flex-direction: row;
+  height: 17%;
+}
+
+.logoContainer image{
+  overflow: hidden;
+  width: 168rpx;
+  height: 168rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  justify-items: center;
+}
+.logoContainer .logoNameContainer{
+  margin-top: 10.5%;
+}
+
+.logoContainer .logoName1{
+  font-size: 36rpx;
+  color:orange;
+}
+
+.logoContainer .logoName2{
+  font-size: 36rpx;
+  color: #d43c33;
+}
+
+.logoContainer .logoName3{
+  font-size: 36rpx;
+  color:#aaa;
+}
+/* heading 部分 */
+
+.headingContainer{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.headingContainer .utilityContainer{
+  display: flex;
+  flex-direction: row;
+  line-height: 100rpx;
+  width: 100%;
+}
+
+.utilityContainer .preferenceContainer{
+  flex: 1 1;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+  height: 128rpx;
+  line-height: 100rpx;
+  width: 50%;
+  justify-content: center;
+  background-color: orange;
+  box-shadow: 5rpx 5rpx 5rpx 2rpx gray;
+  color: #8B4513;
+}
+
+.utilityContainer .menuContainer{
+  flex: 1 1;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;  
+  height: 128rpx;
+  line-height: 100rpx;
+  justify-content: center;
+  width:50%;
+  background-color: #FFEBCD;
+  color: #8B4513;
+  box-shadow: 5rpx 5rpx 5rpx 3rpx gray;
+}
+
+/* 推荐餐厅区域 */
+.recommendContainer {
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 600rpx;
+  background-color: lightgoldenrodyellow;
+  border-radius: 10rpx;
+  border: solid;
+  border-color: #F08080;
+  border-width: 1rpx;
+}
+.recommendContainer .recommendDinningHallContainer{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  /* margin-bottom: 20rpx; */
+  width: 400rpx;
+  height: 90rpx;
+  border-radius: 60rpx;
+  /* border: solid; */
+  /* border-width: 5rpx; */
+  /* border-color: #aaa; */
+  /* background-color: #d43c33; */
+}
+
+.recommendDinningHallContainer text{
+  padding-left: 30rpx;
+  justify-content: center;
+  font-size: 50rpx;
+  color: #8B4513;
+}
+
+.recommendContainer .dishesContainer{
+  display:flex;
+  flex-direction: column;
+}
+
+.dishesContainer .dishContainer{
+  margin-left:30rpx ;
+  display:flex;
+  flex-direction:row;
+  line-height: 50rpx;
+}
+
+.dishContainer .dishTypeContainer{
+  margin-top: 10rpx;
+  margin-right: 15rpx;
+  height: 50rpx;
+  width: 120rpx;
+  margin-bottom: 15rpx;
+  border:solid;
+  border-color: #aaa;
+  border-radius: 10%;
+  border-width: 5rpx;
+}
+
+.dishTypeContainer text{
+  padding-left: 10rpx;
+  font-size: 30rpx;
+}
+
+.dishContainer .dishNameContainer{
+  line-height: 50rpx;
+  padding-top: 10rpx;
+}
+
+.dishNameContainer text{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  justify-content: center;
+}
+
+.menuContainer{
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 400rpx;
+  background-color: lightgoldenrodyellow;
+  border-radius: 10rpx;
+  border: solid;
+  border-color: #F08080;
+  border-width: 1rpx;
+}
+
+/* 联系我们 */
+
+.contactContainer{
+  height: 200rpx;
+}
+
+.contactBtn{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  color: #8B4513;
+  background-color: orange;
+  width: 150rpx;
+  height: 100rpx;
+  justify-content: center;
+  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
+}

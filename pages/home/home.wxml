@@ -1,0 +1,75 @@
+<!--pages/home/home.wxml-->
+<!-- logo -->
+<view class="logoContainer">
+  <image class="logo" src="/pages/images/logo.png"></image>
+  <view class="logoNameContainer">
+    <view class="logoNameEng">
+      <text class="logoName1">Trojan</text>
+      <text class="logoName2">Eat</text>
+    </view>
+    <view class="logoNameChi">
+      <text class="logoName3">南加大恰饭助手</text>
+    </view>
+  </view>
+</view>
+
+<!-- Heading -->
+
+<view class="headingContainer">
+  
+  <view class="utilityContainer">
+    <button class="preferenceContainer">
+      推荐餐厅
+    </button>
+    <button class="menuContainer">
+    全部餐厅
+    </button>
+  </view>
+</view>
+<!-- Recommend Dining -->
+<view class="recommendContainer">
+  <view class="recommendDinningHallContainer">
+    <text class="recommendDinningHall">推荐餐厅: EVK</text>
+  </view>
+  <view class="dishesContainer">
+    <view class="dishContainer">
+      <view class="dishTypeContainer">
+        <text class="dishType">Protein</text>
+      </view>
+      <view class="dishNameContainer">
+        <text class="dishName1">A DISH</text>
+        <text class="dishName2">一道菜</text>
+      </view>
+    </view>
+    <view class="dishContainer">
+      <view class="dishTypeContainer">
+        <text class="dishType">Protein</text>
+      </view>
+      <view class="dishNameContainer">
+        <text class="dishName1">A DISH</text>
+        <text class="dishName2">一道菜</text>
+      </view>
+    </view>
+    <view class="dishContainer">
+      <view class="dishTypeContainer">
+        <text class="dishType">Protein</text>
+      </view>
+      <view class="dishNameContainer">
+        <text class="dishName1">A DISH</text>
+        <text class="dishName2">一道菜</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- menu区域 -->
+<view class="menuContainer">
+  
+</view>
+
+<!-- 联系我们 -->
+<view class="contactContainer">
+  <button class="contactBtn">
+    <text>联系我们</text>
+  </button>
+</view>

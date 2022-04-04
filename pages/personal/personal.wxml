@@ -1,0 +1,37 @@
+<!--pages/personal/personal.wxml-->
+<!-- logo -->
+<view class="logoContainer">
+  <image class="logo" src="/pages/images/logo.png"></image>
+  <view class="logoNameContainer">
+    <view class="logoNameEng">
+      <text class="logoName1">Trojan</text>
+      <text class="logoName2">Eat</text>
+    </view>
+    <view class="logoNameChi">
+      <text class="logoName3">南加大恰饭助手</text>
+    </view>
+  </view>
+</view>
+
+<!-- welcome -->
+<view class="welcomeContainer">
+  <view class="avatarContianer" bindtap="getUserInfo">
+    <image class="avatar" src="/pages/images/nvsheng.jpg"></image>
+  </view>
+  <view class="welcomeTextContainer">
+    <text class="welcomeText1">Welcome, 你的名字</text>
+  </view>
+</view>
+<!-- 个人喜好 -->
+<view class="personalChoiceContainer" bindtap="toPersonalChoice">
+  <text>个人喜好</text>
+</view>
+<!-- 收藏餐厅 -->
+<view class="flagDinningHallContainer">
+  <text>收藏餐厅</text>
+</view>
+<!-- 联系我们 -->
+<button class="contactContainer">
+  <text>联系我们</text>
+</button>
+

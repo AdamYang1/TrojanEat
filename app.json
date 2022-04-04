@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/personal/personal",
+    "pages/home/home",
+    "pages/personalChoice/personalChoice",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "TrojanEat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/pages/images/tabs/tab-home.png",
+        "selectedIconPath": "/pages/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/pages/images/tabs/tab-my.png",
+        "selectedIconPath": "/pages/images/tabs/tab-my-current.png"
+      }
+    ]
+  }
+}

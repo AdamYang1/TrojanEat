@@ -1,0 +1,126 @@
+/* pages/personal/personal.wxss */
+.logoContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 23%;
+  box-shadow: 5rpx 5rpx 5rpx 3rpx gray;
+}
+
+.logoContainer image{
+  overflow: hidden;
+  width: 168rpx;
+  height: 168rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  margin-left: 20%;
+  justify-items: center;
+}
+.logoContainer .logoNameContainer{
+  margin-top: 10.5%;
+}
+
+.logoContainer .logoName1{
+  font-size: 36rpx;
+  color:orange;
+}
+
+.logoContainer .logoName2{
+  font-size: 36rpx;
+  color: #d43c33;
+}
+
+.logoContainer .logoName3{
+  font-size: 36rpx;
+  color:#aaa;
+}
+
+/* welcome部分 */
+.welcomeContainer{
+  margin-left: 15%;
+  margin-top: 45rpx;
+  display: flex;
+  flex-direction: row;
+}
+.welcomeContainer image{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.welcomeContainer .welcomeTextContainer{
+  display: flex;
+  flex-direction: column;
+  line-height: 168rpx;
+}
+
+.welcomeContainer text{
+  margin-left: 30rpx;
+  font-size: 36rpx;
+  color: #aaa;
+  justify-content: center;
+}
+
+/* 个人喜好 */
+.personalChoiceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top:  15rpx; */
+  margin-left: 27%;
+  margin-right: 20rpx;
+  width: 350rpx;
+  height: 200rpx;
+  background-color: lightgoldenrodyellow;
+  border-radius: 10rpx;
+  border: solid;
+  border-color: #F08080;
+  border-width: 1rpx;
+  line-height: 250rpx;
+  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
+
+}
+
+.personalChoiceContainer text{
+  justify-content: center;
+  font-size: 46rpx;
+  /* padding-left: 23%; */
+  color: #8B4513;
+}
+
+.flagDinningHallContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-left: 27%;
+  margin-right: 20rpx;
+  width: 350rpx;
+  height: 200rpx;
+  background-color: lightgoldenrodyellow;
+  border-radius: 10rpx;
+  border: solid;
+  border-color: #F08080;
+  border-width: 1rpx;
+  line-height: 250rpx;
+  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
+}
+/* 收藏餐厅 */
+.flagDinningHallContainer text{
+  justify-content: center;
+  font-size: 46rpx;
+  /* padding-left: 20%; */
+  color: #8B4513;
+}
+/* 联系我们 */
+.contactContainer{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  color: #8B4513;
+  background-color: orange;
+  width: 150rpx;
+  height: 100rpx;
+  justify-content: center;
+  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
+}
