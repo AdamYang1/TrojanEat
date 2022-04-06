@@ -15,19 +15,30 @@
 
 <!-- welcome -->
 <view class="welcomeContainer">
-  <view class="avatarContianer" bindtap="getUserInfo">
-    <image class="avatar" src="/pages/images/nvsheng.jpg"></image>
+  <view  wx:if="{{userInfo.avatarUrl}}" class="avatarContianer" bindtap="getUserInfo">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
   </view>
-  <view class="welcomeTextContainer">
-    <text class="welcomeText1">Welcome, 你的名字</text>
+  <view wx:else class="avatarContianer" bindtap="getUserInfo">
+    <view class = "avatarContainer2">
+      <text>登陆</text>
+    </view>
+  </view>
+  <view wx:if="{{userInfo.avatarUrl}}" class="welcomeTextContainer">
+    <text class="welcomeText1">Welcome, {{userInfo.nickName}}</text>
+  </view>
+  <view wx:else class="welcomeContainer2">
+    <view class="welcomeTextContainer2">
+     <text class="welcomeText2">请登录以查看个人数据</text>
+    </view>
   </view>
 </view>
+
 <!-- 个人喜好 -->
-<view class="personalChoiceContainer" bindtap="toPersonalChoice">
+<view wx:if="{{userInfo.avatarUrl}}" class="personalChoiceContainer" bindtap="toPersonalChoice">
   <text>个人喜好</text>
 </view>
 <!-- 收藏餐厅 -->
-<view class="flagDinningHallContainer">
+<view wx:if="{{userInfo.avatarUrl}}" class="flagDinningHallContainer">
   <text>收藏餐厅</text>
 </view>
 <!-- 联系我们 -->

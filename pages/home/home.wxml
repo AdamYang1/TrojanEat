@@ -15,7 +15,7 @@
 
 <!-- Heading -->
 
-<view class="headingContainer">
+<view wx:if="{{userInfo.avatarUrl}}" class="headingContainer">
   
   <view class="utilityContainer">
     <button class="preferenceContainer">
@@ -27,7 +27,7 @@
   </view>
 </view>
 <!-- Recommend Dining -->
-<view class="recommendContainer">
+<view wx:if="{{userInfo.avatarUrl}}" class="recommendContainer">
   <view class="recommendDinningHallContainer">
     <text class="recommendDinningHall">推荐餐厅: EVK</text>
   </view>
@@ -63,8 +63,13 @@
 </view>
 
 <!-- menu区域 -->
-<view class="menuContainer">
+<view wx:if="{{userInfo.avatarUrl}}" class="menuContainer">
   
+</view>
+
+<!-- 未登录时 -->
+<view wx:else class="loginPrompt" bindtap="homeLogin">
+  <text>请登录以获取信息</text>
 </view>
 
 <!-- 联系我们 -->

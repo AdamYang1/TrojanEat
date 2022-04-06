@@ -163,6 +163,24 @@
   border-width: 1rpx;
 }
 
+/* 还未登录时 */
+.loginPrompt{
+  border-radius: 5%;
+  margin-top: 50rpx;
+  margin-left: 20%;
+  height: 256rpx;
+  width: 456rpx;
+  background-color: orange;
+  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
+}
+.loginPrompt text{
+  margin-left: 84rpx;
+  line-height: 256rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #8B4513;
+}
 /* 联系我们 */
 
 .contactContainer{

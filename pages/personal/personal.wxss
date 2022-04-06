@@ -47,15 +47,43 @@
   height: 128rpx;
   border-radius: 50%;
 }
+
+.avatarContainer2{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  background-color:lightgoldenrodyellow;
+  line-height: 128rpx;
+  margin-right: 15rpx;
+  border: solid;
+  border-color: #F08080;
+}
+.avatarContainer2 text{
+  margin-left: 30rpx;
+  text-align: center;
+  color:#8B4513;
+}
+
 .welcomeContainer .welcomeTextContainer{
   display: flex;
   flex-direction: column;
   line-height: 168rpx;
 }
 
-.welcomeContainer text{
+.welcomeTextContainer text{
   margin-left: 30rpx;
   font-size: 36rpx;
+  color: #aaa;
+  justify-content: center;
+}
+
+.welcomeContainer2{
+  line-height: 168rpx;
+}
+
+.welcomeTextContainer2 .welcomeText2{
+  /* margin-left: 0rpx; */
+  font-size: 40rpx;
   color: #aaa;
   justify-content: center;
 }

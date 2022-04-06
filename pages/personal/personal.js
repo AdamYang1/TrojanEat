@@ -1,4 +1,5 @@
 // pages/personal/personal.js
+var app = getApp()
 Page({
 
   /**
@@ -6,13 +7,32 @@ Page({
    */
   data: {
     userInfo: {},
+    openId: 0,
   },
 
 // 点击头像登陆
 getUserInfo(res){
+  wx.login({
+    success: async (res) => {
+      let code = res.code;
+      // console.log(code)
+      let result = await request('/getOpenId', { code });
+      app.globalData.openId = result;
+      this.setData({
+        openId: result,
+      })
+    },
+    fail: (res)=>{
+      wx.showToast({
+        title: '登陆失败，请重新登录',
+        icon: 'none'
+      })
+    }
+  })
   wx.getUserProfile({
     desc: 'desc',
     success:(result)=>{
+      app.globalData.userInfo = result.userInfo;
       this.setData({
         userInfo: result.userInfo,
       })
@@ -37,7 +57,9 @@ toPersonalChoice(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      userInfo: app.globalData.userInfo,
+    })
   },
 
   /**
