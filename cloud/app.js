@@ -1,8 +1,24 @@
-const express = require('express')
-const Fly = require('flyio/src/node')
+const express = require('express');
+const Fly = require('flyio/src/node');
 const fly = new Fly;
-const jwt = require('jsonwebtoken')
-const app = express()
+const mysql = require('mysql');
+const app = express();
+
+// connect to the database
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Adam20030808!',
+    database: 'TrojanEat'
+})
+connection.connect((err) => {
+    if (err) {
+        console.error('连接失败：' + err.stack);
+        return;
+    }
+    console.log('连接成功');
+});
+
 
 // get user's unique openid to verify identity
 app.use('/getOpenId', async (req, res, next) => {
@@ -19,3 +35,7 @@ app.use('/getOpenId', async (req, res, next) => {
 app.listen(5000, () => {
     console.log('listening.....');
 })
+
+
+// disconnect database
+connection.end();
