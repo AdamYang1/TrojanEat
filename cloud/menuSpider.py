@@ -4,7 +4,7 @@ import json
 import os
 import pymysql
 
-venues = {'Parkside': 518, 'EVK': 514, 'Village': 27229}
+venues = {'PKS_RAW': 518, 'EVK_RAW': 514, 'VLG_RAW': 27229}
 
 
 class MenuSpider:
@@ -17,7 +17,7 @@ class MenuSpider:
                                   port=3306,
                                   user='root',
                                   password='Adam20030808!',
-                                  database='usc_menu',
+                                  database='TrojanEat',
                                   charset='utf8')
         self.cur = self.db.cursor()
         self.all_list = []
@@ -64,7 +64,7 @@ class MenuSpider:
             json.dump(items, f)
 
     def save_to_sql(self, venue):
-        sql = "insert into usc_menu." + venue + " VALUES (%s,%s,%s,%s,%s);"
+        sql = "insert into TrojanEat." + venue + " VALUES (%s,%s,%s,%s,%s);"
         try:
             self.cur.executemany(sql, self.all_list)
             self.db.commit()
