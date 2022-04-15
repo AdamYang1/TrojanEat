@@ -8,7 +8,8 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'Adam20030808!',
-    database: 'TrojanEat'
+    database: 'TrojanEat',
+    multipleStatements: true
 })
 db.connect((err) => {
     if (err) {
