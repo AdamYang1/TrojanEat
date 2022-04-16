@@ -1,32 +1,45 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../routes/db');
+const Async = require('async');
+
 const types = require('../static/types');
+const dhalls = require('../static/dhalls')
 // !!!!! first time using !!!!!!
 // add new userinfo (first time using)
 router.post('/newuser/openid/:openid',
     (req, res) => {
-        const { openid } = req.params;
-        let sql = `insert into userInfo (userOpenId) values ('${openid}');`;
-        db.query(sql, (err, result) => {
-            if (err) throw err;
-            res.end();
-        })
+        Async.waterfall([
+            function (callback) {
+                const { openid } = req.params;
+                let sql = `insert into userInfo (userOpenId) values ('${openid}');`;
+                db.query(sql, (err, result) => {
+                    if (err) throw err;
+                    res.end();
+                });
+                callback(null, openid);
+            },// update new user preference (first time using)
+            function (openid, callback) {
+                for (let i = 0; i < 15; ++i) {
+                    let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}';`;
+                    db.query(sql, (err, result) => {
+                        if (err) throw err;
+                    })
+                }
+                callback(null, openid);
+            },//update new user preference for dinninghall (first time using)
+            function (openid) {
+                dhalls.forEach((dhall) => {
+                    let sql = `update userInfo set ${dhall} = 0 where userOpenId = '${openid}';`;
+                    db.query(sql, (err, result) => {
+                        if (err) throw err;
+                    })
+                })
+            }
+        ])
     });
 
 
-// update new user preference (first time using)
-router.put('/newuser/openid/:openid',
-    (req, res) => {
-        const { openid } = req.params;
-        for (let i = 0; i < 15; ++i) {
-            let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}';`;
-            db.query(sql, (err, result) => {
-                if (err) throw err;
-            })
-        }
-        res.end();
-    });
 
 // ===================== after the first time :) ==========================
 // like!!! dishes
@@ -84,4 +97,14 @@ router.put('/customer/openid/:openid/dhranking/:dhranking',
         }
         res.end();
     })
+
+// display user preference
+router.get('/openid/:openid', (req, res) => {
+    const { openid } = req.params;
+    let sql = `select * from userInfo where userOpenId = '${openid}';`;
+    db.query(sql, (err, result) => {
+        res.send(result);
+    })
+});
+
 module.exports = router;

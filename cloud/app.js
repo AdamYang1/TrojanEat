@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
+app.use(express.json())
 // import wxlogin
 const Fly = require('flyio/src/node');
 const fly = new Fly;
@@ -18,6 +19,13 @@ app.use('/menu', menu);
 // add new userinfo
 const personal = require('../cloud/routes/personal');
 app.use('/personal', personal);
+
+// ========================= get recommend =========================================
+const recommend = require('../cloud/routes/recommend');
+app.use('/recommend', recommend);
+
+
+
 
 // ========================= verify identity =========================================
 // get user's unique openid to verify identity
