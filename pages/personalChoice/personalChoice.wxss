@@ -5,10 +5,9 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  height: 23%;
+  height: 18%;
   box-shadow: 5rpx 5rpx 5rpx 3rpx gray;
 }
-
 .logoContainer image{
   overflow: hidden;
   width: 168rpx;
@@ -21,71 +20,65 @@
 .logoContainer .logoNameContainer{
   margin-top: 10.5%;
 }
-
 .logoContainer .logoName1{
   font-size: 36rpx;
   color:orange;
 }
-
 .logoContainer .logoName2{
   font-size: 36rpx;
   color: #d43c33;
 }
-
 .logoContainer .logoName3{
   font-size: 36rpx;
   color:#aaa;
 }
 
-/* 已选区域 */
-.personalTypesContainer{
-  margin-top: 48rpx;
-  margin-left: 10%;
-  display: grid;
-  grid-template-columns: 170rpx 170rpx 170rpx;
-  grid-template-rows: 100rpx 100rpx; 
-  column-gap: 54rpx;
-}
-.personalTypeContainer{
-  place-self: center;
-  flex: 1 1 1;
-  line-height: 48rpx;
-  justify-content: center;
-  font-size: 28rpx;
-  background-color: orange;
-  box-shadow: 5rpx 5rpx 5rpx 2rpx gray;
-  color: #8B4513;
+.personalChoiceContainer{
+  display: flex;
 }
 
-.personalTypeContainer .personalTypeText{
-  padding-left: 20%;
-  text-align: center;
-  font-size: 32rpx;
-  font-weight: 700;
-}
-
-/* 可选区域 */
+/* 可选区 */
 .typesContainer{
-  margin-left: 10%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 168rpx 168rpx 168rpx;
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
+  /* width: 375rpx; */
+  margin-top: 60rpx;
+  margin-left: 5%;
+ /* background-color: #ecad00; */
+}
+.typesContainer .typesTitle{
+  /* width: ; */
+  margin-bottom: 30rpx;
 }
 
-.typeContainer{
-  border-radius: 50%;
-  line-height: 168rpx;
-  height: 168rpx;
-  /* justify-content: center; */
-  background-color: orange;
-  box-shadow: 5rpx 5rpx 10rpx 5rpx gray;
-  color: #8B4513;
+.typesContainer .typesArea{
+  display: grid;
+  grid-template-columns: 218rpx 218rpx;
+  /* grid-template-rows: 80p 80px;  */
+  column-gap: 5px;
+  row-gap: 1px;
 }
-.typeContainer text{
-  padding-left: 20%;
-  text-align: center;
-  font-size: 32rpx;
-  font-weight: 700;
+.typesContainer .typeContainer{
+  margin-top: 10rpx;
 }
+
+
+
+button {
+  background: #FBCA1F;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+ }
+ 
+ button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+ }
+ 
+ button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+ }

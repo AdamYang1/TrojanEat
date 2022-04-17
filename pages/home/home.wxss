@@ -60,12 +60,9 @@
   line-height: 100rpx;
   width: 50%;
   justify-content: center;
-  background-color: orange;
-  box-shadow: 5rpx 5rpx 5rpx 2rpx gray;
-  color: #8B4513;
 }
 
-.utilityContainer .menuContainer{
+.utilityContainer .menuContainerbtn{
   flex: 1 1;
   margin-top: 30rpx;
   margin-left: 30rpx;
@@ -74,9 +71,6 @@
   line-height: 100rpx;
   justify-content: center;
   width:50%;
-  background-color: #FFEBCD;
-  color: #8B4513;
-  box-shadow: 5rpx 5rpx 5rpx 3rpx gray;
 }
 
 /* 推荐餐厅区域 */
@@ -164,22 +158,43 @@
 }
 
 /* 还未登录时 */
+button {
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+ }
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+ }
+ 
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+ }
+
+
 .loginPrompt{
-  border-radius: 5%;
+  /* border-radius: 5%; */
   margin-top: 50rpx;
   margin-left: 20%;
   height: 256rpx;
   width: 456rpx;
-  background-color: orange;
-  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
+  /* background-color: orange; */
+  /* box-shadow: 5rpx 5rpx 3rpx 3rpx gray; */
 }
 .loginPrompt text{
-  margin-left: 84rpx;
-  line-height: 256rpx;
+  /* margin-left: 84rpx; */
+  line-height:88rpx;
   text-align: center;
   font-size: 36rpx;
   font-weight: 700;
-  color: #8B4513;
+  /* color: #8B4513; */
 }
 /* 联系我们 */
 
@@ -192,8 +207,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 30rpx;
-  color: #8B4513;
-  background-color: orange;
+  /* color: #8B4513; */
+  /* background-color: orange; */
   width: 150rpx;
   height: 100rpx;
   justify-content: center;

@@ -1,4 +1,4 @@
-<!--pages/personalChoice/personalChoice.wxml-->
+<!-- pages/personalChoice/personalChoice.wxml -->
 <!-- logo -->
 <view class="logoContainer">
   <image class="logo" src="/pages/images/logo.png"></image>
@@ -12,82 +12,26 @@
     </view>
   </view>
 </view>
-
-
-<!-- 标题 -->
-<view class="personalChoiceHeading">
-  <text>你喜欢的</text>
-</view>
-<!-- 已选区域 -->
-<view class="personalTypesContainer">
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
+<!-- 可选区 -->
+<view class="personalChoiceContainer">
+  <view class="typesContainer">
+    <button class="typesTitle" style="width: 288rpx;">可选区</button>
+    <view class="typesArea">
+      <button wx:for="{{types}}" class="typeContainer" style="width: 188rpx;"
+      bindtap="handleType" data-type = "{{item}}">
+        {{item}}
+      </button>
+    </view>
   </view>
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-</view>
-<!-- 可选区域 -->
-<view class="typesContainer">
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-</view>
-
-<!-- 你不喜欢的 -->
-<view class="personalChoiceHeading">
-  <text>你不喜欢的</text>
-</view>
-<!-- 已选区域 -->
-<view class="personalTypesContainer">
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-  <view class="personalTypeContainer" style="width: 208rpx;">
-    <text class="personalTypeText">Protein</text>
-    <text class="iconfont icon-quxiao"></text>
-  </view>
-</view>
-<!-- 可选区域 -->
-<view class="typesContainer">
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
-  </view>
-  <view class="typeContainer" style="width: 168rpx;" >
-    <text>Protein</text>
+  <view class="choicesContainer">
+    <button class="choiceTitle" style="width: 208rpx;">已选</button>
+    <view class="choicesArea">
+      <button wx:for="{{userPreference}}" class="choiceContainer" stype="width: 188rpx;">
+      <!-- data-choice = "{{index}}"> -->
+        {{item}}
+      </button>
+    </view>
+    <button class="clear" bindtap="handleClear">清除已选</button>
+    <button class="clear" bindtap="handleSubmit">更新/确认已选</button>
   </view>
 </view>

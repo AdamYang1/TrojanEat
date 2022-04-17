@@ -15,32 +15,25 @@
 
 <!-- welcome -->
 <view class="welcomeContainer">
-  <view  wx:if="{{userInfo.avatarUrl}}" class="avatarContianer" bindtap="getUserInfo">
+  <view  wx:if="!{{userInfo.avatarUrl}}" class="avatarContainer" bindtap="getUserInfo">
     <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
   </view>
-  <view wx:else class="avatarContianer" bindtap="getUserInfo">
-    <view class = "avatarContainer2">
-      <text>登陆</text>
-    </view>
-  </view>
-  <view wx:if="{{userInfo.avatarUrl}}" class="welcomeTextContainer">
+  <view wx:if="!{{userInfo.avatarUrl}}" class="welcomeTextContainer">
     <text class="welcomeText1">Welcome, {{userInfo.nickName}}</text>
   </view>
-  <view wx:else class="welcomeContainer2">
-    <view class="welcomeTextContainer2">
-     <text class="welcomeText2">请登录以查看个人数据</text>
-    </view>
-  </view>
+  <button wx:else class = "login" bindtap="getUserInfo">
+      登陆以获取推荐  
+  </button>
 </view>
 
 <!-- 个人喜好 -->
-<view wx:if="{{userInfo.avatarUrl}}" class="personalChoiceContainer" bindtap="toPersonalChoice">
+<button wx:if="!{{userInfo.avatarUrl}}" class="personalChoiceContainer" bindtap="toPersonalChoice">
   <text>个人喜好</text>
-</view>
+</button>
 <!-- 收藏餐厅 -->
-<view wx:if="{{userInfo.avatarUrl}}" class="flagDinningHallContainer">
+<button wx:if="!{{userInfo.avatarUrl}}" class="flagDinningHallContainer">
   <text>收藏餐厅</text>
-</view>
+</button>
 <!-- 联系我们 -->
 <button class="contactContainer">
   <text>联系我们</text>
