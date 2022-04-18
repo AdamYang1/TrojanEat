@@ -7,7 +7,8 @@ Page({
    */
   data: {
     userInfo: {},
-    openId: 0,
+    isFirst: true
+    // openId: 0,
   },
 
 // 点击头像登陆
@@ -59,6 +60,7 @@ toPersonalChoice(){
   onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo,
+      isFirst: app.globalData.isFirst
     })
   },
 

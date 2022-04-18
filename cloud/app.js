@@ -15,7 +15,7 @@ const db = require('../cloud/routes/db');
 const menu = require('../cloud/routes/menu');
 app.use('/menu', menu);
 
-// ======================== userinfo ==============================================
+// ======================== personal userinfo ==============================================
 // add new userinfo
 const personal = require('../cloud/routes/personal');
 app.use('/personal', personal);

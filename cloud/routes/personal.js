@@ -48,7 +48,7 @@ router.put('/customer/openid/:openid/like/options/:options',
         const { openid, options } = req.params;
         const optionsArr = options.split(',');
         for (let i = 0; i < 15; ++i) {
-            let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}' and ${types[i]} = 1;`
+            let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}' and ${types[i]} = 1`
             db.query(sql, (err, result) => {
                 if (err) throw err;
             })

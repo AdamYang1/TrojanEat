@@ -8,16 +8,16 @@ Page({
    */
   data: {
     userInfo: {},
-    openId: 0,
+    openid: 0,
+    isFirst: true
   },
   // 首页登陆
   homeLogin() {
     wx.login({
       success: async (res) => {
         let code = res.code;
-        // console.log(code)
         let result = await request('/getOpenId', { code });
-        app.globalData.openId = result;
+        app.globalData.openid = result;
         this.setData({
           openId: result,
         })
@@ -51,6 +51,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo,
+      isFirst: app.globalData.isFirst
     })
   },
 
@@ -66,7 +67,7 @@ Page({
    */
   onShow: function () {
     this.setData({
-      userInfo: app.globalData.userInfo,
+      openid: app.globalData.openid,
     })
   },
 

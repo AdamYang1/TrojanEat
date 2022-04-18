@@ -15,7 +15,7 @@
 
 <!-- Heading -->
 
-<view wx:if="!{{userInfo.avatarUrl}}" class="headingContainer">
+<view wx:if="!{{isFirst}}" class="headingContainer">
   
   <view class="utilityContainer">
     <button class="preferenceContainer">
@@ -27,7 +27,7 @@
   </view>
 </view>
 <!-- Recommend Dining -->
-<view wx:if="!{{userInfo.avatarUrl}}" class="recommendContainer">
+<view wx:if="!{{isFirst}}" class="recommendContainer">
   <view class="recommendDinningHallContainer">
     <text class="recommendDinningHall">推荐餐厅: EVK</text>
   </view>
@@ -63,7 +63,7 @@
 </view>
 
 <!-- menu区域 -->
-<view wx:if="!{{userInfo.avatarUrl}}" class="menuContainer">
+<view wx:if="!{{isFirst}}" class="menuContainer">
   
 </view>
 

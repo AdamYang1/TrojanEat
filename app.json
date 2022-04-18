@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/personalChoice/personalChoice",
     "pages/personal/personal",
-    "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/logo/logo"
+    "pages/logo/logo",
+    "pages/welcome/welcome"
   ],
   "window": {
     "backgroundTextStyle": "light",

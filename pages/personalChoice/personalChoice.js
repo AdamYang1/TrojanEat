@@ -1,6 +1,6 @@
 // pages/personalChoice/personalChoice.js
+import request from '../request/request'
 var app = getApp()
-let selecedArr = app.globalData.selecedArr;
 let typesArr = app.globalData.types;
 // let 
 Page({
@@ -11,45 +11,64 @@ Page({
   data: {
     types: ['乳制品', '牛肉', '鸡肉', '猪肉', '蛋类', '鱼类', '花生',
       '芝麻', '贝类', '豆制品', '坚果', '谷物类'],
+    typesEng: ['dairy', 'beef', 'chicken', 'pork', 'eggs', 'fish', 'peanuts',
+      'sesame', 'shellfish', 'soy', 'tree_nuts', 'wheat_gluten'],
     userPreference: [],
+    userPreferenceEng: [],
     test: []
   },
   // 点击某个食品
   handleType: function (e) {
     let type = e.currentTarget.dataset.type;
     let typeIndex = typesArr.indexOf(type);
-    if (selecedArr[typeIndex] == 0) {
+    let typeEng = this.data.typesEng[typeIndex];
+    if (app.globalData.selecedArr[typeIndex] == 0) {
       this.setData({
-        userPreference: this.data.userPreference.concat(type)
+        userPreference: this.data.userPreference.concat(type),
+        userPreferenceEng: this.data.userPreferenceEng.concat(typeEng)
+      }, function (type) {
+        app.globalData.userPreference = this.data.userPreference;
+        app.globalData.userPreferenceEng = this.data.userPreferenceEng;
       })
-      app.globalData.userPreference.concat(type);
       app.globalData.selecedArr[typeIndex] = 1
-      wx.setStorageSync(type, 1);
+      // wx.setStorageSync(type, 1);
     } else {
-      console.log('nonono');
+      wx.showToast({
+        title: '请不要重复选择已选过种类～',
+        icon: 'none',
+      });
     }
-
   },
+
   handleClear() {
     // clear all data
     this.setData({
-      userPreference: []
+      userPreference: [],
+      userPreferenceEng: []
     })
     app.globalData.selecedArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    selecedArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     app.globalData.userPreference = [];
+    app.globalData.userPreferenceEng = [];
   },
-  handleSubmit() {
-    // 未能更新global data
-    console.log(app.globalData.userPreference.length);
+  async handleSubmit() {
+    let openid = app.globalData.openid;
+    let options = app.globalData.userPreferenceEng.join(',');
+    await request(`/personal/customer/openid/${openid}/like/options/${options}`, { openid, options }, 'PUT');
+    wx.showToast({
+      title: '更新成功啦！',
+      icon: 'none',
+    })
+    wx.switchTab({
+      url: '/pages/home/home',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    let temp = app.globalData.userPreference;
+  onLoad: async function (options) {
     this.setData({
-      userPreference: temp
+      userPreference: app.globalData.userPreference,
+      userPreferenceEng: app.globalData.userPreferenceEng
     })
   },
 
@@ -57,14 +76,16 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userPreference: app.globalData.userPreference,
+      userPreferenceEng: app.globalData.userPreferenceEng
+    })
   },
 
   /**

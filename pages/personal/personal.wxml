@@ -15,10 +15,10 @@
 
 <!-- welcome -->
 <view class="welcomeContainer">
-  <view  wx:if="!{{userInfo.avatarUrl}}" class="avatarContainer" bindtap="getUserInfo">
+  <view  wx:if="!{{isFirst}}" class="avatarContainer" bindtap="getUserInfo">
     <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
   </view>
-  <view wx:if="!{{userInfo.avatarUrl}}" class="welcomeTextContainer">
+  <view wx:if="!{{isFirst}}" class="welcomeTextContainer">
     <text class="welcomeText1">Welcome, {{userInfo.nickName}}</text>
   </view>
   <button wx:else class = "login" bindtap="getUserInfo">
@@ -27,11 +27,11 @@
 </view>
 
 <!-- 个人喜好 -->
-<button wx:if="!{{userInfo.avatarUrl}}" class="personalChoiceContainer" bindtap="toPersonalChoice">
+<button wx:if="!{{isFirst}}" class="personalChoiceContainer" bindtap="toPersonalChoice">
   <text>个人喜好</text>
 </button>
 <!-- 收藏餐厅 -->
-<button wx:if="!{{userInfo.avatarUrl}}" class="flagDinningHallContainer">
+<button wx:if="!{{isFirst}}" class="flagDinningHallContainer">
   <text>收藏餐厅</text>
 </button>
 <!-- 联系我们 -->

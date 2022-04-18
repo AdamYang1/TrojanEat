@@ -6,7 +6,7 @@ const db = require('../routes/db');
 let output;
 function getPreference(openid, types) {
     return new Promise((resolve, reject) => {
-        const sql = `select ${types} from userInfo where userOpenId = '${openid}' and ${types} = -1;`;
+        const sql = `select ${types} from userInfo where userOpenId = '${openid}' and ${types} = 1;`;
         db.query(sql, (err, result) => {
             if (err) {
                 reject(err);

@@ -27,7 +27,7 @@
     <button class="choiceTitle" style="width: 208rpx;">已选</button>
     <view class="choicesArea">
       <button wx:for="{{userPreference}}" class="choiceContainer" stype="width: 188rpx;">
-      <!-- data-choice = "{{index}}"> -->
+      <!-- bindtap = "handleChoice" data-choice = "{{index}}"> -->
         {{item}}
       </button>
     </view>
