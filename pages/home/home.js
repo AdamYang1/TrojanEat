@@ -18,6 +18,7 @@ Page({
         let code = res.code;
         let result = await request('/getOpenId', { code });
         app.globalData.openid = result;
+        console.log(this.data.openid);
         this.setData({
           openId: result,
         })

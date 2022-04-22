@@ -36,6 +36,7 @@ app.use('/getOpenId', async (req, res, next) => {
     let url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecrete}&js_code=${code}&grant_type=authorization_code`;
     let result = await fly.get(url);
     let openId = JSON.parse(result.data).openid;
+    // console.log(openId);
     res.send(openId);
     next();
 });

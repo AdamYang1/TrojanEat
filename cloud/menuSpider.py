@@ -3,6 +3,8 @@ import requests
 import json
 import os
 import pymysql
+from pygtrans import Translate
+client = Translate()
 
 venues = {'PKS_RAW': 518, 'EVK_RAW': 514, 'VLG_RAW': 27229}
 
@@ -39,6 +41,8 @@ class MenuSpider:
                 food_list = []
                 for food in foods:
                     food_str = food.xpath('./text()')[0].strip()
+                    food_trans = client.translate(food_str)
+                    food_trans_str = food_trans.translatedText
                     attributes = food.xpath('./span//i/span')
                     attr_list = []
                     attr_str = ''
@@ -49,7 +53,8 @@ class MenuSpider:
                     food_list.append({food_str: attr_list})
                     temp = date_str.split('/')
                     new_date_str = '%s-%s-%s' % (temp[2], temp[0], temp[1])
-                    self.all_list.append((new_date_str, time, type, food_str, attr_str))
+                    self.all_list.append((new_date_str, time, type, food_trans_str, attr_str))
+                    # self.all_list.append((new_date_str, time, type, translation, attr_str))
                 type_dict[type] = food_list
             items[time] = type_dict
         return items
