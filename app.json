@@ -1,16 +1,16 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/welcome/welcome",
     "pages/personalChoice/personalChoice",
     "pages/personal/personal",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/logo/logo",
-    "pages/welcome/welcome"
+    "pages/logo/logo"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#BA0000",
     "navigationBarTitleText": "TrojanEat",
     "navigationBarTextStyle": "black"
   },

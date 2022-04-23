@@ -17,6 +17,7 @@ App({
         // 获取用户openid后需要看是否第一次登陆
         let customerInfo = await request(`/personal/openid/${that.globalData.openid}`,{});
         that.globalData.isFirst = customerInfo.length == 0 ? true : false;
+        // that.globalData.isFirst = customerInfo.length == 0 ? true : false;
         // 若不是，获取用户喜好并跳转页面
         if(!that.globalData.isFirst){
           let temp = await request(`/personal/openid/${that.globalData.openid}`, {}, 'GET');

@@ -1,18 +1,32 @@
 // pages/welcome/welcome.js
+import request from '../request/request';
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    openid:0,
   },
-
+async handleStart(){
+  await request(`/personal/newuser/openid/${this.data.openid}`,
+  {}, 'POST');
+  wx.showToast({
+    title: '教程页面还没做，但是初始登陆设置完成！',
+  })
+  // 跳转教程
+  wx.switchTab({
+    url: '../home/home',
+  })//for now
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      openid: app.globalData.openid
+    })
   },
 
   /**
@@ -26,7 +40,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // this.setData({
+    //   openid: app.globalData.openid
+    // })
   },
 
   /**
