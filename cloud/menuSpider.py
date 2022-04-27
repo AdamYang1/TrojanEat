@@ -53,7 +53,7 @@ class MenuSpider:
                     food_list.append({food_str: attr_list})
                     temp = date_str.split('/')
                     new_date_str = '%s-%s-%s' % (temp[2], temp[0], temp[1])
-                    self.all_list.append((new_date_str, time, type, food_trans_str, attr_str))
+                    self.all_list.append((new_date_str, time, type, food_trans_str, food_str, attr_str))
                     # self.all_list.append((new_date_str, time, type, translation, attr_str))
                 type_dict[type] = food_list
             items[time] = type_dict
@@ -69,7 +69,7 @@ class MenuSpider:
             json.dump(items, f)
 
     def save_to_sql(self, venue):
-        sql = "insert into TrojanEat." + venue + " VALUES (%s,%s,%s,%s,%s);"
+        sql = "insert into TrojanEat." + venue + " VALUES (%s,%s,%s,%s,%s,%s);"
         try:
             self.cur.executemany(sql, self.all_list)
             self.db.commit()

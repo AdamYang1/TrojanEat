@@ -1,10 +1,11 @@
 const express = require("express");
-const Async = require("async");
 const router = express.Router();
 const db = require("../routes/db");
-const dhalls = ["vlg", "evk", "pks"];
 const getLikeMenu = require("../controllers/getLikeMenu");
+const getAllLikeMenu = require("../controllers/getAllMenu");
+
 // const getLikeMenu = require("../controllers/getLikeMenu");
+
 // specific dinning hall in specific time with all menu
 router.get("/dhall/:dhall/date/:date/mealtime/:mealtime", (req, res) => {
 	const { dhall, date, mealtime } = req.params;
@@ -16,17 +17,25 @@ router.get("/dhall/:dhall/date/:date/mealtime/:mealtime", (req, res) => {
 		res.end();
 	});
 });
+
 // get menu from a dinning according to preference
 router.get(
 	"/openid/:openid/options/:options/date/:date/mealtime/:mealtime/dh/:dh",
 	async (req, res) => {
 		const { openid, options, date, mealtime, dh } = req.params;
-		let test = await getLikeMenu(openid, options, date, mealtime, dh);
-		// console.log(test);
-		JSON.stringify(test);
-		res.status(200).send(test);
+		let likeMenu = await getLikeMenu(openid, options, date, mealtime, dh);
+		JSON.stringify(likeMenu);
+		res.status(200).send(likeMenu);
 		res.end();
 	}
 );
 
+// get all menu
+router.get("/date/:date/mealtime/:mealtime/dh/:dh", async (req, res) => {
+	const { date, mealtime, dh } = req.params;
+	let allMenu = await getAllLikeMenu(dh, date, mealtime);
+	JSON.stringify(allMenu);
+	res.status(200).send(allMenu);
+	res.end();
+});
 module.exports = router;

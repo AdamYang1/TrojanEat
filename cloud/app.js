@@ -3,13 +3,14 @@ const express = require("express");
 const router = express.Router();
 const app = express();
 app.use(express.json());
-// import wxlogin
+//!!! import wxlogin
 const Fly = require("flyio/src/node");
 const fly = new Fly();
 
 // import db
 const db = require("../cloud/routes/db");
-// get data
+
+//!!! get data
 // ======================== get menu ===============================================
 // get all menu with specific time
 const menu = require("../cloud/routes/menu");
@@ -23,6 +24,14 @@ app.use("/personal", personal);
 // ========================= get recommend =========================================
 const recommend = require("../cloud/routes/recommend");
 app.use("/recommend", recommend);
+
+// ========================= get allergen =========================================
+const allergen = require("../cloud/routes/allergen");
+app.use("/allergen", allergen);
+
+// ========================= process data =========================================
+const procdata = require("./routes/procdata");
+app.use("/procdata", procdata);
 
 // ========================= verify identity =========================================
 // get user's unique openid to verify identity
