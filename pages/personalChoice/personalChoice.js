@@ -53,11 +53,15 @@ Page({
   async handleSubmit() {
     let openid = app.globalData.openid;
     let options = app.globalData.userPreferenceEng.join(',');
+    if(app.globalData.userPreferenceEng.length == 0){
+      wx.showToast({
+        title: '你现在没有任何选择哦',
+        duration: 1000,
+        icon: 'none'
+      })
+      return;
+    }
     await request(`/personal/customer/openid/${openid}/like/options/${options}`, { openid, options }, 'PUT');
-    wx.showToast({
-      title: '更新成功啦！',
-      icon: 'none',
-    })
     wx.switchTab({
       url: '/pages/home/home',
     })

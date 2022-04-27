@@ -27,20 +27,21 @@ app.use("/recommend", recommend);
 // ========================= verify identity =========================================
 // get user's unique openid to verify identity
 app.use("/getOpenId", async (req, res, next) => {
-  let code = req.query.code;
-  let appId = "wx38f2889c7ca5fd55";
-  let appSecrete = "afebca8e3c9e0cede2bdfed71cc3ef9f";
-  let url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecrete}&js_code=${code}&grant_type=authorization_code`;
-  let result = await fly.get(url);
-  //   console.log(result);
-  let openId = JSON.parse(result.data).openid;
-  // console.log(openId);
-  res.send(openId);
-  next();
+	let code = req.query.code;
+	// console.log(code);
+	let appId = "wx38f2889c7ca5fd55";
+	let appSecrete = "afebca8e3c9e0cede2bdfed71cc3ef9f";
+	let url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecrete}&js_code=${code}&grant_type=authorization_code`;
+	let result = await fly.get(url);
+	// console.log(result);
+	let openId = JSON.parse(result.data).openid;
+	// console.log(openId);
+	res.send(openId);
+	next();
 });
 // ============================ create server =============================================
 app.listen(5000, () => {
-  console.log("listening.....");
+	console.log("listening.....");
 });
 
 // disconnect database

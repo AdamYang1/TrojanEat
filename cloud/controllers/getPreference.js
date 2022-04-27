@@ -1,22 +1,22 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const types = require('../static/types');
-const db = require('../routes/db');
+const types = require("../static/types");
+const db = require("../routes/db");
 
 let output;
 function getPreference(openid, types) {
-    return new Promise((resolve, reject) => {
-        const sql = `select ${types} from userInfo where userOpenId = '${openid}' and ${types} = 1;`;
-        db.query(sql, (err, result) => {
-            if (err) {
-                reject(err);
-            } else {
-                // console.log(result);
-                resolve(result);
-            }
-        })
-    })
-    console.log(output);
+  return new Promise((resolve, reject) => {
+    const sql = `select ${types} from userInfo where userOpenId = '${openid}' and ${types} != 1 and ${types} != -1;`;
+    db.query(sql, (err, result) => {
+      if (err) {
+        reject(err);
+      } else {
+        // console.log(result);
+        resolve(result);
+      }
+    });
+  });
+  console.log(output);
 }
 
 module.exports = getPreference;
