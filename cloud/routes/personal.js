@@ -61,26 +61,29 @@ router.put("/customer/openid/:openid/like/options/:options", (req, res) => {
 	// let sql = `update userInfo set `
 	res.end();
 });
-// dislike!!! dishes
-router.put("/customer/openid/:openid/dislike/options/:options", (req, res) => {
-	const { openid, options } = req.params;
-	const optionsArr = options.split(",");
-	for (let i = 0; i < 15; ++i) {
-		let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}' and ${types[i]} = -1;`;
-		db.query(sql, (err, result) => {
-			if (err) throw err;
-		});
-	}
-	for (let i = 0; i < optionsArr.length; ++i) {
-		let sql = `update userInfo set ${optionsArr[i]} = -1 where userOpenId = '${openid}'`;
-		db.query(sql, (err, result) => {
-			if (err) throw err;
-		});
-	}
-	// console.log(options.split(','));
-	// let sql = `update userInfo set `
-	res.end();
-});
+
+// !!! dislike changed to allergen!!!
+// router.put("/customer/openid/:openid/dislike/options/:options", (req, res) => {
+// 	const { openid, options } = req.params;
+// 	const optionsArr = options.split(",");
+// 	for (let i = 0; i < 15; ++i) {
+// 		let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}' and ${types[i]} = -1;`;
+// 		db.query(sql, (err, result) => {
+// 			if (err) throw err;
+// 		});
+// 	}
+// 	for (let i = 0; i < optionsArr.length; ++i) {
+// 		let sql = `update userInfo set ${optionsArr[i]} = -1 where userOpenId = '${openid}'`;
+// 		db.query(sql, (err, result) => {
+// 			if (err) throw err;
+// 		});
+// 	}
+// console.log(options.split(','));
+// let sql = `update userInfo set `
+// 	res.end();
+// });
+//!!!
+
 // dinning hall ranking
 router.put("/customer/openid/:openid/dhranking/:dhranking", (req, res) => {
 	const { openid, dhranking } = req.params;

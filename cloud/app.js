@@ -12,12 +12,14 @@ const db = require("../cloud/routes/db");
 
 //!!! get data
 // ======================== get menu ===============================================
-// get all menu with specific time
 const menu = require("../cloud/routes/menu");
 app.use("/menu", menu);
 
+// // ======================== get dh ranking ===============================================
+// const drank = require("../cloud/routes/drank");
+// app.use("/drank", drank);
+
 // ======================== personal userinfo ==============================================
-// add new userinfo
 const personal = require("../cloud/routes/personal");
 app.use("/personal", personal);
 

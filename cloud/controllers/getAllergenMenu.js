@@ -1,29 +1,28 @@
 // const Async = require("async");
 const db = require("../routes/db");
 
-async function getLikeMenu(openid, options, date, mealtime, dh) {
+async function getAllergenMenu(openid, allergens, date, mealtime, dh) {
 	let resultdic = {};
-	let optiondic = [];
 	let foodList = [];
-	optionsArr = options.split(",");
+	allergensArr = allergens.split(",");
 	if (resultdic[`${dh}`] === undefined) {
 		resultdic[`${dh}`] = {};
 	}
-	for (i in optionsArr) {
-		let option = optionsArr[i];
-		if (resultdic[`${dh}`][`${option}`] === undefined) {
-			resultdic[`${dh}`][`${option}`] = [];
+	for (i in allergensArr) {
+		let allergen = allergensArr[i];
+		if (resultdic[`${dh}`][`${allergen}`] === undefined) {
+			resultdic[`${dh}`][`${allergen}`] = [];
 		}
-		foodList = await getFood(dh, option, openid, date, mealtime);
-		resultdic[`${dh}`][`${option}`] = foodList;
+		foodList = await getFood(dh, allergen, openid, date, mealtime);
+		resultdic[`${dh}`][`${allergen}`] = foodList;
 	}
 	return resultdic;
 }
 
-function getResult(dh, option, openid, date, mealtime) {
+function getResult(dh, allergen, openid, date, mealtime) {
 	return new Promise((resolve, reject) => {
 		let sql = `select food_ch from ${dh}
-		inner join userInfo on ceil(${dh}.${option}) = ceil(userInfo.${option})
+		inner join userInfo on abs(${dh}.${allergen}) = abs(userInfo.${allergen})
 		where ${dh}.time = '${date}' and ${dh}.meal_time = '${mealtime}' and userInfo.userOpenId = '${openid}';`;
 		db.query(sql, (err, result) => {
 			// console.log(result);
@@ -38,10 +37,10 @@ function getResult(dh, option, openid, date, mealtime) {
 	});
 }
 
-async function getFood(dh, option, openid, date, mealtime) {
+async function getFood(dh, allergen, openid, date, mealtime) {
 	return new Promise(async (resolve, reject) => {
 		let foodList = [];
-		let result = await getResult(dh, option, openid, date, mealtime);
+		let result = await getResult(dh, allergen, openid, date, mealtime);
 		foodList = result.map((r) => {
 			let temp = JSON.stringify(r);
 			let first_index = temp.indexOf(":") + 1;
@@ -53,4 +52,4 @@ async function getFood(dh, option, openid, date, mealtime) {
 	});
 }
 
-module.exports = getLikeMenu;
+module.exports = getAllergenMenu;

@@ -12,6 +12,7 @@ function getRecommend(openid, date, mealtime) {
 				`select ${type} from userInfo where userOpenId = '${openid}' and
         ${type} != -1 and ${type} != 0`,
 				(err, result) => {
+					if (err) throw err;
 					let len = type.length;
 					// console.log(result);
 					let temp = JSON.stringify(result).substring(3, 3 + len);
