@@ -1,16 +1,6 @@
 <!--pages/personal/personal.wxml-->
-<!-- logo -->
-<view class="logoContainer">
-  <image class="logo" src="/pages/images/logo.png"></image>
-  <view class="logoNameContainer">
-    <view class="logoNameEng">
-      <text class="logoName1">Trojan</text>
-      <text class="logoName2">Eat</text>
-    </view>
-    <view class="logoNameChi">
-      <text class="logoName3">南加大恰饭助手</text>
-    </view>
-  </view>
+<view class="headingContainer">
+    <text class="heading">个人中心</text>
 </view>
 
 <!-- welcome -->

@@ -1,12 +1,14 @@
 {
   "pages": [
+    "pages/personal/personal",
     "pages/home/home",
     "pages/welcome/welcome",
     "pages/personalChoice/personalChoice",
-    "pages/personal/personal",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/logo/logo"
+    "pages/logo/logo",
+    "pages/allmenu",
+    "pages/allmenu/allmenu"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,6 +26,12 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
+        "iconPath": "/pages/images/tabs/tab-home.png",
+        "selectedIconPath": "/pages/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/allmenu/allmenu",
+        "text": "全部餐厅",
         "iconPath": "/pages/images/tabs/tab-home.png",
         "selectedIconPath": "/pages/images/tabs/tab-home-current.png"
       },

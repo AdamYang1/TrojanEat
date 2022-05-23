@@ -1,46 +1,24 @@
 /* pages/personal/personal.wxss */
-.logoContainer{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  height: 23%;
-  box-shadow: 5rpx 5rpx 5rpx 3rpx gray;
+
+.headingContainer {
+  margin-top: 3%;
 }
 
-.logoContainer image{
-  overflow: hidden;
-  width: 168rpx;
-  height: 168rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  margin-left: 20%;
-  justify-items: center;
-}
-.logoContainer .logoNameContainer{
-  margin-top: 10.5%;
-}
-
-.logoContainer .logoName1{
-  font-size: 36rpx;
-  color:orange;
-}
-
-.logoContainer .logoName2{
-  font-size: 36rpx;
-  color: #d43c33;
-}
-
-.logoContainer .logoName3{
-  font-size: 36rpx;
-  color:#aaa;
+.heading {
+  margin-left: 33%;
+  font-size: 62rpx;
+  font-weight: 800;
+  color: #ba0000;
+  text-shadow: 2rpx 2rpx 2rpx #FFC700;
 }
 
 /* welcome部分 */
 .welcomeContainer{
   /* margin-left: 15%; */
-  margin-top: 45rpx;
+  margin-top: 40rpx;
   display: flex;
   flex-direction: row;
+  border-top: #BA0000 solid 10rpx;
 }
 .login{
   height: 148;
@@ -99,31 +77,6 @@
 }
 
 /* 个人喜好 */
-.personalChoiceContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:  15rpx;
-  margin-left: 27%;
-  margin-right: 20rpx;
-  width: 350rpx;
-  height: 200rpx;
-  /* background-color: lightgoldenrodyellow; */
-  /* border-radius: 10rpx; */
-  border: solid;
-  /* border-color: #F08080; */
-  /* border-width: 1rpx; */
-  line-height: 250rpx;
-  /* box-shadow: 5rpx 5rpx 3rpx 3rpx gray; */
-
-}
-
-.personalChoiceContainer text{
-  justify-content: center;
-  font-size: 46rpx;
-  /* padding-left: 23%; */
-  /* color: #8B4513; */
-}
 
 .flagDinningHallContainer {
   display: flex;
@@ -142,44 +95,24 @@
   line-height: 250rpx;
   /* box-shadow: 5rpx 5rpx 3rpx 3rpx gray; */
 }
-/* 收藏餐厅 */
-.flagDinningHallContainer text{
-  justify-content: center;
-  font-size: 46rpx;
-  /* padding-left: 20%; */
-  /* color: #8B4513; */
-}
-/* 联系我们 */
-.contactContainer{  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30rpx;
-  /* color: #8B4513; */
-  /* background-color: orange; */
-  width: 150rpx;
-  height: 100rpx;
-  justify-content: center;
-  box-shadow: 5rpx 5rpx 3rpx 3rpx gray;
-}
 
 button {
-  background: #FBCA1F;
+  /* background: #FBCA1F; */
   font-family: inherit;
   padding: 0.6em 1.3em;
   font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  font-size: 36rpx;
+  color: #BA0000;
+  border: 4px solid #FFC700;
+  box-shadow: 0.2em 0.2em #be2929;
  }
  
  button:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+  box-shadow: 0.2em 0.2em #BA0000;
  }
  
  button:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
+  box-shadow: 0.05em 0.05em #BA0000;
  }

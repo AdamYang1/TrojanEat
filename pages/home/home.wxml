@@ -1,70 +1,38 @@
 <!--pages/home/home.wxml-->
-<!-- logo -->
-<view class="logoContainer">
-  <image class="logo" src="/pages/images/logo.png"></image>
-  <view class="logoNameContainer">
-    <view class="logoNameEng">
-      <text class="logoName1">Trojan</text>
-      <text class="logoName2">Eat</text>
-    </view>
-    <view class="logoNameChi">
-      <text class="logoName3">南加大恰饭助手</text>
-    </view>
-  </view>
-</view>
 
 <!-- Heading -->
 
 <view wx:if="!{{isFirst}}" class="headingContainer">
-  
-  <view class="utilityContainer">
+  <!-- <view class="utilityContainer">
     <button class="preferenceContainer">
       推荐餐厅
     </button>
     <button class="menuContainerbtn">
     全部餐厅
     </button>
+  </view> -->
+  <view class="headingContainer">
+    <text class="headingText">推荐餐厅</text>
+    <button class="headingDinning" style="width: 70%; text-transform: uppercase;">Parkside</button>
   </view>
 </view>
 <!-- Recommend Dining -->
 <view wx:if="!{{isFirst}}" class="recommendContainer">
-  <view class="recommendDinningHallContainer">
-    <text class="recommendDinningHall">推荐餐厅: EVK</text>
-  </view>
-  <view class="dishesContainer">
-    <view class="dishContainer">
-      <view class="dishTypeContainer">
-        <text class="dishType">Protein</text>
-      </view>
-      <view class="dishNameContainer">
-        <text class="dishName1">A DISH</text>
-        <text class="dishName2">一道菜</text>
+  <text class="recommendTitle">推荐菜品</text>
+  <view class="titleContainer">
+    <view class="typeTitle">
+      <view class="tDecorator"></view>
+      <view class="typeDecorator">
+        <text style="margin-left: 90rpx">种类</text>
       </view>
     </view>
-    <view class="dishContainer">
-      <view class="dishTypeContainer">
-        <text class="dishType">Protein</text>
-      </view>
-      <view class="dishNameContainer">
-        <text class="dishName1">A DISH</text>
-        <text class="dishName2">一道菜</text>
-      </view>
-    </view>
-    <view class="dishContainer">
-      <view class="dishTypeContainer">
-        <text class="dishType">Protein</text>
-      </view>
-      <view class="dishNameContainer">
-        <text class="dishName1">A DISH</text>
-        <text class="dishName2">一道菜</text>
+    <view class="foodTitle">
+      <view class="fDecorator"></view>
+      <view class="foodDecorator">
+        <text style="margin-left: 30rpx">名称</text>
       </view>
     </view>
   </view>
-</view>
-
-<!-- menu区域 -->
-<view wx:if="!{{isFirst}}" class="menuContainer">
-  
 </view>
 
 <!-- 未登录时 -->
@@ -72,9 +40,9 @@
   <text>点击登录以获取推荐餐厅</text>
 </button>
 
-<!-- 联系我们 -->
+<!-- 联系我们
 <view class="contactContainer">
   <button class="contactBtn">
     <text>联系我们</text>
   </button>
-</view>
+</view> -->
