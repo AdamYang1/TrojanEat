@@ -48,10 +48,9 @@ App({
     openid: 0,
     userPreference: [],
     userPreferenceEng: [],
-    types: ['乳制品', '牛肉', '鸡肉', '猪肉', '蛋类', '鱼类', '花生',
-      '芝麻', '贝类', '豆制品', '坚果', '谷物类'],
-    typesEng: ['dairy', 'beef', 'chicken', 'pork', 'eggs', 'fish', 'peanuts',
-      'sesame', 'shellfish', 'soy', 'tree_nuts', 'wheat_gluten'],
+    types: ['鸡肉', '蛋类', '乳制品', '牛肉', '鱼类', '豆制品', '猪肉', '贝类','谷物类','坚果','花生', '芝麻'],
+    typesEng: ['chicken', 'eggs', 'dairy', 'beef', 'fish', 'soy', 'pork', 'shellfish',
+    'wheat_gluten', 'tree_nuts', 'peanuts', 'sesame'],
     selecedArr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   }
 })

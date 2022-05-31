@@ -1,37 +1,38 @@
 <!-- pages/personalChoice/personalChoice.wxml -->
-<!-- logo -->
-<view class="logoContainer">
-  <image class="logo" src="/pages/images/logo.png"></image>
-  <view class="logoNameContainer">
-    <view class="logoNameEng">
-      <text class="logoName1">Trojan</text>
-      <text class="logoName2">Eat</text>
-    </view>
-    <view class="logoNameChi">
-      <text class="logoName3">南加大恰饭助手</text>
-    </view>
-  </view>
+
+<view class="headingContainer">
+    <text class="heading">请选择4个喜爱食物:</text>
 </view>
+
+<!-- welcome -->
+<view class="welcomeContainer" style="border-top: #BA0000 solid 10rpx;"></view>
+
 <!-- 可选区 -->
-<view class="personalChoiceContainer">
-  <view class="typesContainer">
-    <button class="typesTitle" style="width: 288rpx;">可选区</button>
-    <view class="typesArea">
-      <button wx:for="{{types}}" class="typeContainer" style="width: 188rpx;"
-      bindtap="handleType" data-type = "{{item}}">
-        {{item}}
-      </button>
-    </view>
-  </view>
-  <view class="choicesContainer">
-    <button class="choiceTitle" style="width: 208rpx;">已选</button>
-    <view class="choicesArea">
-      <button wx:for="{{userPreference}}" class="choiceContainer" stype="width: 188rpx;">
-      <!-- bindtap = "handleChoice" data-choice = "{{index}}"> -->
-        {{item}}
-      </button>
-    </view>
-    <button class="clear" bindtap="handleClear">清除已选</button>
-    <button class="clear" bindtap="handleSubmit">更新/确认已选</button>
+<!-- <view class="personalChoiceContainer"> -->
+<view class="typesContainer">
+  <!-- <button class="typesTitle" style="width: 288rpx;">可选区</button> -->
+  <view class="typesArea">
+    <button wx:for="{{types}}" class="typeContainer" style="width: max-content;"
+    bindtap="handleType" data-type = "{{item}}">
+      {{item}}
+    </button>
   </view>
 </view>
+<!-- decoration -->
+<view class="welcomeContainer" style="border-top: #BA0000 solid 10rpx;"></view>
+
+<!-- 已选区 -->
+<view class="choicesContainer" style="margin-top:50rpx">
+  <view class="choiceDecorator2"></view>
+  <view class="choiceDecorator3"></view>
+  <view class="choicesArea">
+    <button wx:for="{{userPreference}}" class="choiceContainer" stype="width: 188rpx;">
+      {{item}}
+    </button>
+  </view>
+  <view class="choiceDecorator"></view>
+  <view class="choiceText">已选</view>
+  <button class="clear" bindtap="handleClear" style="width:max-content; height:80rpx;">清除已选</button>
+  <!-- <button class="clear" bindtap="handleSubmit">更新/确认已选</button> -->
+</view>
+<!-- </view> -->

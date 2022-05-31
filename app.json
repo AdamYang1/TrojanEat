@@ -1,13 +1,12 @@
 {
   "pages": [
+    "pages/personalChoice/personalChoice",
     "pages/personal/personal",
     "pages/home/home",
     "pages/welcome/welcome",
-    "pages/personalChoice/personalChoice",
     "pages/index/index",
     "pages/logs/logs",
     "pages/logo/logo",
-    "pages/allmenu",
     "pages/allmenu/allmenu"
   ],
   "window": {

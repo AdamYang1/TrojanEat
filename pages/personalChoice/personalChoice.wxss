@@ -1,37 +1,17 @@
 /* pages/personalChoice/personalChoice.wxss */
-@import '/pages/static/iconfont/iconfont.wxss';
+.headingContainer {
+  margin-top: 3%;
+  margin-bottom:2%;
+}
 
-.logoContainer{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  height: 18%;
-  box-shadow: 5rpx 5rpx 5rpx 3rpx gray;
+.heading {
+  margin-left: 2%;
+  font-size: 55rpx;
+  font-weight: 800;
+  color: #ba0000;
+  text-shadow: 2rpx 2rpx 2rpx #FFC700;
 }
-.logoContainer image{
-  overflow: hidden;
-  width: 168rpx;
-  height: 168rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  margin-left: 20%;
-  justify-items: center;
-}
-.logoContainer .logoNameContainer{
-  margin-top: 10.5%;
-}
-.logoContainer .logoName1{
-  font-size: 36rpx;
-  color:orange;
-}
-.logoContainer .logoName2{
-  font-size: 36rpx;
-  color: #d43c33;
-}
-.logoContainer .logoName3{
-  font-size: 36rpx;
-  color:#aaa;
-}
+
 
 .personalChoiceContainer{
   display: flex;
@@ -39,46 +19,115 @@
 
 /* 可选区 */
 .typesContainer{
-  /* width: 375rpx; */
-  margin-top: 60rpx;
-  margin-left: 5%;
- /* background-color: #ecad00; */
+  margin-top: 30rpx;
+  margin-left: 4%;
+  margin-bottom: 40rpx;
 }
 .typesContainer .typesTitle{
-  /* width: ; */
   margin-bottom: 30rpx;
 }
 
 .typesContainer .typesArea{
   display: grid;
-  grid-template-columns: 218rpx 218rpx;
-  /* grid-template-rows: 80p 80px;  */
+  grid-template-columns: 218rpx 218rpx 218rpx;
   column-gap: 5px;
-  row-gap: 1px;
+  row-gap: 25rpx;
 }
 .typesContainer .typeContainer{
   margin-top: 10rpx;
 }
 
+/* 已选区 */
+.choicesContainer .choiceDecorator {
+  position: absolute;
+  z-index: 100;
+  height: 100rpx;
+  width: 240rpx;
+  background-color: #BA0000;
+}
 
+.choicesContainer .choiceText {
+  position: absolute;
+  z-index: 100;
+  margin-left: 30rpx;
+  margin-top: 16rpx;
+  height: max-content;
+  width: 180rpx;
+  background-color: #FFC700;
+  font-size: 50rpx;
+  font-weight: 550;
+  padding-left: 80rpx;
+  color: white;
+}
+
+.choicesContainer .choiceDecorator2 {
+  position: absolute;
+  z-index: 100;
+  margin-left: 30rpx;
+  margin-top: 50rpx;
+  height: 360rpx;
+  width: 540rpx;
+  background-color: #FFC700;
+}
+
+.choicesContainer .choiceDecorator3 {
+  position: absolute;
+  z-index: 100;
+  margin-left: 45rpx;
+  margin-top: 64rpx;
+  height: 335rpx;
+  width: 510rpx;
+  background-color: white;
+}
+
+.choicesContainer .choicesArea {
+  position: absolute;
+  z-index: 100;
+  margin-left: 52rpx;
+  margin-top: 120rpx;
+  height: 250rpx;
+  width: 500rpx;
+  display: grid;
+  grid-template-columns: 200rpx 200rpx;
+  column-gap: 25px;
+  /* row-gap: 5rpx; */
+}
+
+.choicesContainer .clear {
+  position: absolute;
+  z-index: 100;
+  margin-left: 430rpx;
+  margin-top: 355rpx;
+  line-height: 30rpx;
+  background-color: #FFC700;
+  color: white;
+  font-weight: 550;
+  font-size: 40rpx;
+}
+
+.choicesContainer .choiceContainer {
+  margin-left: 20rpx;
+  width: 210rpx;
+  height: fit-content;
+}
 
 button {
-  background: #FBCA1F;
   font-family: inherit;
   padding: 0.6em 1.3em;
   font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  font-size: 36rpx;
+  color: #BA0000;
+  border: 4px solid #FFC700;
+  box-shadow: 0.2em 0.2em #be2929;
  }
  
  button:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+  box-shadow: 0.2em 0.2em #BA0000;
  }
  
  button:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
+  box-shadow: 0.1m 0.1em #BA0000;
  }
+

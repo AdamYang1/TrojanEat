@@ -19,85 +19,75 @@
   display: flex;
   flex-direction: row;
   border-top: #BA0000 solid 10rpx;
-}
-.login{
-  height: 148;
-  line-height: 148rpx;
-  justify-content: center;
+  height: 270rpx;
 }
 
-.welcomeContainer .avatarContainer{
-  margin-left: 15%;
+.welcomeContainer .welcomeContainer2 {
+  margin-left: 4%;
 }
-.welcomeContainer image{
-  width: 128rpx;
-  height: 128rpx;
-  border-radius: 50%;
-}
-
-.avatarContainer{
-  margin-left: 15%;
-  width: 128rpx;
-  height: 128rpx;
-  border-radius: 50%;
-  background-color:lightgoldenrodyellow;
-  line-height: 128rpx;
-  margin-right: 15rpx;
-  border: solid;
-  border-color: #000000;
-}
-.avatarContainer2 text{
+.welcomeContainer .welcomeDecorator {
+  position: absolute;
+  z-index: 100;
+  margin-top: 70rpx;
   margin-left: 30rpx;
-  text-align: center;
-  color:#8B4513;
+  background-color: #BA0000;
+  height: 110rpx;
+  width: 280rpx;
 }
 
-.welcomeContainer .welcomeTextContainer{
-  display: flex;
-  flex-direction: column;
-  line-height: 168rpx;
+
+.welcomeContainer .welcomeTextContainer {
+  position: absolute;
+  z-index: 100;
+  margin-top: 95rpx;
+  margin-left: 60rpx;
+  background-color: #FFC700;
+  color: white;
+  height: max-content;
+  width: 270rpx;
+  font-size: 45rpx;
+  font-weight: 600;
+  padding-left: 15rpx;
 }
 
-.welcomeTextContainer text{
-  margin-left: 30rpx;
-  font-size: 39rpx;
-  color: #000000;
-  justify-content: center;
+.welcomeContainer .welcomeDecorator2 {
+  position: absolute;
+  z-index: 100;
+  margin-top: 153rpx;
+  margin-left: 343rpx;
+  background-color: #FFC700;
+  width: 310rpx;
+  height: 100rpx;
 }
 
-.welcomeContainer2{
-  line-height: 168rpx;
+.welcomeContainer .userName {
+  position: absolute;
+  z-index: 100;
+  margin-top: 168rpx;
+  margin-left: 360rpx;
+  width: 253rpx;
+  font-size: 50rpx;
+  font-weight: 600;
+  background-color: white;
+  color: #BA0000;
+  padding-left: 23rpx;
 }
 
-.welcomeTextContainer2 .welcomeText2{
-  /* margin-left: 0rpx; */
+/* 联系我们 */
+.contactContainer {
+  background-color: #FFC700;
+}
+
+.contactContainer text {
   font-size: 40rpx;
-  color: #aaa;
-  justify-content: center;
-}
-
-/* 个人喜好 */
-
-.flagDinningHallContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30rpx;
-  margin-left: 27%;
-  margin-right: 20rpx;
-  width: 350rpx;
-  height: 200rpx;
-  /* background-color: lightgoldenrodyellow; */
-  /* border-radius: 10rpx; */
-  border: solid;
-  /* border-color: #F08080; */
-  /* border-width: 1rpx; */
-  line-height: 250rpx;
-  /* box-shadow: 5rpx 5rpx 3rpx 3rpx gray; */
+  line-height: 30rpx;
+  color: white;
 }
 
 button {
   /* background: #FBCA1F; */
+  /* padding-top: 30rpx; */
+  margin-top: 50rpx;
   font-family: inherit;
   padding: 0.6em 1.3em;
   font-weight: 900;
@@ -114,5 +104,13 @@ button {
  
  button:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em #BA0000;
+  box-shadow: 0.1m 0.1em #BA0000;
  }
+
+
+button text {
+  line-height: 140rpx;
+  font-size: 55rpx;
+  text-shadow: 0.1rem 0.1rem 0.1rem #FFC700;
+  /* align-self: center; */
+}
