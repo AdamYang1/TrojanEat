@@ -38,6 +38,10 @@
 }
 
 /* 已选区 */
+.choicesContainer {
+  margin-left: 5%;
+}
+
 .choicesContainer .choiceDecorator {
   position: absolute;
   z-index: 100;
@@ -49,41 +53,41 @@
 .choicesContainer .choiceText {
   position: absolute;
   z-index: 100;
-  margin-left: 30rpx;
+  margin-left: 50rpx;
   margin-top: 16rpx;
   height: max-content;
-  width: 180rpx;
+  width: 160rpx;
   background-color: #FFC700;
   font-size: 50rpx;
   font-weight: 550;
-  padding-left: 80rpx;
+  padding-left: 60rpx;
   color: white;
 }
 
 .choicesContainer .choiceDecorator2 {
   position: absolute;
   z-index: 100;
-  margin-left: 30rpx;
+  margin-left: 50rpx;
   margin-top: 50rpx;
   height: 360rpx;
-  width: 540rpx;
+  width: 550rpx;
   background-color: #FFC700;
 }
 
 .choicesContainer .choiceDecorator3 {
   position: absolute;
   z-index: 100;
-  margin-left: 45rpx;
+  margin-left: 65rpx;
   margin-top: 64rpx;
   height: 335rpx;
-  width: 510rpx;
+  width: 520rpx;
   background-color: white;
 }
 
 .choicesContainer .choicesArea {
   position: absolute;
   z-index: 100;
-  margin-left: 52rpx;
+  margin-left: 72rpx;
   margin-top: 120rpx;
   height: 250rpx;
   width: 500rpx;
@@ -96,13 +100,20 @@
 .choicesContainer .clear {
   position: absolute;
   z-index: 100;
-  margin-left: 430rpx;
+  margin-left: 420rpx;
   margin-top: 355rpx;
   line-height: 30rpx;
   background-color: #FFC700;
   color: white;
   font-weight: 550;
-  font-size: 40rpx;
+  font-size: 35rpx;
+}
+
+.choicesContainer .submit {
+  position: absolute;
+  z-index: 100;
+  margin-top: 490rpx;
+  margin-left: 150rpx;
 }
 
 .choicesContainer .choiceContainer {

@@ -23,24 +23,31 @@ Page({
   },
   // 点击某个食品
   handleType: function (e) {
-    let type = e.currentTarget.dataset.type;
-    let typeIndex = typesArr.indexOf(type);
-    let typeEng = this.data.typesEng[typeIndex];
-    if (app.globalData.selecedArr[typeIndex] == 0) {
-      this.setData({
-        userPreference: this.data.userPreference.concat(type),
-        userPreferenceEng: this.data.userPreferenceEng.concat(typeEng)
-      }, function (type) {
-        app.globalData.userPreference = this.data.userPreference;
-        app.globalData.userPreferenceEng = this.data.userPreferenceEng;
-      })
-      app.globalData.selecedArr[typeIndex] = 1
-      // wx.setStorageSync(type, 1);
-    } else {
+    if(this.data.userPreference.length == 4) {
       wx.showToast({
-        title: '请不要重复选择已选过种类～',
+        title: '最多只能选择4个不同种类哦～',
         icon: 'none',
-      });
+      })
+    } else {
+      let type = e.currentTarget.dataset.type;
+      let typeIndex = typesArr.indexOf(type);
+      let typeEng = this.data.typesEng[typeIndex];
+      if (app.globalData.selecedArr[typeIndex] == 0) {
+        this.setData({
+          userPreference: this.data.userPreference.concat(type),
+          userPreferenceEng: this.data.userPreferenceEng.concat(typeEng)
+        }, function (type) {
+          app.globalData.userPreference = this.data.userPreference;
+          app.globalData.userPreferenceEng = this.data.userPreferenceEng;
+        })
+        app.globalData.selecedArr[typeIndex] = 1
+        // wx.setStorageSync(type, 1);
+      } else {
+        wx.showToast({
+          title: '请不要重复选择已选过种类～',
+          icon: 'none',
+        });
+      }
     }
   },
 

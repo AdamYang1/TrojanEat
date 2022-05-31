@@ -33,6 +33,6 @@
   <view class="choiceDecorator"></view>
   <view class="choiceText">已选</view>
   <button class="clear" bindtap="handleClear" style="width:max-content; height:80rpx;">清除已选</button>
-  <!-- <button class="clear" bindtap="handleSubmit">更新/确认已选</button> -->
+  <button class="submit" bindtap="handleSubmit">更新/确认已选</button>
 </view>
 <!-- </view> -->
