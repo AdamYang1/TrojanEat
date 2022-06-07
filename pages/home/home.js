@@ -19,6 +19,9 @@ Page({
     vlgOpen: true,
     evkOpen: true,
     pksOpen: true,
+    dhRank: [],
+    dhArr: ["EVK", "PKS", "VLG"],
+    dhRec: [],
   },
   // 首页登陆
   homeLogin() {
@@ -60,9 +63,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.dhRec);
     this.setData({
       userInfo: app.globalData.userInfo,
-      isFirst: app.globalData.isFirst
+      isFirst: app.globalData.isFirst,
+      dhRank: app.globalData.dhRank,
+      dhRec: app.globalData.dhRec,
     })
   },
 
@@ -77,6 +83,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // console.log(app.globalData.dhRec);
+
+    /* 日期设定 */
     let date = new Date();
     let myDay = date.getDay();
     let myTime = date.toTimeString();
@@ -138,10 +147,14 @@ Page({
         isDinner: true,
       })
     }
+    /* 日期 */
+
+
     // 初始化数据 
     this.setData({
       openid: app.globalData.openid,
       myDate: myDate,
+      dhRec: app.globalData.dhRec
     })
   },
 

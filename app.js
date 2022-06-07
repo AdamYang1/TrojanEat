@@ -8,6 +8,69 @@ App({
 		const logs = wx.getStorageSync("logs") || [];
 		logs.unshift(Date.now());
 		wx.setStorageSync("logs", logs);
+
+		/* 获取当前日期 */
+		let date = new Date();
+    let myDay = date.getDay();
+    let myTime = date.toTimeString();
+    let myDate = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+    // 判断是否工作日
+    if(myDay>=1 && myDay <=5){
+			that.globalData.isWeekDay = true;
+    }
+    // 判断是否开门
+    if(myTime >= '21:00'){
+			that.globalData.vlgOpen = true;
+			that.globalData.evkOpen = false;
+			that.globalData.pksOpen = false;
+    }
+    if(myTime >= '22:00' || myTime <= "07:00"){
+			that.globalData.vlgOpen = false;
+			that.globalData.evkOpen = false;
+			that.globalData.pksOpen = false;
+    }
+    if(myTime >= '07:00' && myTime <= '10:30'){
+			that.globalData.vlgOpen = true;
+			that.globalData.evkOpen = true;
+			that.globalData.pksOpen = true;
+    }
+    if(myTime >= '10:30' && myTime <= '11:00'){
+			that.globalData.vlgOpen = false;
+			that.globalData.evkOpen = false;
+			that.globalData.pksOpen = false;
+    }
+    // 判断mealtime
+    if(myTime <= '10:30' && myTime >= '07:00'){
+        that.globalData.isBreakfast = true;
+        that.globalData.isLunch = false;
+        that.globalData.isDinner = false;
+    }
+    if(myTime <= '16:00' && myTime >= '10:30'){
+      that.globalData.isBreakfast = false;
+      that.globalData.isLunch = true;
+      that.globalData.isDinner = false;
+    }
+    if(myTime <= '22:00' && myTime >= '16:00'){
+			that.globalData.isBreakfast = false;
+			that.globalData.isLunch = false;
+			that.globalData.isDinner = true;
+    }
+		// 更新日期
+		let mealIndex = -1;
+		if(that.globalData.isBreakfast) {
+			mealIndex = 0;
+		}
+		if(that.globalData.isLunch) {
+			mealIndex = 1;
+		}
+		if(that.globalData.isDinner) {
+			mealIndex=  2;
+		}
+    that.globalData.myDate = myDate;
+		/* 日期 */
+
+
+		/* 登陆获取信息 */
 		// 登录
 		wx.login({
 			success: async (res) => {
@@ -23,11 +86,30 @@ App({
 				// that.globalData.isFirst = customerInfo.length == 0 ? true : false;
 				// 若不是，获取用户喜好并跳转页面
 				if (!that.globalData.isFirst) {
+					//更新用户当天推荐餐厅排名
+					let updateRec = await request(
+						// `/recommend/openid/${that.globalData.openid}/date/${that.globalData.myDate}
+						// /mealtime/${that.globalData.mealInterval[mealIndex]}`,
+						`/recommend/openid/${that.globalData.openid}/date/2022-04-26/mealtime/Lunch`,
+						{},
+						"PUT"
+					);
+
+					//获取用户喜好
 					let temp = await request(
 						`/personal/openid/${that.globalData.openid}`,
 						{},
 						"GET"
 					);
+					
+					//获取用户当天餐厅排名
+					let dhRank = await request(
+						`/recommend/openid/${that.globalData.openid}`,
+						{},
+						"GET"
+					);
+
+					//更新用户喜好
 					let tempUserInfo = JSON.parse(JSON.stringify(temp[0]));
 					for (let i in tempUserInfo) {
 						if (tempUserInfo[i] == 1) {
@@ -38,7 +120,26 @@ App({
 							that.globalData.userPreferenceEng.push(i);
 						}
 					}
+
+					//更新用户餐厅推荐
+					let tempDhRank = JSON.parse(JSON.stringify(dhRank[0]));
+					for (let i in tempDhRank) { //evk pks vlg
+						that.globalData.dhRank.push(tempDhRank[i]);
+					}
+					let tempMax = -1;
+					for(let i in that.globalData.dhRank) {
+						tempMax = (that.globalData.dhRank[i] > tempMax) ? that.globalData.dhRank[i] : tempMax;
+					}
+					let tempRecArr = [];
+					for(let i in that.globalData.dhRank) {
+						if(that.globalData.dhRank[i] == tempMax) {
+							that.globalData.dhRec.push(that.globalData.dhArr[i]);
+						}
+					}
+					console.log(that.globalData.dhRec[0]);
 				}
+
+
 				// 若是第一次登陆，跳转到欢迎界面
 				else {
 					wx.redirectTo({
@@ -55,6 +156,9 @@ App({
 		openid: 0,
 		userPreference: [],
 		userPreferenceEng: [],
+		dhRank: [],
+		dhArr: ["EVK", "PKS", "VLG"],
+		dhRec: [],
 		types: [
 			"鸡肉",
 			"蛋类",
@@ -85,5 +189,14 @@ App({
 		],
 		selecedArr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		mealInterval: ["Breakfast", "Lunch", "Dinner"],
+		myDate: '0000-00-00',
+    isFirst: true,
+    isWeekDay: true,
+    isBreakfast: false,
+    isLunch: false,
+    isDinner: false,
+    vlgOpen: true,
+    evkOpen: true,
+    pksOpen: true,
 	},
 });

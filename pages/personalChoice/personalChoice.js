@@ -80,7 +80,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
+  onLoad: function (options) {
     this.setData({
       userPreference: app.globalData.userPreference,
       userPreferenceEng: app.globalData.userPreferenceEng
@@ -101,6 +101,7 @@ Page({
       userPreference: app.globalData.userPreference,
       userPreferenceEng: app.globalData.userPreferenceEng
     })
+
   },
 
   /**

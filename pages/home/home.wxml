@@ -13,7 +13,7 @@
   </view> -->
   <view class="headingContainer">
     <text class="headingText">推荐餐厅</text>
-    <button class="headingDinning" style="width: 70%; text-transform: uppercase;">Parkside</button>
+    <button class="headingDinning" style="width: 70%; text-transform: uppercase;">{{dhRec[0]}}</button>
   </view>
 </view>
 <!-- Recommend Dining -->
@@ -46,3 +46,8 @@
     <text>联系我们</text>
   </button>
 </view> -->
+
+
+<view>
+{{dhRec[0]}}
+</view>
