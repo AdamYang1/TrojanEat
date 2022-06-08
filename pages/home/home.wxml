@@ -46,8 +46,3 @@
     <text>联系我们</text>
   </button>
 </view> -->
-
-
-<view>
-{{dhRec[0]}}
-</view>
