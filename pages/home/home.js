@@ -21,7 +21,8 @@ Page({
 		dhRank: [],
 		dhArr: ["EVK", "PKS", "VLG"],
 		dhRec: [],
-		test: "haha",
+		displayRecTypes: [],
+		recDish: [],
 	},
 	// 首页登陆
 	homeLogin() {
@@ -68,9 +69,10 @@ Page({
         userInfo: app.globalData.userInfo,
         isFirst: app.globalData.isFirst,
         dhRank: app.globalData.dhRank,
-        dhRec: app.globalData.dhRec,
+				dhRec: app.globalData.dhRec,
+				displayRecTypes: app.globalData.displayRecTypes,
+				recDish: app.globalData.recDish,
       });
-      console.log(this.data.dhRec);
     } else {
       app.userCallBack = res => {
         if(res) {
@@ -78,7 +80,9 @@ Page({
             userInfo: app.globalData.userInfo,
             isFirst: app.globalData.isFirst,
             dhRank: app.globalData.dhRank,
-            dhRec: app.globalData.dhRec,
+						dhRec: app.globalData.dhRec,
+						displayRecTypes: app.globalData.displayRecTypes,
+						recDish: app.globalData.recDish,
           })
         }
       }
@@ -162,12 +166,6 @@ Page({
 		}
 		/* 日期 */
 
-		// 初始化数据
-		// this.setData({
-		// 	openid: app.globalData.openid,
-		// 	myDate: myDate,
-		// 	dhRec: app.globalData.dhRec,
-		// });
 	},
 
 	/**

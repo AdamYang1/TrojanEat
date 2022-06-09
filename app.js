@@ -87,33 +87,40 @@ App({
 				// that.globalData.isFirst = customerInfo.length == 0 ? true : false;
 				// 若不是，获取用户喜好并跳转页面
 				if (!that.globalData.isFirst) {
-					//更新用户当天推荐餐厅排名
-					let updateRec = await request(
+					/* 更新用户当天推荐餐厅排名 =====================================*/
+					await request(
 						// `/recommend/openid/${that.globalData.openid}/date/${that.globalData.myDate}
 						// /mealtime/${that.globalData.mealInterval[mealIndex]}`,
 						`/recommend/openid/${that.globalData.openid}/date/2022-04-26/mealtime/Lunch`,
 						{},
 						"PUT"
 					);
+					/* 更新用户当天推荐餐厅排名 =*/
 
-					//获取用户喜好
-					let temp = await request(
+					/* 获取用户信息 ===============================================*/
+					let user = await request(
 						`/personal/openid/${that.globalData.openid}`,
 						{},
 						"GET"
 					);
+					/* 获取用户信息 =*/
 
-					//获取用户当天餐厅排名
+					/* 获取用户当天餐厅排名 ============================================*/
 					let dhRank = await request(
 						`/recommend/openid/${that.globalData.openid}`,
 						{},
 						"GET"
 					);
+					/* 获取用户当天餐厅排名 =*/
 
-					//更新用户喜好
-					let tempUserInfo = JSON.parse(JSON.stringify(temp[0]));
+
+					/* 更新用户喜好 ============================================*/
+					let tempUserInfo = JSON.parse(JSON.stringify(user[0]));
 					for (let i in tempUserInfo) {
-						if (tempUserInfo[i] == 1) {
+						if (tempUserInfo[i] > 0 && tempUserInfo[i] <= 1
+							&& i.indexOf("pks") == -1
+							&& i.indexOf("evk") == -1
+							&& i.indexOf("vlg") == -1) {
 							let index = that.globalData.typesEng.indexOf(i);
 							let type = that.globalData.types[index];
 							that.globalData.selecedArr[index] = 1;
@@ -121,8 +128,9 @@ App({
 							that.globalData.userPreferenceEng.push(i);
 						}
 					}
+					/* 更新用户喜好 =*/
 
-					//更新用户餐厅推荐
+					/* 更新用户餐厅推荐 ==============================================*/
 					let tempDhRank = JSON.parse(JSON.stringify(dhRank[0]));
 					for (let i in tempDhRank) {
 						//evk pks vlg
@@ -141,31 +149,87 @@ App({
 						}
 					}
 					let dhRecommended = that.globalData.dhRec[0];
-					//获取推荐餐厅信息
-					let dhRecInfo = await request(
+					/* 更新用户餐厅推荐 =*/
+
+					/* 获取推荐餐厅信息 ========================================*/
+					let dhRecMenu = await request(
 						/* `/menu/openid/${that.globalData.openid}
 						/options/${userPreferenceEng.join(',')}
 						/date/${that.globalData.myDate}
 						/mealtime/${that.globalData.mealInterval[mealIndex]}
-						/dh/${dhRec[0]}`, */
-						`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/pks`,
+						/dh/${that.globalData.dhRec[0]}`, */
+						`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
+						${that.globalData.dhRec[0]}`,
 						{},
 						"GET"
 					);
-					let tempRecDhInfo = JSON.parse(JSON.stringify(dhRecInfo))[dhRecommended];
-					console.log(Object.keys(tempRecDhInfo));
-					for(let i in tempRecDhInfo) {
-						console.log(tempRecDhInfo[i]);
+					let recMenu = JSON.parse(JSON.stringify(dhRecMenu[dhRecommended]));
+					//处理type
+					for(let type in Object.keys(recMenu)) {
+						for(let typeEng in that.globalData.userPreferenceEng) {
+							if(Object.keys(recMenu)[type] == that.globalData.userPreferenceEng[typeEng]) {
+								that.globalData.displayRecTypes.push(that.globalData.userPreference[typeEng])
+							};
+						}
 					}
-					
+					//处理对应菜品
+					for(let type in recMenu) {
+						that.globalData.recDish.push(recMenu[type]);
+					}
+					/* 获取推荐餐厅信息 =/
 
+					/* 获取全部餐厅信息 ===============================================*/
+					for(let dh in that.globalData.dhArr) {
+						let tempAllMenu = await request(
+						/* 	`/menu/date/${that.globalData.myDate}
+							/mealtime/${that.globalData.mealInterval[mealIndex]}
+							/dh/${that.globalData.dhArr[dh]}`, */
+							`/menu/date/2022-04-26/mealtime/Lunch/dh/${that.globalData.dhArr[dh]}`,
+							{},
+							"GET"
+						)
+						if(that.globalData.dhArr[dh] == "evk") {
+							that.globalData.evkCate = Object.keys(tempAllMenu[that.globalData.dhArr[dh]]);
+							for(let cate in that.globalData.evkCate) {
+								that.globalData.evkDish.push(
+									tempAllMenu["evk"][that.globalData.evkCate[cate]]
+								);
+							}
+						}
+						if(that.globalData.dhArr[dh] == 'pks') {
+							that.globalData.pksCate = Object.keys(tempAllMenu[that.globalData.dhArr[dh]]);
+							for(let cate in that.globalData.pksCate) {
+								that.globalData.pksDish.push(
+									tempAllMenu["pks"][that.globalData.pksCate[cate]]
+								);
+							}
+						}
+						if(that.globalData.dhArr[dh] == 'vlg') {
+							that.globalData.vlgCate = Object.keys(tempAllMenu[that.globalData.dhArr[dh]]);
+							for(let cate in that.globalData.vlgCate) {
+								that.globalData.vlgDish.push(
+									tempAllMenu["vlg"][that.globalData.vlgCate[cate]]
+								);
+							}
+						}
+					}
+					that.globalData.dHallCate['evk'].push(that.globalData.evkCate);
+					that.globalData.dHallCate['pks'].push(that.globalData.pksCate);
+					that.globalData.dHallCate['vlg'].push(that.globalData.vlgCate);
 
-					/* prevent home.onload aroused before app.onlaunch */
+					/* 获取全部餐厅信息 =*/
+
+					/* prevent home.onload aroused before app.onlaunch ===============*/
 					if (that.userCallBack) {
 						// console.log(that.globalData.dhRec);
 						that.userCallBack(that.globalData.dhRec);
 					}
-	
+					if (that.menuCallBack) {
+						// console.log(that.globalData.vlgCate);
+						that.menuCallBack(that.globalData.vlgCate);
+					}
+					/* prevent home.onload aroused before app.onlaunch =*/
+
 				}
 				// 若是第一次登陆，跳转到欢迎界面
 				else {
@@ -173,19 +237,31 @@ App({
 						url: "/pages/welcome/welcome",
 					});
 				}
-				// console.log(that.globalData.userPreference)
 			},
 		});
 	},
 	globalData: {
+		/* user info */
 		isFirst: false,
 		userInfo: {},
 		openid: 0,
 		userPreference: [],
 		userPreferenceEng: [],
+		/* cec menu */
 		dhRank: [],
 		dhArr: ["evk", "pks", "vlg"],
 		dhRec: [],
+		displayRecTypes: [],
+		recDish: [],
+		/* all menu */
+		dHallCate: {'evk': [], 'pks':[], 'vlg':[]},
+		evkCate: [],
+		evkDish: [],
+		pksCate: [],
+		pksDish: [],
+		vlgCate: [],
+		vlgDish: [],
+		/* static data */
 		types: [
 			"鸡肉",
 			"蛋类",
@@ -215,6 +291,7 @@ App({
 			"sesame",
 		],
 		selecedArr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		/* mealtime info */
 		mealInterval: ["Breakfast", "Lunch", "Dinner"],
 		myDate: "0000-00-00",
 		isFirst: true,

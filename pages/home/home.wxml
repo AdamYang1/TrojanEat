@@ -40,6 +40,8 @@
   <text>点击登录以获取推荐餐厅</text>
 </button>
 
+
+<!-- <view wx:for="{{displayRecTypes}}">{{item}}</view> -->
 <!-- 联系我们
 <view class="contactContainer">
   <button class="contactBtn">

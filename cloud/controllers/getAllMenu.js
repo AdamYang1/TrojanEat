@@ -35,7 +35,7 @@ function getFoodList(dh, cate, date, mealtime) {
 async function getFood(dh, cate, date, mealtime) {
 	return new Promise(async (resolve, reject) => {
 		let foodList = [];
-		let result = await getFoodList(dh, "Crepes", date, mealtime);
+		let result = await getFoodList(dh, cate, date, mealtime);
 		foodList = result.map((r) => {
 			let temp = JSON.stringify(r);
 			let first_index = temp.indexOf(":") + 1;
