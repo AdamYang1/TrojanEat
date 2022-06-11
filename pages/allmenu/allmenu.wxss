@@ -48,11 +48,32 @@
     z-index: 100;
     width: 100%;
     height: 650rpx;
+    /* flex-direction: row; */
     /* background-color: #ba0000; */
 }
 
-.typeTitle {
-    /* background-color: #BA0000; */
+.menuDisplayer .category {
+    display: flex;
+    flex-direction: row;
+}
+
+.menuDisplayer .dishes {
+    width:600rpx;
+    height:200rpx;
+    display:-moz-box;
+    display:-webkit-box;
+    display: box;
+    -moz-box-orient:vertical;
+    -webkit-box-orient:vertical;
+    box-orient:vertical;
+}
+
+.dish {
+    -moz-box-flex:1;
+    -webkit-box-flex:1;
+    box-flex:1;
+}
+/* .typeTitle {
     padding-top: 4rpx;
     margin-top: 35rpx;
     font-weight: 700;
@@ -78,7 +99,7 @@
     margin-left: 70rpx;
     width: 200rpx;
     height: 85rpx;
-  }
+  } */
 
 button {
     /* background: #FBCA1F; */

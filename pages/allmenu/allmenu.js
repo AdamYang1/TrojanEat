@@ -9,6 +9,7 @@ Page({
   data: {
     dHalls: ['evk', 'pks', 'vlg'],
     dHallCate: {'EVK': [], 'PKS':[], 'VLG':[]},
+    vlgMenu: [],
     evkCate: [],
     evkDish: [],
     pksCate: [],
@@ -23,6 +24,8 @@ Page({
   onLoad(options) {
     if(app.globalData.vlgCate.length) {
       this.setData({
+        vlgMenu: app.globalData.vlgMenu,
+
         dHallCate: app.globalData.dHallCate,
         evkCate: app.globalData.evkCate,
         vlgCate: app.globalData.vlgCate,
@@ -35,6 +38,7 @@ Page({
       app.menuCallBack = res => {
         if(res) {
           this.setData({
+            vlgMenu: app.globalData.vlgMenu,
             dHallCate: app.globalData.dHallCate,
             evkCate: app.globalData.evkCate,
             vlgCate: app.globalData.vlgCate,

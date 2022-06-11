@@ -179,6 +179,7 @@ App({
 					/* 获取推荐餐厅信息 =/
 
 					/* 获取全部餐厅信息 ===============================================*/
+
 					for(let dh in that.globalData.dhArr) {
 						let tempAllMenu = await request(
 						/* 	`/menu/date/${that.globalData.myDate}
@@ -207,15 +208,16 @@ App({
 						if(that.globalData.dhArr[dh] == 'vlg') {
 							that.globalData.vlgCate = Object.keys(tempAllMenu[that.globalData.dhArr[dh]]);
 							for(let cate in that.globalData.vlgCate) {
-								that.globalData.vlgDish.push(
-									tempAllMenu["vlg"][that.globalData.vlgCate[cate]]
-								);
+								let category = {
+									'cate': '',
+									'dishes': [],
+								}
+								category.cate = that.globalData.vlgCate[cate];
+								category.dishes = tempAllMenu["vlg"][that.globalData.vlgCate[cate]];
+								that.globalData.vlgMenu.push(category);
 							}
 						}
 					}
-					that.globalData.dHallCate['evk'].push(that.globalData.evkCate);
-					that.globalData.dHallCate['pks'].push(that.globalData.pksCate);
-					that.globalData.dHallCate['vlg'].push(that.globalData.vlgCate);
 
 					/* 获取全部餐厅信息 =*/
 
@@ -254,7 +256,9 @@ App({
 		displayRecTypes: [],
 		recDish: [],
 		/* all menu */
-		dHallCate: {'evk': [], 'pks':[], 'vlg':[]},
+		evkMenu: [],
+		pksMenu: [],
+		vlgMenu: [],
 		evkCate: [],
 		evkDish: [],
 		pksCate: [],
