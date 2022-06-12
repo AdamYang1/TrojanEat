@@ -53,25 +53,21 @@
 }
 
 .menuDisplayer .category {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
 }
 
 .menuDisplayer .dishes {
-    width:600rpx;
-    height:200rpx;
-    display:-moz-box;
-    display:-webkit-box;
-    display: box;
-    -moz-box-orient:vertical;
-    -webkit-box-orient:vertical;
-    box-orient:vertical;
+    height:max-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .dish {
-    -moz-box-flex:1;
-    -webkit-box-flex:1;
-    box-flex:1;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
 }
 /* .typeTitle {
     padding-top: 4rpx;

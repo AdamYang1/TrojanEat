@@ -23,6 +23,7 @@ Page({
 		dhRec: [],
 		displayRecTypes: [],
 		recDish: [],
+		recDish2: [],
 	},
 	// 首页登陆
 	homeLogin() {
@@ -72,6 +73,7 @@ Page({
 				dhRec: app.globalData.dhRec,
 				displayRecTypes: app.globalData.displayRecTypes,
 				recDish: app.globalData.recDish,
+				recDish2: app.globalData.recDish2,
       });
     } else {
       app.userCallBack = res => {
@@ -83,7 +85,9 @@ Page({
 						dhRec: app.globalData.dhRec,
 						displayRecTypes: app.globalData.displayRecTypes,
 						recDish: app.globalData.recDish,
-          })
+						recDish2: app.globalData.recDish2,
+					})
+					console.log(this.data.recDish);
         }
       }
     }
@@ -105,8 +109,7 @@ Page({
 		let date = new Date();
 		let myDay = date.getDay();
 		let myTime = date.toTimeString();
-		let myDate =
-			date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+		let myDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
 		// 判断是否工作日
 		if (myDay >= 1 && myDay <= 5) {
 			this.setData({

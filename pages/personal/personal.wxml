@@ -18,10 +18,6 @@
 </view>
 
 
-<!-- 推荐餐厅 -->
-<button wx:if="!{{isFirst}}" class="recDinningHallContainer" >
-  <text>推荐餐厅</text>
-</button>
 <!-- 所有餐厅 -->
 <button wx:if="!{{isFirst}}" class="allDinningHallContainer" >
   <text>所有餐厅</text>

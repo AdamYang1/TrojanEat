@@ -10,12 +10,8 @@ Page({
     dHalls: ['evk', 'pks', 'vlg'],
     dHallCate: {'EVK': [], 'PKS':[], 'VLG':[]},
     vlgMenu: [],
-    evkCate: [],
-    evkDish: [],
-    pksCate: [],
-    pksDish: [],
-    vlgCate: [],
-    vlgDish: [],
+    evkMenu: [],
+    pksMenu: [],
   },
 
   /**
@@ -25,27 +21,16 @@ Page({
     if(app.globalData.vlgCate.length) {
       this.setData({
         vlgMenu: app.globalData.vlgMenu,
-
-        dHallCate: app.globalData.dHallCate,
-        evkCate: app.globalData.evkCate,
-        vlgCate: app.globalData.vlgCate,
-        pksCate: app.globalData.pksCate,
-        evkDish: app.globalData.evkDish,
-        vlgDish: app.globalData.vlgDish,
-        pksDish: app.globalData.pksDish,
+        pksMenu: app.globalData.pksMenu,
+        evkMenu: app.globalData.evkMenu,
       });
     } else {
       app.menuCallBack = res => {
         if(res) {
           this.setData({
             vlgMenu: app.globalData.vlgMenu,
-            dHallCate: app.globalData.dHallCate,
-            evkCate: app.globalData.evkCate,
-            vlgCate: app.globalData.vlgCate,
-            pksCate: app.globalData.pksCate,
-            evkDish: app.globalData.evkDish,
-            vlgDish: app.globalData.vlgDish,
-            pksDish: app.globalData.pksDish,
+            pksMenu: app.globalData.pksMenu,
+            evkMenu: app.globalData.evkMenu,
           });
         }
       }
