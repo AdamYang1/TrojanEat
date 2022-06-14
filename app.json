@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/allmenu/allmenu",
     "pages/home/home",
+    "pages/allmenu/allmenu",
     "pages/personalChoice/personalChoice",
     "pages/personal/personal",
     "pages/welcome/welcome",

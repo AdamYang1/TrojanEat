@@ -150,64 +150,35 @@ App({
 					/* 更新用户餐厅推荐 =*/
 
 					/* 获取推荐餐厅信息 ========================================*/
-					if(that.globalData.dhRec.length < 3) {
-						let dhRecommended = that.globalData.dhRec[0];
-						let dhRecMenu = await request(
-							/* `/menu/openid/${that.globalData.openid}
-							/options/${userPreferenceEng.join(',')}
-							/date/${that.globalData.myDate}
-							/mealtime/${that.globalData.mealInterval[mealIndex]}
-							/dh/${that.globalData.dhRec[0]}`, */
-							`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
-							${that.globalData.dhRec[0]}`,
-							{},
-							"GET"
-						);
-						let recMenu = JSON.parse(JSON.stringify(dhRecMenu[dhRecommended]));
-						//处理type
-						for(let type in Object.keys(recMenu)) {
-							for(let typeEng in that.globalData.userPreferenceEng) {
-								if(Object.keys(recMenu)[type] == that.globalData.userPreferenceEng[typeEng]) {
-									that.globalData.displayRecTypes.push(that.globalData.userPreference[typeEng])
-								};
-							}
+					let dhRecommended = that.globalData.dhRec[0];
+
+					let dhRecMenu = await request(
+						/* `/menu/openid/${that.globalData.openid}
+						/options/${userPreferenceEng.join(',')}
+						/date/${that.globalData.myDate}
+						/mealtime/${that.globalData.mealInterval[mealIndex]}
+						/dh/${that.globalData.dhRec[0]}`, */
+						`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
+						${that.globalData.dhRec[0]}`,
+						{},
+						"GET"
+					);
+					let recMenu = JSON.parse(JSON.stringify(dhRecMenu[dhRecommended]));
+					//处理type
+					for(let type in Object.keys(recMenu)) {
+						for(let typeEng in that.globalData.userPreferenceEng) {
+							if(Object.keys(recMenu)[type] == that.globalData.userPreferenceEng[typeEng]) {
+								that.globalData.displayRecTypes.push(that.globalData.userPreference[typeEng])
+							};
 						}
-						//处理对应菜品
-						for(let type in recMenu) {
-							that.globalData.recDish.push(recMenu[type]);
-						}
-						if(that.globalData.dhRec.length == 2) {
-							let dhRecommended2 = that.globalData.dhRec[1];
-							let dhRecMenu2 = await request(
-								/* `/menu/openid/${that.globalData.openid}
-								/options/${userPreferenceEng.join(',')}
-								/date/${that.globalData.myDate}
-								/mealtime/${that.globalData.mealInterval[mealIndex]}
-								/dh/${that.globalData.dhRec[1]}`, */
-								`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
-								${that.globalData.dhRec[1]}`,
-								{},
-								"GET"
-							);
-							let recMenu2 = JSON.parse(JSON.stringify(dhRecMenu2[dhRecommended2]));
-							//处理type
-							for(let type in Object.keys(recMenu2)) {
-								for(let typeEng in that.globalData.userPreferenceEng) {
-									if(Object.keys(recMenu2)[type] == that.globalData.userPreferenceEng[typeEng]) {
-										that.globalData.displayRecTypes.push(that.globalData.userPreference[typeEng])
-									};
-								}
-							}
-							//处理对应菜品
-							for(let type in recMenu2) {
-								that.globalData.recDish2.push(recMenu2[type]);
-							}
-						}
+					}
+					//处理对应菜品
+					for(let type in recMenu) {
+						that.globalData.recDish.push(recMenu[type]);
 					}
 					/* 获取推荐餐厅信息 =/
 
 					/* 获取全部餐厅信息 ===============================================*/
-
 					for(let dh in that.globalData.dhArr) {
 						let tempAllMenu = await request(
 						/* 	`/menu/date/${that.globalData.myDate}
@@ -255,6 +226,53 @@ App({
 						}
 					}
 
+					// 获取每个餐厅推荐菜品
+					for(let i = 0; i < 3; i++) {
+						let dhRecMenu = await request(
+							/* `/menu/openid/${that.globalData.openid}
+							/options/${userPreferenceEng.join(',')}
+							/date/${that.globalData.myDate}
+							/mealtime/${that.globalData.mealInterval[mealIndex]}
+							/dh/${that.globalData.dhRec[0]}`, */
+							`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
+							${that.globalData.dhArr[i]}`,
+							{},
+							"GET"
+						);
+						let recMenu = JSON.parse(JSON.stringify(dhRecMenu[that.globalData.dhArr[i]]));
+						//处理对应菜品
+						if(that.globalData.dhArr[i] == "evk") {
+							for(let type in recMenu) {
+								that.globalData.evkRec.push(recMenu[type]);
+							}
+						}
+						if(that.globalData.dhArr[i] == "pks") {
+							for(let type in recMenu) {
+								that.globalData.pksRec.push(recMenu[type]);
+							}
+						}
+						if(that.globalData.dhArr[i] == "vlg") {
+							for(let type in recMenu) {
+								that.globalData.vlgRec.push(recMenu[type]);
+							}
+						}
+					}
+					for(let i = 0; i < 3; i++) {
+						if(that.globalData.dhArr[i] != dhRecommended) {
+							that.globalData.otherDh.push(that.globalData.dhArr[i]);
+							let obj = {
+								'dh': "",
+								'types': [],
+								'rec': [],
+							}
+							obj.dh = that.globalData.dhArr[i];
+							obj.types = that.globalData.displayRecTypes;
+							if(obj.dh == "vlg") obj.rec = that.globalData.vlgRec;
+							if(obj.dh == "evk") obj.rec = that.globalData.evkRec;
+							if(obj.dh == "pks") obj.rec = that.globalData.pksRec;
+							that.globalData.otherDhRec.push(obj);
+						}
+					}
 					/* 获取全部餐厅信息 =*/
 
 					/* prevent home.onload aroused before app.onlaunch ===============*/
@@ -291,7 +309,8 @@ App({
 		dhRec: [],
 		displayRecTypes: [],
 		recDish: [],
-		recDish2: [],
+		otherDh: [],
+		otherDhRec: [],
 		/* all menu */
 		evkMenu: [],
 		pksMenu: [],
@@ -302,6 +321,10 @@ App({
 		pksDish: [],
 		vlgCate: [],
 		vlgDish: [],
+
+		evkRec: [],
+		vlgRec: [],
+		pksRec: [],
 		/* static data */
 		types: [
 			"鸡肉",

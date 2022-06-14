@@ -23,6 +23,7 @@ Page({
         vlgMenu: app.globalData.vlgMenu,
         pksMenu: app.globalData.pksMenu,
         evkMenu: app.globalData.evkMenu,
+  
       });
     } else {
       app.menuCallBack = res => {
@@ -31,6 +32,7 @@ Page({
             vlgMenu: app.globalData.vlgMenu,
             pksMenu: app.globalData.pksMenu,
             evkMenu: app.globalData.evkMenu,
+     
           });
         }
       }

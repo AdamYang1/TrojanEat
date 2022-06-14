@@ -23,7 +23,12 @@ Page({
 		dhRec: [],
 		displayRecTypes: [],
 		recDish: [],
-		recDish2: [],
+
+		otherDh: [],
+		otherDhRec: [],
+		vlgRec: [],
+    evkMenu: [],
+    pksMenu: [],
 	},
 	// 首页登陆
 	homeLogin() {
@@ -73,8 +78,9 @@ Page({
 				dhRec: app.globalData.dhRec,
 				displayRecTypes: app.globalData.displayRecTypes,
 				recDish: app.globalData.recDish,
-				recDish2: app.globalData.recDish2,
-      });
+				otherDh: app.globalData.otherDh,
+				otherDhRec: app.globalData.otherDhRec,
+			});
     } else {
       app.userCallBack = res => {
         if(res) {
@@ -85,9 +91,9 @@ Page({
 						dhRec: app.globalData.dhRec,
 						displayRecTypes: app.globalData.displayRecTypes,
 						recDish: app.globalData.recDish,
-						recDish2: app.globalData.recDish2,
+						otherDh: app.globalData.otherDh,
+						otherDhRec: app.globalData.otherDhRec,
 					})
-					console.log(this.data.recDish);
         }
       }
     }

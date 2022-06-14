@@ -45,22 +45,22 @@
   font-weight: 700;
   color: #BA0000;
   text-shadow: 3rpx 3rpx 3rpx rgb(235, 217, 177);
-  margin-left: 10%;
+  margin-left: 7%;
 }
 
 .recommendContainer .recMenuContainer {
   width: 90%;
-  height: 80%;
+  height: auto;
   background-color: #ffeca8;
   border-radius: 10%;
   margin-left: 5%;
   padding-top: 60rpx;
+  padding-bottom: 60rpx;
   display: flex;
   justify-content: center;
 }
 
 .recommendContainer .typeRecContainer {
-  position: absolute;
   display: flex;
   flex-direction: column;
   row-gap: 30rpx;
@@ -75,13 +75,19 @@
   text-align: center;
 }
 
+.other {
+  margin-top: 60rpx;
+  background-color: #FFC700;
+  border-radius: 5%;
+}
+
 .noRec {
-  font-size: 45rpx;
+  font-size: 35rpx;
   font-weight: 700;
   color: black;
   text-shadow: 2rpx 2rpx 2rpx rgb(240, 219, 35);
   text-align: center;
-  line-height: 90rpx;
+  line-height: 60rpx;
 }
 
 .dishName {
