@@ -15,13 +15,22 @@
 .allMenuContainer {
     margin-top: 35rpx;
     border-top: #ba0000 solid 10rpx;
-    height: 100%;
     width: 100%;
+    background-color: #FFC700;
 }
 
 .dhContainer {
     margin-top: 50rpx;
+    margin-left: 5%;
+    background-color: #FFC700;
+
     /* margin-bottom: 300rpx; */
+}
+.dhName {
+    margin-left: 5%;
+    font-size: 50rpx;
+    font-weight: 700;
+    text-shadow: 3rpx 3rpx 3rpx #5a5959;
 }
 
 .title {
@@ -35,7 +44,6 @@
 .menuDecorator {
     position: absolute;
     z-index: 100;
-    margin-top: 50rpx;
     background-color: #FFC700;
     margin-left: 14%;
     width: 550rpx;
@@ -43,63 +51,44 @@
 }
 
 .menuDisplayer {
-    margin-top: 50rpx;
+    margin-top: 10rpx;
+    margin-left: 2%;
     position: relative;
     z-index: 100;
-    width: 100%;
+    width: 90%;
     height: 650rpx;
-    /* flex-direction: row; */
-    /* background-color: #ba0000; */
+    background-color: #ffeca8;
+    border-radius: 7%;
 }
 
-.menuDisplayer .category {
-    /* display: flex;
-    flex-direction: row; */
+.category {
+    margin-top: 15rpx;
+    text-align: center;
+    font-size: 50rpx;
+    font-weight: 500;
+    text-shadow: 3rpx 3rpx 3rpx gray;
 }
 
 .menuDisplayer .dishes {
+    margin-left: 16%;
+    width: 430rpx;
+    text-align: center;
     height:max-content;
     display: flex;
     flex-direction: column;
 }
 
 .dish {
-    display: flex;
-    flex-direction: row;
-    width: max-content;
-    height: max-content;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    text-align: center;
+    /* line-height: 60rpx; */
+    color: #ba0000;
+    font-size: 35rpx;
+    text-shadow: 0rpx 0rpx 0rpx;
 }
-/* .typeTitle {
-    padding-top: 4rpx;
-    margin-top: 35rpx;
-    font-weight: 700;
-    font-size: 40rpx;
-    color: #BA0000;
-    flex: 1;
-  }
-  
-  .typeTitle .typeDecorator {
-    position: relative;
-    z-index: 100;
-    background-color: white;
-    margin-top: 15rpx;
-    margin-left: 105rpx;
-    width: 190rpx;
-    height: 60rpx;
-  }
-  
-  .typeTitle .tDecorator {
-    position: absolute;
-    z-index: 100;
-    background-color: #BA0000;
-    margin-left: 70rpx;
-    width: 200rpx;
-    height: 85rpx;
-  } */
 
 button {
-    /* background: #FBCA1F; */
-    /* font-family: inherit; */
     padding: 0.6em 1.3em;
     font-weight: 900;
     font-size: 36rpx;

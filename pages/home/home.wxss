@@ -68,7 +68,7 @@
 
 .recTitle {
   text-transform: uppercase;
-  font-size: 40rpx;
+  font-size: 50rpx;
   font-weight: 700;
   color: black;
   text-shadow: 3rpx 3rpx 3rpx rgb(240, 219, 35);
@@ -76,19 +76,19 @@
 }
 
 .noRec {
-  font-size: 30rpx;
+  font-size: 45rpx;
   font-weight: 700;
   color: black;
   text-shadow: 2rpx 2rpx 2rpx rgb(240, 219, 35);
   text-align: center;
-  line-height: 75rpx;
+  line-height: 90rpx;
 }
 
 .dishName {
   color: #BA0000;
   text-align: center;
   line-height: 90rpx;
-  font-size: 40rpx;
+  font-size: 45rpx;
   font-weight: 600;
 }
 

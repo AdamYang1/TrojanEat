@@ -4,9 +4,7 @@
 </view>
 <view class="allMenuContainer">
     <view class="dhContainer">
-        <view class="dhContainer">
-            <button class="title" style="text-transform:uppercase; width: 400rpx; height: 100rpx;">EVK</button>
-        </view>
+        <view class="dhName">Everybody's Kitchen</view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">
             <view wx:for="{{evkMenu}}" wx:key="*this" class="category">
@@ -19,9 +17,7 @@
         </scroll-view>
     </view>
     <view class="dhContainer">
-        <view class="dhContainer">
-            <button class="title" style="text-transform:uppercase; width: 400rpx; height: 100rpx;">PKS</button>
-        </view>
+        <view class="dhName">ParkSide</view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">
             <view wx:for="{{pksMenu}}" wx:key="*this" class="category">
@@ -34,8 +30,9 @@
         </scroll-view>
     </view>
     <view class="dhContainer">
-        <view class="dhContainer">
-            <button class="title" style="text-transform:uppercase; width: 400rpx; height: 100rpx;">VLG</button>
+        <view class="dhName">
+            <!-- <button class="title" style="text-transform:uppercase; width: 400rpx; height: 100rpx;">VLG</button> -->
+            Village
         </view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">
