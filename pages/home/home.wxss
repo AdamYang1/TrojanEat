@@ -41,71 +41,55 @@
 
 .recommendContainer .recommendTitle {
   margin-left: 37%;
-  font-size: 48rpx;
+  font-size: 50rpx;
   font-weight: 700;
   color: #BA0000;
-  text-shadow: 2rpx 2rpx 2rpx rgb(235, 217, 177);
+  text-shadow: 3rpx 3rpx 3rpx rgb(235, 217, 177);
+  margin-left: 10%;
 }
 
-.recommendContainer .titleContainer {
-  margin-top: 30rpx;
+.recommendContainer .recMenuContainer {
+  width: 90%;
+  height: 80%;
+  background-color: #ffeca8;
+  border-radius: 10%;
+  margin-left: 5%;
+  padding-top: 60rpx;
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
-.recommendContainer .typeTitle {
-  /* background-color: #BA0000; */
-  font-weight: 700;
-  font-size: 48rpx;
-  color: white;
-  flex: 1;
-}
-
-.typeTitle .typeDecorator {
+.recommendContainer .typeRecContainer {
   position: absolute;
-  z-index: 100;
-  background-color: #BA0000;
-  margin-top: 12rpx;
-  margin-left: 70rpx;
-  width: 200rpx;
-  height: 58rpx;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30rpx;
 }
 
-.typeTitle .tDecorator {
-  position: absolute;
-  z-index: 100;
-  background-color: white;
-  margin-left: 115rpx;
-  width: 190rpx;
-  height: 80rpx;
-}
-
-.recommendContainer .foodTitle {
-  z-index: 100;
+.recTitle {
+  text-transform: uppercase;
+  font-size: 40rpx;
   font-weight: 700;
-  font-size: 48rpx;
+  color: black;
+  text-shadow: 3rpx 3rpx 3rpx rgb(240, 219, 35);
+  text-align: center;
+}
+
+.noRec {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: black;
+  text-shadow: 2rpx 2rpx 2rpx rgb(240, 219, 35);
+  text-align: center;
+  line-height: 75rpx;
+}
+
+.dishName {
   color: #BA0000;
-  flex: 1;
-}
-
-.recommendContainer .foodDecorator {
-  position: absolute;
-  z-index: 100;
-  background-color: white;
-  width: 200rpx;
-  height: 58rpx;
-  margin-left: 90rpx;
-  margin-top: 12rpx;
-}
-
-.recommendContainer .fDecorator {
-  margin-left: 50rpx;
-  position: absolute;
-  z-index: 100;
-  background-color: #BA0000;
-  width: 190rpx;
-  height: 80rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 40rpx;
+  font-weight: 600;
 }
 
 .loginPrompt{
@@ -114,16 +98,12 @@
   margin-left: 20%;
   height: 256rpx;
   width: 456rpx;
-  /* background-color: orange; */
-  /* box-shadow: 5rpx 5rpx 3rpx 3rpx gray; */
 }
 .loginPrompt text{
-  /* margin-left: 84rpx; */
   line-height:88rpx;
   text-align: center;
   font-size: 36rpx;
   font-weight: 700;
-  /* color: #8B4513; */
 }
 
 /* 联系我们 */
