@@ -24,7 +24,7 @@ async function getLikeMenu(dh, date, mealtime) {
 
 function getFoodList(dh, cate, date, mealtime) {
 	return new Promise((resolve, reject) => {
-		let sql = `select food_ch from ${dh} where category = '${cate}' and meal_time = '${mealtime}' and time = '${date}';`;
+		let sq = `select food_ch from ${dh} where category = '${cate}' and meal_time = '${mealtime}' and time = '${date}';`;
 		db.query(sql, (err, result) => {
 			if (err) reject(err);
 			resolve(result);
