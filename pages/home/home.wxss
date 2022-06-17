@@ -60,6 +60,11 @@
   justify-content: center;
 }
 
+.recMenuContainer .recContainer {
+  background-color: #FFC700;
+  border-radius: 7%;
+}
+
 .recommendContainer .typeRecContainer {
   display: flex;
   flex-direction: column;
@@ -71,7 +76,7 @@
   font-size: 50rpx;
   font-weight: 700;
   color: black;
-  text-shadow: 3rpx 3rpx 3rpx rgb(240, 219, 35);
+  text-shadow: 3rpx 3rpx 3rpx rgb(240, 144, 35);
   text-align: center;
 }
 
