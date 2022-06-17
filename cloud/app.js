@@ -10,6 +10,8 @@ const fly = new Fly();
 // import db
 const db = require("../cloud/routes/db");
 
+const port = process.env.PORT || 5000;
+
 //!!! get data
 // ======================== get menu ===============================================
 const menu = require("../cloud/routes/menu");
@@ -51,7 +53,7 @@ app.use("/getOpenId", async (req, res, next) => {
 	next();
 });
 // ============================ create server =============================================
-app.listen(5000, () => {
+app.listen(port, () => {
 	console.log("listening.....");
 });
 
