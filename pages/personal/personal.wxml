@@ -19,7 +19,7 @@
 
 
 <!-- 所有餐厅 -->
-<button wx:if="!{{isFirst}}" class="allDinningHallContainer" >
+<button wx:if="!{{isFirst}}" class="allDinningHallContainer" bindtap="toAllMenu" >
   <text>所有餐厅</text>
 </button>
 <!-- 个人喜好 -->

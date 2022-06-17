@@ -53,7 +53,12 @@ toPersonalChoice(){
     url: '/pages/personalChoice/personalChoice',
   })
 },
-
+// 所有餐厅跳转
+toAllMenu(){
+  wx.switchTab({
+    url: '/pages/allmenu/allmenu',
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
