@@ -15,11 +15,11 @@ class MenuSpider:
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'
         }
-        self.db = pymysql.connect(host='localhost',
+        self.db = pymysql.connect(host='35.224.73.150',
                                   port=3306,
                                   user='root',
                                   password='Adam20030808!',
-                                  database='TrojanEat',
+                                  database='TrojanEatDB',
                                   charset='utf8')
         self.cur = self.db.cursor()
         self.all_list = []
@@ -69,7 +69,7 @@ class MenuSpider:
             json.dump(items, f)
 
     def save_to_sql(self, venue):
-        sql = "insert into TrojanEat." + venue + " VALUES (%s,%s,%s,%s,%s,%s);"
+        sql = "insert into TrojanEatDB." + venue + " VALUES (%s,%s,%s,%s,%s,%s);"
         try:
             self.cur.executemany(sql, self.all_list)
             self.db.commit()
