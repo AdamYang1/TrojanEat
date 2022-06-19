@@ -5,10 +5,10 @@ const express = require("express");
 const router = express.Router();
 // connect to the database
 const db = mysql.createConnection({
-	host: "35.224.73.150",
-	user: "root",
-	password: "Adam20030808!",
-	database: "TrojanEatDB",
+	host: "us-cdbr-east-05.cleardb.net",
+	user: "b12f50cb8ad7c6",
+	password: "89c03a83",
+	database: "heroku_e1b49fc3ea33877",
 	multipleStatements: true,
 });
 db.connect((err) => {
