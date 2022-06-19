@@ -3,6 +3,7 @@ import requests
 import json
 import os
 import pymysql
+import sys
 from pygtrans import Translate
 client = Translate()
 
@@ -78,8 +79,9 @@ class MenuSpider:
             print(e)
             self.db.rollback()
 
-    def run(self):
+    def run(self, start_year, start_month, start_day, end_year, end_month, end_day):
         from datetime import date, timedelta
+        print("test")
         # print(""" 
         # Which dining venue menu do you want?
         #     1. Parkside
@@ -92,12 +94,15 @@ class MenuSpider:
             # if choice in ['Parkside', 'EVK', 'Village']:
             #     break
             # print("Enter the right name!!!")
-        start_year = int(input('Enter start year: '))
-        start_month = int(input('Enter start month: '))
-        start_day = int(input('Enter start day: '))
-        end_year = int(input('Enter end year: '))
-        end_month = int(input('Enter end month: '))
-        end_day = int(input('Enter end day: '))
+
+        # start_year = int(input('Enter start year: '))
+        # start_month = int(input('Enter start month: '))
+        # start_day = int(input('Enter start day: '))
+        # end_year = int(input('Enter end year: '))
+        # end_month = int(input('Enter end month: '))
+        # end_day = int(input('Enter end day: '))
+
+
         d0 = date(start_year, start_month, start_day)
         d1 = date(end_year, end_month, end_day)
         delta = d1 - d0
@@ -126,4 +131,4 @@ class MenuSpider:
 
 if __name__ == '__main__':
     spider = MenuSpider()
-    spider.run()
+    spider.run(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[1]), int(sys.argv[4]), int(sys.argv[5]))

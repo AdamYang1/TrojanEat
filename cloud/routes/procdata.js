@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../routes/db");
 const dhalls = ["vlg", "evk", "pks"];
+// const { spawn } = require("child_process");
+const parseData = require("../controllers/parseData");
 //先删除raw data， 然后爬取新的数据，然后drop 之前的proc表格，重新create
 
 // delete data in dh_raw tables
@@ -16,6 +18,27 @@ router.put("/delete", (req, res) => {
 	});
 	res.send({ sucess: true });
 });
+
+// parse data
+router.get(
+	"/parse/year/:year/month1/:month1/day1/:day1/month2/:month2/day2/:day2/",
+	async (req, res) => {
+		let success = true;
+		const { year, month1, day1, month2, day2 } = req.params;
+		parseData(year, month1, day1, month2, day2);
+		dhalls.forEach((dh) => {
+			let sql = `select * from ${dh}_raw;`;
+			db.query(sql, (err, result) => {
+				if (err) {
+					success = false;
+					throw err;
+				}
+				return result;
+			});
+		});
+		if (success) res.send({ success: true });
+	}
+);
 
 // drop dh_proc tables
 router.put("/drop", (req, res) => {
