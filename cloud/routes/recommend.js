@@ -35,4 +35,16 @@ router.put(
 	}
 );
 
+router.get(
+	"/openid/:openid/date/:date/mealtime/:mealtime/test/:test",
+	(req, res) => {
+		const { openid, date, mealtime, test } = req.params;
+		let sql = `select * from vlg where time = '2022-06-19';`;
+		db.query(sql, (err, result) => {
+			if (err) throw err;
+			res.send(result);
+		});
+	}
+);
+
 module.exports = router;

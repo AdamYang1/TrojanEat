@@ -2,7 +2,6 @@ const Async = require("async");
 const db = require("../routes/db");
 const types = require("../static/types");
 const dhall = ["vlg", "evk", "pks"];
-
 function getRecommend(openid, date, mealtime) {
 	Async.map(
 		types,
@@ -25,9 +24,19 @@ function getRecommend(openid, date, mealtime) {
 			results.forEach((t) => {
 				if (t.length > 0) {
 					dhall.forEach((dh) => {
+						let open = false;
 						Async.waterfall([
+							//filter dhall that closes
+							function (callback) {
+								let sql = `select * from ${dh};`;
+								db.query(sql, (err, result) => {
+									if (err) throw err;
+									open = result.length > 0 ? true : false;
+								});
+							},
 							//count how many matched dishes for each dinning hall
 							function (callback) {
+								if (!open) return;
 								let sql = `with temp as(
                             select time, meal_time, userInfo.userOpenId as openid, userInfo.${t} as weight, ${dh}.food as recommend from ${dh}
                             inner join userInfo on ceil(${dh}.${t}) = ceil(userInfo.${t}) where ${dh}.time = '${date}' and ${dh}.meal_time = '${mealtime}' and userInfo.userOpenId = '${openid}')
@@ -44,6 +53,7 @@ function getRecommend(openid, date, mealtime) {
 							},
 							// augment the result to the dh_rec
 							function (count, openid, callback) {
+								if (!open) return;
 								let sql = `update userInfo set ${dh}_rec = ${dh}_rec + ${count} where userOpenId = '${openid}';`;
 								db.query(sql, (err, result) => {
 									if (err) throw err;
