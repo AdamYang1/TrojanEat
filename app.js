@@ -90,7 +90,7 @@ App({
 					await request(
 						// `/recommend/openid/${that.globalData.openid}/date/${that.globalData.myDate}
 						// /mealtime/${that.globalData.mealInterval[mealIndex]}`,
-						`/recommend/openid/${that.globalData.openid}/date/2022-04-26/mealtime/Lunch`,
+						`/recommend/openid/${that.globalData.openid}/date/2022-06-19/mealtime/Lunch`,
 						{},
 						"PUT"
 					);
@@ -158,7 +158,7 @@ App({
 						/date/${that.globalData.myDate}
 						/mealtime/${that.globalData.mealInterval[mealIndex]}
 						/dh/${that.globalData.dhRec[0]}`, */
-						`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
+						`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-06-19/mealtime/Lunch/dh/
 						${that.globalData.dhRec[0]}`,
 						{},
 						"GET"
@@ -184,7 +184,7 @@ App({
 						/* 	`/menu/date/${that.globalData.myDate}
 							/mealtime/${that.globalData.mealInterval[mealIndex]}
 							/dh/${that.globalData.dhArr[dh]}`, */
-							`/menu/date/2022-04-26/mealtime/Lunch/dh/${that.globalData.dhArr[dh]}`,
+							`/menu/date/2022-06-19/mealtime/Lunch/dh/${that.globalData.dhArr[dh]}`,
 							{},
 							"GET"
 						)
@@ -234,7 +234,7 @@ App({
 							/date/${that.globalData.myDate}
 							/mealtime/${that.globalData.mealInterval[mealIndex]}
 							/dh/${that.globalData.dhRec[0]}`, */
-							`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-04-26/mealtime/Lunch/dh/
+							`/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-06-19/mealtime/Lunch/dh/
 							${that.globalData.dhArr[i]}`,
 							{},
 							"GET"
