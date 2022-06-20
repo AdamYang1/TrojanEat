@@ -18,7 +18,13 @@
 </view>
 <!-- Recommend Dining -->
 <view wx:if="!{{isFirst}}" class="recommendContainer">
-  <view class="recommendTitle">推荐菜品</view>
+  <view class="recommendHead">
+    <view class="recommendTitle">推荐菜品</view>
+    <button class="refresh"
+    style="margin-left: 67%; border: 4rpx solid #BA0000; box-shadow: 0.05em 0.05em lightyellow; width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button>
+    <!-- <text class="iconfont icon-yuanxunhuan"
+    style="text-shadow:1rpx 1rpx 1rpx gray; font-size:60rpx; margin-left: 70%; position: absolute; z-index: 90; margin-top: 5rpx; width: 100rpx;"></text> -->
+  </view>
   <view class="recMenuContainer">
     <view class="typeRecContainer">
       <view class="recContainer">

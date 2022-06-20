@@ -2,7 +2,11 @@
 import request from "../request/request";
 var app = getApp();
 
+
 Page({
+	refresh(){
+		app.onLaunch();
+	},
 	/**
 	 * 页面的初始数据
 	 */
@@ -10,6 +14,7 @@ Page({
 		userInfo: {},
 		openid: 0,
 		myDate: "0000-00-00",
+		mealIndex: -1,
 		isFirst: true,
 		isWeekDay: true,
 		isBreakfast: false,
