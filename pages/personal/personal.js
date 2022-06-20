@@ -59,6 +59,12 @@ toAllMenu(){
     url: '/pages/allmenu/allmenu',
   })
 },
+// 教程跳转
+toTutorial(){
+  wx.navigateTo({
+    url: '/pages/tutorial/tutorial',
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */

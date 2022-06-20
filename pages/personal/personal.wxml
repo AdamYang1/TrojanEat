@@ -26,6 +26,10 @@
 <button wx:if="!{{isFirst}}" class="personalChoiceContainer" bindtap="toPersonalChoice" >
   <text>个人喜好</text>
 </button>
+<!-- 教程 -->
+<button wx:if="!{{isFirst}}" class="personalChoiceContainer" bindtap="toTutorial" >
+  <text>教程</text>
+</button>
 <!-- 联系我们 -->
 <button class="contactContainer" style="width:280rpx;">
   <text>联系我们</text>
