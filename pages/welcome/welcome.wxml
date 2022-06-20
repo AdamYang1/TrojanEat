@@ -8,6 +8,6 @@
       <text class="eatName2" style="color: #BA0000; font-size: 58rpx; font-weight: 700;">Eats</text>
     </view>
     <button class="start" style="height: 126rpx; font-size: 50rpx;"
-    bindtap="handleStart">点击进入</button>
+    bindtap="handleStart">点击开始</button>
   </view>
 </view>

@@ -73,9 +73,12 @@ Page({
       return;
     }
     await request(`/personal/customer/openid/${openid}/like/options/${options}`, { openid, options }, 'PUT');
-    wx.switchTab({
+    wx.reLaunch({
       url: '/pages/home/home',
     })
+/*     wx.switchTab({
+      url: '/pages/home/home',
+    }) */
   },
   /**
    * 生命周期函数--监听页面加载
