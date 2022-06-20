@@ -3,6 +3,7 @@ import request from "./pages/request/request";
 // let app = getApp();
 App({
 	async onLaunch() {
+		console.log('app launched');
 		let that = this;
 		// 展示本地存储能力
 		const logs = wx.getStorageSync("logs") || [];

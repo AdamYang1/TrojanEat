@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/tutorial/tutorial",
     "pages/allmenu/allmenu",
     "pages/personalChoice/personalChoice",
     "pages/personal/personal",
