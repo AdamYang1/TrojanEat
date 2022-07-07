@@ -12,6 +12,9 @@ Page({
     vlgMenu: [],
     evkMenu: [],
     pksMenu: [],
+    vlgOpen: [],
+    evkOpen: [],
+    pksOpen: [],
   },
 
   /**
@@ -20,20 +23,25 @@ Page({
   onLoad(options) {
     if(app.globalData.vlgCate.length) {
       this.setData({
+        vlgOpen: app.globalData.vlgOpen,
+        evkOpen: app.globalData.evkOpen,
+        pksOpen: app.globalData.pksOpen,
         vlgMenu: app.globalData.vlgMenu,
         pksMenu: app.globalData.pksMenu,
         evkMenu: app.globalData.evkMenu,
-  
       });
     } else {
       app.menuCallBack = res => {
         if(res) {
           this.setData({
+            vlgOpen: app.globalData.vlgOpen,
+            evkOpen: app.globalData.evkOpen,
+            pksOpen: app.globalData.pksOpen,
             vlgMenu: app.globalData.vlgMenu,
             pksMenu: app.globalData.pksMenu,
             evkMenu: app.globalData.evkMenu,
-     
           });
+          // console.log(this.data.evkOpen);
         }
       }
     }

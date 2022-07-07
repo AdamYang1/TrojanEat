@@ -5,6 +5,7 @@
 <view class="allMenuContainer">
     <view class="dhContainer">
         <view class="dhName">Everybody's Kitchen</view>
+        <view wx:if="{{!evkOpen}}" class="dhName">餐厅关了哦</view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">
             <view wx:for="{{evkMenu}}" wx:key="index" class="category">
@@ -18,6 +19,7 @@
     </view>
     <view class="dhContainer">
         <view class="dhName">ParkSide</view>
+        <view wx:if="{{!pksOpen}}" class="dhName">餐厅关了哦</view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">
             <view wx:for="{{pksMenu}}" wx:key="index" class="category">
@@ -30,10 +32,8 @@
         </scroll-view>
     </view>
     <view class="dhContainer">
-        <view class="dhName">
-            <!-- <button class="title" style="text-transform:uppercase; width: 400rpx; height: 100rpx;">VLG</button> -->
-            Villlage
-        </view>
+        <view class="dhName">Villlage</view>
+        <view wx:if="{{!vlgOpen}}" class="dhName">餐厅关了哦</view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">
             <view wx:for="{{vlgMenu}}" wx:key="index" class="category">
