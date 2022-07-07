@@ -5,6 +5,14 @@
       {
         "value": ".eslintrc.js",
         "type": "file"
+      },
+      {
+        "value": ".vscode",
+        "type": "folder"
+      },
+      {
+        "value": "cloud",
+        "type": "folder"
       }
     ],
     "include": []
