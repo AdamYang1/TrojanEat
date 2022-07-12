@@ -17,6 +17,8 @@
     border-top: #ba0000 solid 10rpx;
     width: 100%;
     background-color: #FFC700;
+    height: max-content;
+    padding-bottom: 10%;
 }
 
 .dhContainer {

@@ -76,6 +76,7 @@
 /* 联系我们 */
 .contactContainer {
   background-color: #FFC700;
+  margin-bottom: 7%;
 }
 
 .contactContainer text {
