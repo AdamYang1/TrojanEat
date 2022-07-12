@@ -1,9 +1,50 @@
-[![npm version](https://badge.fury.io/js/angular2-expandable-list.svg)](https://badge.fury.io/js/angular2-expandable-list)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 [![OSCS Status](https://www.oscs1024.com/platform/badge/AdamYang1/TrojanEat.svg?size=small)](https://www.oscs1024.com/project/AdamYang1/TrojanEat?ref=badge_small)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![wxml: html](https://img.shields.io/badge/HTML-wxml-green.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-# TrojanEat
+[contributors-shield]: https://img.shields.io/github/contributors/AdamYang1/TrojanEat.svg?style=flat
+[contributors-url]: https://github.com/AdamYang1/TrojanEat/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/AdamYang1/TrojanEat?style=flat
+[forks-url]: https://github.com/AdamYang1/TrojanEat/network/members
+[stars-shield]: https://img.shields.io/github/stars/AdamYang1/TrojanEat.svg?style=flat
+[stars-url]: https://github.com/AdamYang1/TrojanEat/stargazers
+[issues-shield]: https://img.shields.io/github/issues/AdamYang1/TrojanEat.svg?style=flat
+[issues-url]: https://github.com/AdamYang1/TrojanEat/issues
+[license-shield]: https://img.shields.io/github/license/AdamYang1/TrojanEat.svg?style=flat
+[license-url]: https://github.com/AdamYang1/TrojanEat/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=social&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/shixiang-yang-60b46a219/
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/AdamYang1/TrojanEat">
+    <img src="pages/images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h1 align="center">TrojanEat</h1>
+
+  <p align="center">
+    An awesome application for USC student!
+    <br />
+    <a href="https://github.com/AdamYang1/TrojanEat"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/AdamYang1/TrojanEat">View Demo</a>
+    ·
+    <a href="https://github.com/AdamYang1/TrojanEat/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/AdamYang1/TrojanEat/issues">Request Feature</a>
+  </p>
+  <br>
+</div>
+
+## About the Project
 
 > This is a USC dining hall recommendation application specifically targeting Chinese Freshman who are likely to have hard time reading menus. Users will be asked to pick their favourite types of food and will receive recommendation dining hall accordingly.
 
@@ -28,21 +69,20 @@ v8.16.0
 
 ## Table of contents
 
-- [TrojanEat](#trojaneat)
-  - [Important Note](#important-note)
-  - [Prerequisites](#prerequisites)
-  - [Table of contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Serving the app](#serving-the-app)
-  - [API](#api)
-    - [useBasicFetch](#usebasicfetch)
-      - [Options](#options)
-  - [Contributing](#contributing)
-    - [Built With](#built-with)
-  - [Authors](#authors)
-  - [License](#license)
+- [About the Project](#about-the-project)
+- [Important Note](#important-note)
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Testing](#testing)
+  - [Testing the app](#testing-the-app)
+- [API](#api)
+  - [Routes](#routes)
+- [Contributing](#contributing)
+  - [Built With](#built-with)
+- [Authors](#authors)
+- [License](#license)
 
 ## Getting Started
 
@@ -65,9 +105,9 @@ To install and set up the library, run:
 $ npm install
 ```
 
-## Usage
+## Testing
 
-### Serving the app
+### Testing the app
 
 ```sh
 $ npm start
@@ -75,89 +115,18 @@ $ npm start
 
 ## API
 
-### useBasicFetch
+### Routes
 
-```js
-useBasicFetch((url: string = ""), (delay: number = 0));
-```
-
-Supported options and result fields for the `useBasicFetch` hook are listed below.
-
-#### Options
-
-`url`
-
-| Type   | Default value |
-| ------ | ------------- |
-| string | ''            |
+| Route     | Utility                                                                           |
+| --------- | --------------------------------------------------------------------------------- |
+| db        | connect to database (hided)                                                       |
+| menu      | get all menu & recommended menu                                                   |
+| personal  | get & update user preferences && update dining hall ranking based on user choices |
+| procdata  | get & update user preferences && update dining hall ranking based on user choices |
+| recommend | analyze & update user preferences && return recommendation                        |
+| allergen  | update & get user allergen (deleted)                                              |
 
 If present, the request will be performed as soon as the component is mounted
-
-Example:
-
-```tsx
-const MyComponent: React.FC = () => {
-	const { data, error, loading } = useBasicFetch(
-		"https://api.icndb.com/jokes/random"
-	);
-
-	if (error) {
-		return <p>Error</p>;
-	}
-
-	if (loading) {
-		return <p>Loading...</p>;
-	}
-
-	return (
-		<div className="App">
-			<h2>Chuck Norris Joke of the day</h2>
-			{data && data.value && <p>{data.value.joke}</p>}
-		</div>
-	);
-};
-```
-
-`delay`
-
-| Type   | Default value | Description          |
-| ------ | ------------- | -------------------- |
-| number | 0             | Time in milliseconds |
-
-If present, the request will be delayed by the given amount of time
-
-Example:
-
-```tsx
-type Joke = {
-	value: {
-		id: number;
-		joke: string;
-	};
-};
-
-const MyComponent: React.FC = () => {
-	const { data, error, loading } = useBasicFetch<Joke>(
-		"https://api.icndb.com/jokes/random",
-		2000
-	);
-
-	if (error) {
-		return <p>Error</p>;
-	}
-
-	if (loading) {
-		return <p>Loading...</p>;
-	}
-
-	return (
-		<div className="App">
-			<h2>Chuck Norris Joke of the day</h2>
-			{data && data.value && <p>{data.value.joke}</p>}
-		</div>
-	);
-};
-```
 
 ## Contributing
 
@@ -194,7 +163,7 @@ See also the list of [contributors](https://github.com/AdamYang1/TrojanEat/graph
 
 ## License
 
-[MIT License](https://andreasonny.mit-license.org/2019) © Andrea SonnY
+[MIT License](https://andreasonny.mit-license.org/2019) © Shixiang Yang
 
 [node.js]: https://img.shields.io/badge/Node.js-000000?style=for-the-badge&logo=Node.js
 [node-url]: https://nodejs.org/en/
@@ -212,5 +181,5 @@ See also the list of [contributors](https://github.com/AdamYang1/TrojanEat/graph
 [postman-url]: https://www.postman.com/
 [heroku]: https://img.shields.io/badge/heroku-0769AD?style=for-the-badge&logo=heroku
 [heroku-url]: https://dashboard.heroku.com/login
-[python]: https://img.shields.io/badge/python-0769AD?style=for-the-badge&logo=python&color=white
+[python]: https://img.shields.io/badge/python-0769AD?style=for-the-badge&logo=python&color=grey
 [python-url]: https://www.python.org/
