@@ -48,13 +48,13 @@
 
 > This is a USC dining hall recommendation application specifically targeting Chinese Freshman who are likely to have hard time reading menus. Users will be asked to pick their favourite types of food and will receive recommendation dining hall accordingly.
 
-## Important Note
+### Important Note
 
 This is an application deployed on WeChat-based environment. Therefore, you have to install [WeChat](https://www.wechat.com/) on your phone to use this application. Nevertheless, you are welcome to test the server using APIs.
 
 Even though it is designed for USC Chinese student, everyone is welcome to use the app and contribute to the app.
 
-## Prerequisites
+### Prerequisites
 
 This project requires NodeJS (version 8 or later) and NPM.
 [Node](http://nodejs.org/) and [NPM](https://npmjs.org/) are really easy to install.
@@ -70,8 +70,8 @@ v8.16.0
 ## Table of contents
 
 - [About the Project](#about-the-project)
-- [Important Note](#important-note)
-- [Prerequisites](#prerequisites)
+  - [Important Note](#important-note)
+  - [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
@@ -81,7 +81,8 @@ v8.16.0
   - [Routes](#routes)
 - [Contributing](#contributing)
   - [Built With](#built-with)
-- [Authors](#authors)
+- [Author & Contributors](#author--contributors)
+- [Acknowledgements](#acknowledgements)
 - [License](#license)
 
 ## Getting Started
@@ -130,7 +131,7 @@ If present, the request will be performed as soon as the component is mounted
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read follow process for submitting pull requests to us.
 
 1.  Fork it!
 2.  Create your feature branch: `git checkout -b my-new-feature`
@@ -145,21 +146,28 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 - [![Node][node.js]][node-url]
 - [![Express][express.js]][express-url]
-- [![Javascript][javascript.js]][javascript-url]
+- [![python][python]][python-url]
 - [![mysql][mysql]][mysql-url]
+- [![Javascript][javascript.js]][javascript-url]
 - [![html][html]][html-url]
 - [![css][css]][css-url]
 - [![postman][postman]][postman-url]
 - [![heroku][heroku]][heroku-url]
-- [![python][python]][python-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Authors
+## Author & Contributors
 
 - **Adam Yang** - _Initial & Entire work_ - [AdamYang](https://github.com/AdamYang1)
+- **Celine Wen** - _User Interface & LOGO Design_ - [CelineWen](https://www.linkedin.com/in/celinewen)
 
 See also the list of [contributors](https://github.com/AdamYang1/TrojanEat/graphs/contributors) who participated in this project.
+
+## Acknowledgements
+
+This project was developed by, is maintained by, and is sponsored by Shixiang (Adam) Yang all independently. It incorporates extensive feedback from many USC students to mention here, including many contributors who have helped to design UI, LOGO, and contribute great ideas, and so on.
+
+This project is largely based on the menu released by [USC Dining](https://hospitality.usc.edu/residential-dining-menus/) and the translation for is primarily based on [pygtrans](https://pypi.org/project/pygtrans/1.0.5/). There might be some bugs and inappropriate translations leading unpleasant experience, please kindly inform me if it happens and everyone is welcome to contribute.
 
 ## License
 
