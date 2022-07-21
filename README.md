@@ -1,4 +1,5 @@
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+<!-- [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier) -->
+
 [![OSCS Status](https://www.oscs1024.com/platform/badge/AdamYang1/TrojanEat.svg?size=small)](https://www.oscs1024.com/project/AdamYang1/TrojanEat?ref=badge_small)
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -6,19 +7,6 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-[contributors-shield]: https://img.shields.io/github/contributors/AdamYang1/TrojanEat.svg?style=flat
-[contributors-url]: https://github.com/AdamYang1/TrojanEat/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AdamYang1/TrojanEat?style=flat
-[forks-url]: https://github.com/AdamYang1/TrojanEat/network/members
-[stars-shield]: https://img.shields.io/github/stars/AdamYang1/TrojanEat.svg?style=flat
-[stars-url]: https://github.com/AdamYang1/TrojanEat/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AdamYang1/TrojanEat.svg?style=flat
-[issues-url]: https://github.com/AdamYang1/TrojanEat/issues
-[license-shield]: https://img.shields.io/github/license/AdamYang1/TrojanEat.svg?style=flat
-[license-url]: https://github.com/AdamYang1/TrojanEat/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=social&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/shixiang-yang-60b46a219/
 
 <!-- PROJECT LOGO -->
 <br />
@@ -46,7 +34,7 @@
 
 ## About the Project
 
-> This is a USC dining hall recommendation application specifically targeting Chinese Freshman who are likely to have hard time reading menus. Users will be asked to pick their favourite types of food and will receive recommendation dining hall accordingly.
+> This is a USC dining hall recommendation application specifically targeting Chinese Freshman who are likely to have hard time reading menus. It saves students time by providing translations, recommendations, and dining hall details (ex. vegan dining hall). Users will be asked to pick their favourite types of food and will receive recommendation dining hall accordingly.
 
 ### Important Note
 
@@ -191,3 +179,15 @@ This project is largely based on the menu released by [USC Dining](https://hospi
 [heroku-url]: https://dashboard.heroku.com/login
 [python]: https://img.shields.io/badge/python-0769AD?style=for-the-badge&logo=python&color=grey
 [python-url]: https://www.python.org/
+[contributors-shield]: https://img.shields.io/github/contributors/AdamYang1/TrojanEat.svg?style=flat
+[contributors-url]: https://github.com/AdamYang1/TrojanEat/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/AdamYang1/TrojanEat?style=flat
+[forks-url]: https://github.com/AdamYang1/TrojanEat/network/members
+[stars-shield]: https://img.shields.io/github/stars/AdamYang1/TrojanEat.svg?style=flat
+[stars-url]: https://github.com/AdamYang1/TrojanEat/stargazers
+[issues-shield]: https://img.shields.io/github/issues/AdamYang1/TrojanEat.svg?style=flat
+[issues-url]: https://github.com/AdamYang1/TrojanEat/issues
+[license-shield]: https://img.shields.io/github/license/AdamYang1/TrojanEat.svg?style=flat
+[license-url]: https://github.com/AdamYang1/TrojanEat/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=social&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/shixiang-yang-60b46a219/

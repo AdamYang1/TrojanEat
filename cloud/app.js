@@ -37,6 +37,10 @@ app.use("/allergen", allergen);
 const procdata = require("./routes/procdata");
 app.use("/procdata", procdata);
 
+// ========================= process data =========================================
+const vegan = require("./routes/vegan");
+app.use("/vegan", vegan);
+
 // ========================= verify identity =========================================
 // get user's unique openid to verify identity
 app.use("/getOpenId", async (req, res, next) => {
