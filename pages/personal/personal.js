@@ -65,6 +65,13 @@ toTutorial(){
     url: '/pages/tutorial/tutorial',
   })
 },
+
+toContact(){
+  wx.navigateTo({
+    url: '/pages/contact/contact',
+  })
+},
+
   /**
    * 生命周期函数--监听页面加载
    */

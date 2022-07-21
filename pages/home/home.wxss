@@ -43,12 +43,12 @@
 }
 
 .recommendContainer .recommendTitle {
-  /* margin-left: 80%; */
   font-size: 50rpx;
   font-weight: 700;
   color: #BA0000;
   text-shadow: 3rpx 3rpx 3rpx rgb(235, 217, 177);
-  margin-left: 7%;
+  margin-left: 33%;
+  /* align-self: center; */
 }
 
 .recommendContainer .recMenuContainer {

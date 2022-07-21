@@ -31,7 +31,7 @@
   <text>教程</text>
 </button>
 <!-- 联系我们 -->
-<button class="contactContainer" style="width:280rpx;">
+<button class="contactContainer" style="width:280rpx;" bindtap="toContact">
   <text>联系我们</text>
 </button>
 
