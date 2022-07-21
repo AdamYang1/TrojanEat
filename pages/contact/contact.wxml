@@ -1,0 +1,26 @@
+<!--pages/personal/personal.wxml-->
+<view class="headingContainer">
+    <text class="heading">author&owner: Adam Yang</text>
+</view>
+
+<view class="contactContainer">
+<!-- welcome -->
+<view class="welcomeContainer">
+  <view class="welcomeContainer2">
+    <view class="welcomeDecorator"></view>
+    <view class="welcomeTextContainer">
+      欢迎大家联系
+    </view>
+    <view class="welcomeDecorator2"></view>
+    <view class="userName">
+      可怜的作者
+    </view>
+  </view>
+</view>
+  <view class="claim">如果有任何bug或者小程序无法正常运行请速度联系作者！！
+  同时也欢迎每一个人的意见和批评！
+  </view>
+  <image class="contactImg" src="/pages/images/wx.png"></image>
+  <view class="claim">此小程序全程由作者独立开发和维护，若有任何bug请多多包含！</view>
+</view>
+

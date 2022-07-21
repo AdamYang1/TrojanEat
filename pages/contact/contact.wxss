@@ -1,0 +1,94 @@
+/* pages/contact/contact.wxss */
+
+.headingContainer {
+	margin-top: 3%;
+}
+
+.heading {
+	margin-left: 18%;
+	font-size: 40rpx;
+	font-weight: 800;
+	color: #ba0000;
+	text-shadow: 2rpx 2rpx 2rpx #ffc700;
+}
+
+/* welcome部分 */
+.welcomeContainer {
+	/* margin-left: 15%; */
+	margin-top: 40rpx;
+	display: flex;
+	flex-direction: row;
+	border-top: #ba0000 solid 10rpx;
+	height: 270rpx;
+}
+
+.welcomeContainer .welcomeContainer2 {
+	margin-left: 5%;
+}
+.welcomeContainer .welcomeDecorator {
+	position: absolute;
+	z-index: 100;
+	margin-top: 70rpx;
+	margin-left: 30rpx;
+	background-color: #ba0000;
+	height: 110rpx;
+	width: 280rpx;
+}
+
+.welcomeContainer .welcomeTextContainer {
+	position: absolute;
+	z-index: 100;
+	margin-top: 95rpx;
+	margin-left: 60rpx;
+	background-color: #ffc700;
+	color: white;
+	height: max-content;
+	width: 270rpx;
+	font-size: 45rpx;
+	font-weight: 600;
+	padding-left: 15rpx;
+}
+
+.welcomeContainer .welcomeDecorator2 {
+	position: absolute;
+	z-index: 100;
+	margin-top: 153rpx;
+	margin-left: 344rpx;
+	background-color: #ffc700;
+	width: 310rpx;
+	height: 100rpx;
+}
+
+.welcomeContainer .userName {
+	position: absolute;
+	z-index: 100;
+	margin-top: 168rpx;
+	margin-left: 360rpx;
+	width: 257rpx;
+	font-size: 50rpx;
+	font-weight: 600;
+	background-color: white;
+	color: #ba0000;
+	padding-left: 23rpx;
+}
+
+.contactContainer {
+	height: 100%;
+	background-color: #ffeca8;
+}
+
+.claim {
+	margin-left: 13%;
+	width: 75%;
+	text-align: center;
+	font-size: 36rpx;
+	font-weight: 400;
+	border-style: dotted;
+	border-color: #ffc700;
+}
+
+image {
+	margin-left: 10%;
+	width: 600rpx;
+	height: 780rpx;
+}
