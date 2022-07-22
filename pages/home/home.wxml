@@ -27,8 +27,8 @@
     <view class="typeRecContainer">
       <view wx:if="{{recDish[0].length}}" style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
       <view class="recContainer">
-      <view wx:if="{{!recDish[0].length}}" class="noRec" style="font-size: 56rpx; font-weight: 8000; height: 800rpx;">
-        <text>正在加载...</text>
+      <view wx:if="{{!recDish[0].length}}" class="noRec" style="font-size: 56rpx; font-weight: 800; width: 600rpx; height: 800rpx; text-align: center;">
+        <text>正在加载。。。</text>
       </view>
         <view wx:for="{{recDish}}" wx:key="index" style="margin-top: 2%;" class="typeRec">
           <view class="recTitle">{{dhRec[0]}} - {{displayRecTypes[index]}}</view>
