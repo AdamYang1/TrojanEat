@@ -32,7 +32,7 @@
         </scroll-view>
     </view>
     <view class="dhContainer">
-        <view class="dhName">Villlage</view>
+        <view class="dhName">Village</view>
         <view wx:if="{{!vlgOpen}}" class="dhName">餐厅关了哦</view>
         <view class="menuDecorator"></view>
         <scroll-view class="menuDisplayer" scroll-y="ture" upper-threshold="50" lower-threshold="50">

@@ -2,10 +2,34 @@
 import request from "../request/request";
 var app = getApp();
 
-
 Page({
-	refresh(){
-		app.onLaunch();
+	refresh() {
+		let prev = 0;
+		let now = +new Date();
+		if (now - prev > 3000) {
+			prev = now;
+			app.globalData.dhRank = [];
+			app.globalData.dhRec = [];
+			app.globalData.displayRecTypes = [];
+			app.globalData.recDish = [];
+			app.globalData.otherDh = [];
+			app.globalData.otherDhRec = [];
+			app.globalData.evkRec = [];
+			app.globalData.vlgRec = [];
+			app.globalData.pksRec = [];
+			app.globalData.userPreference = [];
+			app.globalData.userPreferenceEng = [];
+			app.globalData.evkMenu = [];
+			app.globalData.pksMenu = [];
+			app.globalData.vlgMenu = [];
+			app.globalData.evkCate = [];
+			app.globalData.evkDish = [];
+			app.globalData.pksCate = [];
+			app.globalData.pksDish = [];
+			app.globalData.vlgCate = [];
+			app.globalData.vlgDish = [];
+			app.onLaunch();
+		}
 	},
 	/**
 	 * 页面的初始数据
@@ -32,8 +56,8 @@ Page({
 		otherDh: [],
 		otherDhRec: [],
 		vlgRec: [],
-    evkMenu: [],
-    pksMenu: [],
+		evkMenu: [],
+		pksMenu: [],
 	},
 	// 首页登陆
 	homeLogin() {
@@ -75,34 +99,33 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-    if(app.globalData.dhRec.length) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        isFirst: app.globalData.isFirst,
-        dhRank: app.globalData.dhRank,
+		if (app.globalData.dhRec.length) {
+			this.setData({
+				userInfo: app.globalData.userInfo,
+				isFirst: app.globalData.isFirst,
+				dhRank: app.globalData.dhRank,
 				dhRec: app.globalData.dhRec,
 				displayRecTypes: app.globalData.displayRecTypes,
 				recDish: app.globalData.recDish,
 				otherDh: app.globalData.otherDh,
 				otherDhRec: app.globalData.otherDhRec,
 			});
-    } else {
-      app.userCallBack = res => {
-        if(res) {
-          this.setData({
-            userInfo: app.globalData.userInfo,
-            isFirst: app.globalData.isFirst,
-            dhRank: app.globalData.dhRank,
+		} else {
+			app.userCallBack = (res) => {
+				if (res) {
+					this.setData({
+						userInfo: app.globalData.userInfo,
+						isFirst: app.globalData.isFirst,
+						dhRank: app.globalData.dhRank,
 						dhRec: app.globalData.dhRec,
 						displayRecTypes: app.globalData.displayRecTypes,
 						recDish: app.globalData.recDish,
 						otherDh: app.globalData.otherDh,
 						otherDhRec: app.globalData.otherDhRec,
-					})
+					});
 				}
-      }
-    }
-
+			};
+		}
 	},
 
 	/**
@@ -120,7 +143,8 @@ Page({
 		let date = new Date();
 		let myDay = date.getDay();
 		let myTime = date.toTimeString();
-		let myDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+		let myDate =
+			date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
 		// 判断是否工作日
 		if (myDay >= 1 && myDay <= 5) {
 			this.setData({
@@ -179,7 +203,6 @@ Page({
 			});
 		}
 		/* 日期 */
-
 	},
 
 	/**

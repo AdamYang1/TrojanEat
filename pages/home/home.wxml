@@ -20,8 +20,8 @@
 <view wx:if="!{{isFirst}}" class="recommendContainer">
   <view class="recommendHead">
     <view style="text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35);" class="recommendTitle">推荐菜品</view>
-    <!-- <button class="refresh"
-    style="background-color: #FFECA8; border-radius: 10%; margin-left: 67%; border: 4rpx solid #BA0000; box-shadow: 0.15em 0.15em rgb(240, 144, 35); width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button> -->
+    <button class="refresh"
+    style="background-color: #FFECA8; border-radius: 10%; margin-left: 67%; border: 4rpx solid #BA0000; box-shadow: 0.15em 0.15em rgb(240, 144, 35); width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button>
   </view>
   <view style="margin-top: 3%;" class="recMenuContainer">
     <view class="typeRecContainer">
