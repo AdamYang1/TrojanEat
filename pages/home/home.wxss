@@ -47,7 +47,7 @@
   font-weight: 700;
   color: #BA0000;
   text-shadow: 3rpx 3rpx 3rpx rgb(235, 217, 177);
-  margin-left: 33%;
+  margin-left: 7%;
   /* align-self: center; */
 }
 

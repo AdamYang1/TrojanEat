@@ -4,10 +4,14 @@ var app = getApp();
 
 Page({
 	refresh() {
-		let prev = 0;
 		let now = +new Date();
-		if (now - prev > 3000) {
-			prev = now;
+		this.setData({
+			now:now,
+		})
+		if (this.data.now - this.data.prev > 3000) {
+			this.setData({
+				prev: now,
+			})
 			app.globalData.dhRank = [];
 			app.globalData.dhRec = [];
 			app.globalData.displayRecTypes = [];
@@ -29,6 +33,11 @@ Page({
 			app.globalData.vlgCate = [];
 			app.globalData.vlgDish = [];
 			app.onLaunch();
+		} else {
+			wx.showToast({
+				title: '请三秒后再尝试刷新',
+				icon: 'error',
+			})
 		}
 	},
 	/**
@@ -52,12 +61,13 @@ Page({
 		dhRec: [],
 		displayRecTypes: [],
 		recDish: [],
-
 		otherDh: [],
 		otherDhRec: [],
 		vlgRec: [],
 		evkMenu: [],
 		pksMenu: [],
+		prev: 0,
+		now: 0,
 	},
 	// 首页登陆
 	homeLogin() {

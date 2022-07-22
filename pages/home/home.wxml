@@ -21,20 +21,22 @@
   <view class="recommendHead">
     <view style="text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35);" class="recommendTitle">推荐菜品</view>
     <button class="refresh"
-    style="background-color: #FFECA8; border-radius: 10%; margin-left: 67%; border: 4rpx solid #BA0000; box-shadow: 0.15em 0.15em rgb(240, 144, 35); width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button>
+    style="background-color: #FFECA8; border-radius: 0%; margin-left: 67%; border: 5rpx dotted #BA0000; box-shadow: 0.15em 0.15em rgb(240, 144, 35); width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button>
   </view>
   <view style="margin-top: 3%;" class="recMenuContainer">
     <view class="typeRecContainer">
-      <view style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
-
+      <view wx:if="{{recDish[0].length}}" style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
       <view class="recContainer">
+      <view wx:if="{{!recDish[0].length}}" class="noRec" style="font-size: 56rpx; font-weight: 8000; height: 800rpx;">
+        <text>正在加载...</text>
+      </view>
         <view wx:for="{{recDish}}" wx:key="index" style="margin-top: 2%;" class="typeRec">
           <view class="recTitle">{{dhRec[0]}} - {{displayRecTypes[index]}}</view>
           <view class="dishName" wx:for="{{recDish[index]}}" wx:key="index">{{index+1}}. {{item}}</view>
           <view class="noRec" wx:if="{{!recDish[index].length}}">没有这个种类的菜 :(</view>
         </view>
       </view>
-      <view style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
+      <view wx:if="{{recDish[0].length}}" style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
       <view wx:for="{{otherDhRec}}" wx:key="index" class="other">
         <view wx:for="{{item.types}}" wx:key="index" wx:for-item="type" class="typeRec">
           <view class="recTitle">{{item.dh}} - {{type}}</view>
@@ -42,7 +44,7 @@
           wx:for-item="dish" wx:if="{{dish.length}}">{{dish}}</view>
         </view>
       </view>
-      <view style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
+      <view wx:if="{{recDish[0].length}}" style="margin-left: 8%;"> --- --- --- --- --- --- --- --- --- </view>
 
     </view>
   </view>
