@@ -114,6 +114,7 @@ $ npm start
 | procdata  | get & update user preferences && update dining hall ranking based on user choices |
 | recommend | analyze & update user preferences && return recommendation                        |
 | allergen  | update & get user allergen (deleted)                                              |
+| vegan     | analyze & return the vegan dining hall on Monday                                  |
 
 If present, the request will be performed as soon as the component is mounted
 

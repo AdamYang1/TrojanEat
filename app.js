@@ -326,7 +326,7 @@ App({
 		openid: 0,
 		userPreference: [],
 		userPreferenceEng: [],
-		/* cec menu */
+		/* rec menu */
 		dhRank: [],
 		dhArr: ["evk", "pks", "vlg"],
 		dhRec: [],
