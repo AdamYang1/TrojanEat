@@ -103,26 +103,6 @@ App({
 						);
 						/* 获取用户信息 =*/
 
-						/* 更新用户当天推荐餐厅排名 =====================================*/
-						await request(
-							// `/recommend/openid/${that.globalData.openid}/date/2022-07-22
-							// 	/mealtime/Lunch/options/${that.globalData.userPreferenceEng.join(",")}`,
-							// /mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}`,
-							// !!!TEST
-							// `/recommend/openid/${that.globalData.openid}/date/2022-06-19/mealtime/Lunch`,
-							{},
-							"PUT"
-						);
-						/* 更新用户当天推荐餐厅排名 =*/
-
-						/* 获取用户当天餐厅排名 ============================================*/
-						let dhRank = await request(
-							`/recommend/openid/${that.globalData.openid}`,
-							{},
-							"GET"
-						);
-						/* 获取用户当天餐厅排名 =*/
-
 						/* 更新用户喜好 ============================================*/
 						let tempUserInfo = JSON.parse(JSON.stringify(user[0]));
 						for (let i in tempUserInfo) {
@@ -141,6 +121,27 @@ App({
 							}
 						}
 						/* 更新用户喜好 =*/
+
+						/* 更新用户当天推荐餐厅排名 =====================================*/
+						await request(
+							`/recommend/openid/${that.globalData.openid}/date/${that.globalData.myDate}
+								/mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}/options/${that.globalData.userPreferenceEng.join(",")}`,
+							// /mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}`,
+							// !!!TEST
+							// `/recommend/openid/${that.globalData.openid}/date/2022-06-19/mealtime/Lunch`,
+							{},
+							"put"
+						);
+						/* 更新用户当天推荐餐厅排名 =*/
+
+						/* 获取用户当天餐厅排名 ============================================*/
+						let dhRank = await request(
+							`/recommend/openid/${that.globalData.openid}`,
+							{},
+							"GET"
+						);
+						console.log(dhRank);
+						/* 获取用户当天餐厅排名 =*/
 
 						/* 更新用户餐厅推荐 ==============================================*/
 						let tempDhRank = JSON.parse(JSON.stringify(dhRank[0]));
@@ -164,7 +165,7 @@ App({
 
 						/* 获取推荐餐厅信息 ========================================*/
 						let dhRecommended = that.globalData.dhRec[0];
-
+						console.log(dhRecommended);
 						let dhRecMenu = await request(
 							`/menu/openid/${that.globalData.openid}
 						/options/${that.globalData.userPreferenceEng.join(",")}
@@ -262,14 +263,13 @@ App({
 							/options/${that.globalData.userPreferenceEng.join(",")}
 							/date/${that.globalData.myDate}
 							/mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}
-							/dh/${that.globalData.dhRec[0]}`,
+							/dh/${that.globalData.dhArr[i]}`,
 								//!!! TESTING
 								// `/menu/openid/o0wn04gRkRW6BiuGbjDZiLAPumX0/options/beef,shellfish/date/2022-06-19/mealtime/Lunch/dh/
 								// ${that.globalData.dhArr[i]}`,
 								{},
 								"GET"
 							);
-							console.log(dhRecMenu);
 							let recMenu = JSON.parse(
 								JSON.stringify(dhRecMenu[that.globalData.dhArr[i]])
 							);
