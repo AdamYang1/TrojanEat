@@ -18,9 +18,10 @@ router.get("/openid/:openid", (req, res) => {
 });
 // update recommend
 router.put(
-	"/openid/:openid/date/:date/mealtime/:mealtime",
+	"/openid/:openid/date/:date/mealtime/:mealtime/options/:options",
 	async (req, res) => {
-		const { openid, date, mealtime } = req.params;
+		const { openid, date, mealtime, options } = req.params;
+		let temp = options.split(",");
 		//initialize the recommendation index to zero
 		dhall_rec.forEach((d) => {
 			let sql = `update userInfo set ${d} = 0 where userOpenId = '${openid}';`;
@@ -28,7 +29,7 @@ router.put(
 				if (err) throw err;
 			});
 		});
-		getRecommend(openid, date, mealtime);
+		getRecommend(openid, date, mealtime, temp);
 		res.json({
 			success: true,
 		});
