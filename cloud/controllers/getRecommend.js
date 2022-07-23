@@ -21,10 +21,11 @@ function getRecommend(openid, date, mealtime, temp) {
 				//count how many matched dishes for each dinning hall
 				function (callback) {
 					if (!open) return;
-					let sql = `with temp as(
-		                    select time, meal_time, userInfo.userOpenId as openid, userInfo.${type} as weight, ${dh}.food as recommend from ${dh}
-		                    inner join userInfo on ceil(${dh}.${type}) = ceil(userInfo.${type}) where ${dh}.time = '${date}' and ${dh}.meal_time = '${mealtime}' and userInfo.userOpenId = '${openid}')
-							select count(recommend)*weight from temp group by time;`;
+					let sql = `select
+					count(${dh}.food)*userinfo.${type} as recommend from ${dh}
+					inner join userinfo on ceil(${dh}.${type}) = ceil(userinfo.${type})
+					where ${dh}.time = '${date}' and
+					${dh}.meal_time = '${mealtime}' and userinfo.userOpenId = '${openid}';`;
 					db.query(sql, (err, output) => {
 						if (err) throw err;
 						let temp = JSON.stringify(output);
