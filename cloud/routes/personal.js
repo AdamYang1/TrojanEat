@@ -40,27 +40,32 @@ router.post("/newuser/openid/:openid", (req, res) => {
 
 // ===================== after the first time :) ==========================
 // like!!! dishes
-router.put("/customer/openid/:openid/like/options/:options", (req, res) => {
-	const { openid, options } = req.params;
-	const optionsArr = options.split(",");
-	//initialize all the choices again
-	for (let i = 0; i < 15; ++i) {
-		let sql = `update userInfo set ${types[i]} = 0 where userOpenId = '${openid}' and ${types[i]} != -1`;
-		db.query(sql, (err, result) => {
-			if (err) throw err;
-		});
+router.put(
+	"/customer/openid/:openid/like/options/:options/prev/:prev",
+	(req, res) => {
+		const { openid, options, prev } = req.params;
+		const optionsArr = options.split(",");
+		const prevArr = prev.split(",");
+		//initialize all the choices again
+		for (let i = 0; i < prevArr.length; ++i) {
+			let sql = `update userInfo set ${prevArr[i]} = 0 where userOpenId = '${openid}'`;
+			db.query(sql, (err, result) => {
+				if (err) throw err;
+			});
+		}
+		for (let i = 0; i < optionsArr.length; ++i) {
+			// console.log(optionsArr[i]);
+			let weight = 1 - 0.1 * i;
+			let sql = `update userInfo set ${optionsArr[i]} = ${weight} where userOpenId = '${openid}'`;
+			db.query(sql, (err, result) => {
+				if (err) throw err;
+			});
+		}
+		// console.log(options.split(','));
+		// let sql = `update userInfo set `
+		res.end();
 	}
-	for (let i = 0; i < optionsArr.length; ++i) {
-		let weight = 1 - 0.1 * i;
-		let sql = `update userInfo set ${optionsArr[i]} = ${weight} where userOpenId = '${openid}'`;
-		db.query(sql, (err, result) => {
-			if (err) throw err;
-		});
-	}
-	// console.log(options.split(','));
-	// let sql = `update userInfo set `
-	res.end();
-});
+);
 
 // !!! dislike changed to allergen!!!
 // router.put("/customer/openid/:openid/dislike/options/:options", (req, res) => {

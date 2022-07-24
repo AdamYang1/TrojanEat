@@ -19,11 +19,12 @@ Page({
       'wheat_gluten', 'tree_nuts', 'peanuts', 'sesame'],
     userPreference: [],
     userPreferenceEng: [],
-    test: []
+    test: [],
+    userOptions: [],
   },
   // 点击某个食品
   handleType: function (e) {
-    if(this.data.userPreference.length == 4) {
+    if(this.data.userPreference.length >= 4) {
       wx.showToast({
         title: '最多只能选择4个不同种类哦～',
         icon: 'none',
@@ -64,6 +65,8 @@ Page({
   async handleSubmit() {
     let openid = app.globalData.openid;
     let options = app.globalData.userPreferenceEng.join(',');
+    let prev = this.data.userOptions.join(',');
+    // console.log(options);
     if(app.globalData.userPreferenceEng.length == 0){
       wx.showToast({
         title: '你现在没有任何选择哦',
@@ -72,7 +75,7 @@ Page({
       })
       return;
     }
-    await request(`/personal/customer/openid/${openid}/like/options/${options}`, { openid, options }, 'PUT');
+    await request(`/personal/customer/openid/${openid}/like/options/${options}/prev/${prev}`, { openid, options }, 'PUT');
     wx.switchTab({
       url: '/pages/home/home',
     })
@@ -83,7 +86,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       userPreference: app.globalData.userPreference,
-      userPreferenceEng: app.globalData.userPreferenceEng
+      userPreferenceEng: app.globalData.userPreferenceEng,
+      userOptions: app.globalData.userPreferenceEng
     })
   },
 
