@@ -76,6 +76,27 @@ Page({
       return;
     }
     await request(`/personal/customer/openid/${openid}/like/options/${options}/prev/${prev}`, { openid, options }, 'PUT');
+    app.globalData.dhRank = [];
+			app.globalData.dhRec = [];
+			app.globalData.displayRecTypes = [];
+			app.globalData.recDish = [];
+			app.globalData.otherDh = [];
+			app.globalData.otherDhRec = [];
+			app.globalData.evkRec = [];
+			app.globalData.vlgRec = [];
+			app.globalData.pksRec = [];
+			app.globalData.userPreference = [];
+			app.globalData.userPreferenceEng = [];
+			app.globalData.evkMenu = [];
+			app.globalData.pksMenu = [];
+			app.globalData.vlgMenu = [];
+			app.globalData.evkCate = [];
+			app.globalData.evkDish = [];
+			app.globalData.pksCate = [];
+			app.globalData.pksDish = [];
+			app.globalData.vlgCate = [];
+			app.globalData.vlgDish = [];
+			app.onLaunch();
     wx.switchTab({
       url: '/pages/home/home',
     })
