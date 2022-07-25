@@ -30,7 +30,7 @@ App({
 			that.globalData.vlgOpen = false;
 			that.globalData.evkOpen = false;
 			that.globalData.pksOpen = false;
-			that.globalData.mealIndex = 1;
+			that.globalData.mealIndex = -1;
 		}
 		if (myTime >= "07:00" && myTime <= "10:30") {
 			that.globalData.vlgOpen = true;
@@ -65,10 +65,9 @@ App({
 			that.globalData.mealIndex = 1;
 		} else if (that.globalData.isDinner) {
 			that.globalData.mealIndex = 2;
+		} else {
+			that.globalData.mealIndex = -1;
 		}
-		// else {
-		// 	that.globalData.mealIndex = -1;
-		// }
 		that.globalData.myDate = myDate;
 		/* 日期 */
 
@@ -124,8 +123,12 @@ App({
 
 						/* 更新用户当天推荐餐厅排名 =====================================*/
 						await request(
-							`/recommend/openid/${that.globalData.openid}/date/${that.globalData.myDate}
-								/mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}/options/${that.globalData.userPreferenceEng.join(",")}`,
+							`/recommend/openid/${that.globalData.openid}/date/${
+								that.globalData.myDate
+							}
+								/mealtime/${
+									that.globalData.mealInterval[that.globalData.mealIndex]
+								}/options/${that.globalData.userPreferenceEng.join(",")}`,
 							// /mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}`,
 							// !!!TEST
 							// `/recommend/openid/${that.globalData.openid}/date/2022-06-19/mealtime/Lunch`,

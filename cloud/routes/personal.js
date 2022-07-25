@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const db = require("../routes/db");
 const Async = require("async");
-
+let updatePreference = require("../controllers/updatePreference");
 const types = require("../static/types");
 const dhalls = require("../static/dhalls");
+const { connect } = require("./recommend");
 // !!!!! first time using !!!!!!
 // add new userinfo (first time using)
 router.post("/newuser/openid/:openid", (req, res) => {
@@ -42,27 +43,26 @@ router.post("/newuser/openid/:openid", (req, res) => {
 // like!!! dishes
 router.put(
 	"/customer/openid/:openid/like/options/:options/prev/:prev",
-	(req, res) => {
+	async (req, res) => {
 		const { openid, options, prev } = req.params;
 		const optionsArr = options.split(",");
 		const prevArr = prev.split(",");
+		updatePreference(openid, optionsArr);
 		//initialize all the choices again
+
 		for (let i = 0; i < prevArr.length; ++i) {
-			let sql = `update userInfo set ${prevArr[i]} = 0 where userOpenId = '${openid}'`;
-			db.query(sql, (err, result) => {
-				if (err) throw err;
+			if (optionsArr.indexOf(prevArr[i]) != -1) {
+				continue;
+			}
+			db.getConnection(function (err, connection) {
+				let sql = `update userInfo set ${prevArr[i]} = 0 where userOpenId = '${openid}'`;
+				connection.query(sql, (err, result) => {
+					if (err) throw err;
+					connection.release();
+				});
 			});
 		}
-		for (let i = 0; i < optionsArr.length; ++i) {
-			// console.log(optionsArr[i]);
-			let weight = 1 - 0.1 * i;
-			let sql = `update userInfo set ${optionsArr[i]} = ${weight} where userOpenId = '${openid}'`;
-			db.query(sql, (err, result) => {
-				if (err) throw err;
-			});
-		}
-		// console.log(options.split(','));
-		// let sql = `update userInfo set `
+
 		res.end();
 	}
 );
