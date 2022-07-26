@@ -12,7 +12,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/AdamYang1/TrojanEat">
-    <img src="pages/images/logo.png" alt="Logo" width="80" height="80">
+    <!-- <img src="pages/images/logo.png" alt="Logo" width="80" height="80"> -->
+  <img src="https://s2.loli.net/2022/07/27/zHgvTYuqFmNGsPU.png" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">TrojanEat</h1>
