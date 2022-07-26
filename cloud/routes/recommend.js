@@ -16,7 +16,7 @@ router.get("/openid/:openid", (req, res) => {
 		res.end();
 	});
 });
-// update recommend
+// update recommend dhrank
 router.put(
 	"/openid/:openid/date/:date/mealtime/:mealtime/options/:options",
 	async (req, res) => {
@@ -24,7 +24,7 @@ router.put(
 		let temp = options.split(",");
 		//initialize the recommendation index to zero
 		dhall_rec.forEach((d) => {
-			let sql = `update userInfo set ${d} = 0 where userOpenId = '${openid}';`;
+			let sql = `update userinfo set ${d} = 0 where userOpenId = '${openid}';`;
 			db.query(sql, (err, result) => {
 				if (err) throw err;
 			});

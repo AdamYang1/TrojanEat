@@ -22,18 +22,18 @@ async function getLikeMenu(openid, options, date, mealtime, dh) {
 
 function getResult(dh, option, openid, date, mealtime) {
 	return new Promise((resolve, reject) => {
-		let sql = `select food_ch from ${dh}
-		inner join userInfo on ceil(${dh}.${option}) = ceil(userInfo.${option})
-		where ${dh}.time = '${date}' and ${dh}.meal_time = '${mealtime}' and userInfo.userOpenId = '${openid}';`;
-		db.query(sql, (err, result) => {
-			// console.log(result);
-			if (err) reject(err);
-			if (result.length > 0) {
-				resolve(result);
-			}
-			if (result.length == 0) {
-				resolve(result);
-			}
+		db.getConnection(function (err, connection) {
+			let sql = `select food_ch from ${dh}
+			inner join userInfo on ceil(${dh}.${option}) = ceil(userInfo.${option})
+			where ${dh}.time = '${date}' and ${dh}.meal_time = '${mealtime}' and userInfo.userOpenId = '${openid}';`;
+			connection.query(sql, (err, result) => {
+				// console.log(result);
+				if (err) reject(err);
+				if (result.length >= 0) {
+					resolve(result);
+				}
+				connection.destroy();
+			});
 		});
 	});
 }
