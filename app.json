@@ -43,5 +43,6 @@
         "selectedIconPath": "/pages/images/tabs/tab-my-current.png"
       }
     ]
-  }
+  },
+  "lazyCodeLoading": "requiredComponents"
 }
