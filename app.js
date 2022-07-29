@@ -112,6 +112,7 @@ App({
 								i.indexOf("evk") == -1 &&
 								i.indexOf("vlg") == -1
 							) {
+								//需要处理如果用户没有喜好
 								let index = that.globalData.typesEng.indexOf(i);
 								let type = that.globalData.types[index];
 								that.globalData.selecedArr[index] = 1;
@@ -119,9 +120,11 @@ App({
 								that.globalData.userPreferenceEng.push(i);
 							}
 						}
+
 						/* 更新用户喜好 =*/
 
 						/* 更新用户当天推荐餐厅排名 =====================================*/
+						let dhRank = [];
 						await request(
 							`/recommend/openid/${that.globalData.openid}/date/${
 								that.globalData.myDate
@@ -129,21 +132,23 @@ App({
 								/mealtime/${
 									that.globalData.mealInterval[that.globalData.mealIndex]
 								}/options/${that.globalData.userPreferenceEng.join(",")}`,
-							// /mealtime/${that.globalData.mealInterval[that.globalData.mealIndex]}`,
-							// !!!TEST
-							// `/recommend/openid/${that.globalData.openid}/date/2022-06-19/mealtime/Lunch`,
 							{},
-							"put"
-						);
+							"PUT"
+						).then(async ()=>{
+							dhRank = await request(
+								`/recommend/openid/${that.globalData.openid}`,
+								{},
+								"GET"
+							);
+						}
+						)
+				
 						/* 更新用户当天推荐餐厅排名 =*/
 
-						/* 获取用户当天餐厅排名 ============================================*/
-						let dhRank = await request(
-							`/recommend/openid/${that.globalData.openid}`,
-							{},
-							"GET"
-						);
 						console.log(dhRank);
+
+						/* 获取用户当天餐厅排名 ============================================*/
+						
 						/* 获取用户当天餐厅排名 =*/
 
 						/* 更新用户餐厅推荐 ==============================================*/
