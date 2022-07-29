@@ -101,11 +101,19 @@ Page({
 			});
 			return;
 		}
-		await request(
-			`/personal/customer/openid/${openid}/like/options/${options}/prev/${prev}`,
-			{ openid, options },
-			"PUT"
-		);
+		if(prev.length != 0){
+			await request(
+				`/personal/customer/openid/${openid}/like/options/${options}/prev/${prev}`,
+				{ openid, options },
+				"PUT"
+			);
+		} else {
+			await request(
+				`/personal/customer/openid/${openid}/like/options/${options}/prev/vegan`,
+				{ openid, options },
+				"PUT"
+			);
+		}
 		app.globalData.dhRank = [];
 		app.globalData.dhRec = [];
 		app.globalData.displayRecTypes = [];
@@ -126,7 +134,7 @@ Page({
 		app.globalData.pksDish = [];
 		app.globalData.vlgCate = [];
 		app.globalData.vlgDish = [];
-		await request(`/recommend/openid/${app.globalData.openid}`, {}, "GET");
+		// await request(`/recommend/openid/${app.globalData.openid}`, {}, "GET");
 
 		app.onLaunch();
 		wx.switchTab({

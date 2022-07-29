@@ -9,7 +9,8 @@ Page({
 		openid: 0,
 	},
 	async handleStart() {
-		await request(`/personal/newuser/openid/${this.data.openid}`, {}, "PUT");
+		console.log(this.data.openid);
+		await request(`/personal/newuser/openid/${this.data.openid}`, {}, "POST");
 		// 跳转教程
 		wx.navigateTo({
 			url: "/pages/personalChoice/personalChoice",
