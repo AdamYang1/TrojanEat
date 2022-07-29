@@ -46,6 +46,7 @@ Page({
 	data: {
 		userInfo: {},
 		openid: 0,
+		havePreference: true,
 		myDate: "0000-00-00",
 		mealIndex: -1,
 		isFirst: true,
@@ -119,7 +120,9 @@ Page({
 				recDish: app.globalData.recDish,
 				otherDh: app.globalData.otherDh,
 				otherDhRec: app.globalData.otherDhRec,
+				havePreference: app.globalData.havePreference,
 			});
+			console.log(this.data.havePreference);
 		} else {
 			app.userCallBack = (res) => {
 				if (res) {
@@ -132,7 +135,9 @@ Page({
 						recDish: app.globalData.recDish,
 						otherDh: app.globalData.otherDh,
 						otherDhRec: app.globalData.otherDhRec,
+						havePreference: app.globalData.havePreference,
 					});
+					// console.log(this.data.havePreference);
 				}
 			};
 		}

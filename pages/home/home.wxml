@@ -1,23 +1,14 @@
 <!--pages/home/home.wxml-->
 
 <!-- Heading -->
-
-<view wx:if="!{{isFirst}}" class="headingContainer">
-  <!-- <view class="utilityContainer">
-    <button class="preferenceContainer">
-      推荐餐厅
-    </button>
-    <button class="menuContainerbtn">
-    全部餐厅
-    </button>
-  </view> -->
+<view wx:if="{{!isFirst}} && {{havePreference}}" class="headingContainer">
   <view class="headingContainer">
     <text class="headingText">推荐餐厅</text>
     <button class="headingDinning" style="text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35); width: 70%; text-transform: uppercase;">{{dhRec[0]}}</button>
   </view>
 </view>
 <!-- Recommend Dining -->
-<view wx:if="!{{isFirst}}" class="recommendContainer">
+<view wx:if="{{!isFirst}} && {{havePreference}}" class="recommendContainer">
   <view class="recommendHead">
     <view style="text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35);" class="recommendTitle">推荐菜品</view>
     <!-- <button class="refresh"
@@ -50,13 +41,16 @@
   </view>
 </view>
 
-<!-- 未登录时 -->
-<button wx:else class="loginPrompt" bindtap="homeLogin">
-  <text>点击登录以获取推荐餐厅</text>
-</button>
+<!-- no preference -->
+<view wx:if="{{!havePreference}}" class="recommendContainer">
+    <view class="recMenuContainer">
+      <view style="text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35);" class="recommendTitle">
+      请先去选择至少一个喜欢的种类哦～
+    </view>
+  </view>
+</view>
 
 
-<!-- <view wx:for="{{displayRecTypes}}">{{item}}</view> -->
 <!-- 联系我们
 <view class="contactContainer">
   <button class="contactBtn">
