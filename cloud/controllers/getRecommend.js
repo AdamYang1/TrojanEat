@@ -26,10 +26,10 @@ function getRecommend(openid, date, mealtime, temp) {
 					if (!open) return;
 					db.getConnection(function (err, connection) {
 						let sql = `select
-						count(${dh}.food)*userinfo.${type} as recommend from ${dh}
-						inner join userinfo on ceil(${dh}.${type}) = ceil(userinfo.${type})
-						where ${dh}.time = '${date}' and
-						${dh}.meal_time = '${mealtime}' and userinfo.userOpenId = '${openid}';`;
+      count(${dh}.food)*userinfo.${type} as recommend from ${dh}
+      inner join userinfo on ceil(${dh}.${type}) = ceil(userinfo.${type})
+      where ${dh}.time = '${date}' and
+      ${dh}.meal_time = '${mealtime}' and userinfo.userOpenId = '${openid}';`;
 						connection.query(sql, (err, output) => {
 							if (err) throw err;
 							let temp = JSON.stringify(output);
@@ -46,7 +46,6 @@ function getRecommend(openid, date, mealtime, temp) {
 				function (count, openid, callback) {
 					if (!open) return;
 					db.getConnection(function (err, connection) {
-						console.log(count);
 						let sql = `update userInfo set ${dh}_rec = ${dh}_rec + ${count} where userOpenId = '${openid}';`;
 						connection.query(sql, (err, result) => {
 							if (err) throw err;

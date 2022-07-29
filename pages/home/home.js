@@ -137,7 +137,7 @@ Page({
 						otherDhRec: app.globalData.otherDhRec,
 						havePreference: app.globalData.havePreference,
 					});
-					// console.log(this.data.havePreference);
+					console.log(this.data.havePreference);
 				}
 			};
 		}

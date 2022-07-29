@@ -86,7 +86,7 @@ Start with cloning this repo on your local machine:
 
 ```sh
 $ git clone https://github.com/AdamYang1/TrojanEat.git
-$ cd TrojanEat
+$ cd TrojanEat/cloud
 ```
 
 To install and set up the library, run:
