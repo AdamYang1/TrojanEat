@@ -1,48 +1,53 @@
 {
-	"pages": [
-		"pages/home/home",
-		"pages/contact/contact",
-		"pages/welcome/welcome",
-		"pages/personalChoice/personalChoice",
-		"pages/allmenu/allmenu",
-		"pages/tutorial/tutorial",
-		"pages/personal/personal",
-		"pages/index/index",
-		"pages/logs/logs",
-		"pages/logo/logo"
-	],
-	"window": {
-		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#0000",
-		"navigationBarTitleText": "TrojanEat",
-		"navigationBarTextStyle": "black"
-	},
-	"style": "v2",
-	"sitemapLocation": "sitemap.json",
-	"tabBar": {
-		"color": "#333",
-		"selectedColor": "#d43c33",
-		"backgroundColor": "#fff",
-		"list": [
-			{
-				"pagePath": "pages/home/home",
-				"text": "首页",
-				"iconPath": "/pages/images/tabs/tab-home.png",
-				"selectedIconPath": "/pages/images/tabs/tab-home-current.png"
-			},
-			{
-				"pagePath": "pages/allmenu/allmenu",
-				"text": "全部餐厅",
-				"iconPath": "/pages/images/tabs/tab-home.png",
-				"selectedIconPath": "/pages/images/tabs/tab-home-current.png"
-			},
-			{
-				"pagePath": "pages/personal/personal",
-				"text": "个人中心",
-				"iconPath": "/pages/images/tabs/tab-my.png",
-				"selectedIconPath": "/pages/images/tabs/tab-my-current.png"
-			}
-		]
-	},
-	"lazyCodeLoading": "requiredComponents"
+  "pages": [
+    "pages/home/home",
+    "pages/tutorial/tutorial",
+    "pages/contact/contact",
+    "pages/welcome/welcome",
+    "pages/personalChoice/personalChoice",
+    "pages/allmenu/allmenu",
+    "pages/personal/personal",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/logo/logo",
+    "pages/tutorial2/tutorial2",
+    "pages/tutorial3/tutorial3",
+    "pages/tutorial4/tutorial4",
+    "pages/tutorial5/tutorial5",
+    "pages/tutorial6/tutorial6"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0000",
+    "navigationBarTitleText": "TrojanEat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/pages/images/tabs/tab-home.png",
+        "selectedIconPath": "/pages/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/allmenu/allmenu",
+        "text": "全部餐厅",
+        "iconPath": "/pages/images/tabs/tab-home.png",
+        "selectedIconPath": "/pages/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/pages/images/tabs/tab-my.png",
+        "selectedIconPath": "/pages/images/tabs/tab-my-current.png"
+      }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents"
 }
