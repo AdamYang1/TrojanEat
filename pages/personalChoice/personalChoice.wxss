@@ -127,18 +127,19 @@ button {
   padding: 0.6em 1.3em;
   font-weight: 900;
   font-size: 36rpx;
-  color: #BA0000;
-  border: 4px solid #FFC700;
-  box-shadow: 0.2em 0.2em #be2929;
+  color: black;
+  background-color: #FFC700;
+  /* border: 4px solid #FFC700; */
+  box-shadow: 0.1em 0.1em grey;
  }
  
  button:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.2em 0.2em #BA0000;
+  box-shadow: 0.1em 0.1em grey;
  }
  
  button:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.1m 0.1em #BA0000;
+  box-shadow: 0.1m 0.1em grey;
  }
 

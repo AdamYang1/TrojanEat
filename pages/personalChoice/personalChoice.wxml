@@ -5,21 +5,21 @@
 </view>
 
 <!-- welcome -->
-<view class="welcomeContainer" style="border-top: #BA0000 solid 10rpx;"></view>
+<view class="welcomeContainer" style="border-top: white solid 10rpx;"></view>
 
 <!-- 可选区 -->
 <!-- <view class="personalChoiceContainer"> -->
 <view class="typesContainer">
   <!-- <button class="typesTitle" style="width: 288rpx;">可选区</button> -->
   <view class="typesArea">
-    <button wx:for="{{types}}" class="typeContainer" style="width: max-content;"
+    <button wx:for="{{types}}" class="typeContainer" style="width: max-content; border-radius:10%;"
     bindtap="handleType" data-type = "{{item}}">
       {{item}}
     </button>
   </view>
 </view>
 <!-- decoration -->
-<view class="welcomeContainer" style="border-top: #BA0000 solid 10rpx;"></view>
+<view class="welcomeContainer" style="border-top: white solid 10rpx;"></view>
 
 <!-- 已选区 -->
 <view class="choicesContainer" style="margin-top:50rpx">

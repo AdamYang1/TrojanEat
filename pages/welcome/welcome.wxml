@@ -1,13 +1,12 @@
-<view class="welcomePage" style="background-color: #BA0000;">
+<view class="welcomePage" style="background-color: white;">
   <text class="welcomeText" style="color:snow; font-size: 40rpx; font-weight: 400;">Welcome</text>
   <view class="welcomeInner" style="background: white;">
-    <view class="welcomeInnerDec" style="background: #C4C4C4;"></view>
-    <image class="eatLogo" src="https://s2.loli.net/2022/07/27/zHgvTYuqFmNGsPU.png"></image>
+    <image class="eatLogo" style="border-radius: 50%; height: 250rpx; width: 260rpx;" src="https://s2.loli.net/2022/07/27/zHgvTYuqFmNGsPU.png"></image>
     <view class="eatName">
-      <text class="eatName1" style="color: #FFC700; font-size: 58rpx; font-weight: 700;">Trojan</text>
-      <text class="eatName2" style="color: #BA0000; font-size: 58rpx; font-weight: 700;">Eats</text>
+      <text class="eatName1" style="color: #FFC700; font-size: 78rpx; font-weight: 800;">Trojan</text>
+      <text class="eatName2" style="color: #BA0000; font-size: 78rpx; font-weight: 800;">Eats</text>
     </view>
-    <button class="start" style="height: 126rpx; font-size: 50rpx;"
+    <button class="start" style="margin-top: 40%; padding-top: 5%; height: 186rpx; width:368rpx; font-size: 58rpx;"
     bindtap="handleStart">点击开始</button>
   </view>
 </view>

@@ -6,7 +6,7 @@
   margin-top: 20rpx;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .headingContainer .headingText{
@@ -14,7 +14,7 @@
   font-weight: 700;
   color: #BA0000;
   text-shadow: 2rpx 2rpx 2rpx #FFC700;
-  /* margin-left: 15%; */
+  margin-left: 15%;
 }
 
 .headingContainer .headingDinning{
@@ -48,6 +48,7 @@
   color: #BA0000;
   text-shadow: 3rpx 3rpx 3rpx rgb(235, 217, 177);
   margin-left: 7%;
+  margin-bottom: 3%;
   /* align-self: center; */
 }
 
@@ -57,7 +58,7 @@
   background-color: #ffeca8;
   border-radius: 3%;
   margin-left: 5%;
-  margin-top: 1%;
+  margin-top: 5%;
   padding-top: 60rpx;
   padding-bottom: 60rpx;
   display: flex;
@@ -116,7 +117,7 @@
   font-weight: 700;
   color: black;
   text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35);
-  text-align: center;
+  /* text-align: center; */
   line-height: 60rpx;
 }
 

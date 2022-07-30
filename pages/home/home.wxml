@@ -11,15 +11,15 @@
 <view wx:if="{{!isFirst}} && {{havePreference}}" class="recommendContainer">
   <view class="recommendHead">
     <view style="text-shadow: 2rpx 2rpx 2rpx rgb(240, 144, 35);" class="recommendTitle">推荐菜品</view>
-    <!-- <button class="refresh"
-    style="background-color: #FFECA8; border-radius: 0%; margin-left: 67%; border: 5rpx dotted #BA0000; box-shadow: 0.15em 0.15em rgb(240, 144, 35); width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button> -->
+    <button class="refresh"
+    style="background-color: white; border-radius: 7%; margin-left: 67%; border: 5rpx solid #BA0000; box-shadow: 0.15em 0.15em rgb(240, 144, 35); width: 150rpx; height: 75rpx;" bindtap="refresh">刷新</button>
   </view>
   <view style="margin-top: 3%;" class="recMenuContainer">
     <view class="typeRecContainer">
       <view wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;"> >>> </view>
       <view class="recContainer">
-      <view wx:if="{{!recDish.length}}" class="noRec" style="font-size: 56rpx; font-weight: 800; width: 600rpx; height: 800rpx; text-align: center;">
-        <text>正在加载。。。</text>
+      <view wx:if="{{!recDish.length}}" class="noRec" style="font-size: 56rpx; font-weight: 800; width: 600rpx; height: 800rpx; margin-left: 18%;">
+        <text>正在加载 . . .</text>
       </view>
         <view wx:for="{{recDish}}" wx:key="index" style="margin-top: 2%;" class="typeRec">
           <view class="recTitle">{{dhRec[0]}} - {{displayRecTypes[index]}}</view>
