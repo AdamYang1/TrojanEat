@@ -1,26 +1,33 @@
 <!--pages/personal/personal.wxml-->
 <view class="headingContainer">
-    <text class="heading">author&owner: Adam Yang</text>
+    <text class="heading">About</text>
 </view>
 
 <view class="contactContainer">
 <!-- welcome -->
-<view class="welcomeContainer">
-  <view class="welcomeContainer2">
-    <view class="welcomeDecorator"></view>
-    <view class="welcomeTextContainer">
-      欢迎大家联系
-    </view>
-    <view class="welcomeDecorator2"></view>
-    <view class="userName">
-      可怜的作者
-    </view>
+  <view class="welcomeContainer">
+    <!-- <view class="welcomeContainer2">
+      <view class="welcomeDecorator"></view>
+      <view class="welcomeTextContainer">
+        欢迎大家联系
+      </view>
+      <view class="welcomeDecorator2"></view>
+      <view class="userName">
+        可怜的作者
+      </view>
+    </view> -->
   </view>
-</view>
-  <view class="claim">如果有任何bug或者小程序无法正常运行请速度联系作者！！
-  同时也欢迎每一个人的意见和批评！
-  </view>
-  <image class="contactImg" src="https://sm.ms/image/SNgd7zocpmDPOCu"></image>
-  <view class="claim">此小程序全程由作者独立开发和维护，若有任何bug请多多包含！</view>
+    <view class="claim">
+    初来乍到usc不熟悉环境？每天花时间纠结去哪里吃饭但又不想花时间看菜单？每周一不想走到餐厅才发现吃素？
+    </view>
+    <view class="claim">
+    来试试TrojanEat吧！我们会根据你的个人喜好和学校食堂的匹配度来推荐每日最合你胃口的食堂！随时点开微信，分分钟知道吃什么！！！
+    </view>
+    <view class="claim">
+    如果有任何bug或者小程序无法正常运行请速度联系作者！！
+    同时也欢迎每一个人的意见和批评！
+    </view>
+    <image class="contactImg" src="https://s2.loli.net/2022/07/27/SNgd7zocpmDPOCu.jpg"></image>
+    <view class="claim">此小程序全程由作者独立开发和维护，若有任何bug请多多包含！</view>
 </view>
 

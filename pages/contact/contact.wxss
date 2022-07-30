@@ -2,11 +2,13 @@
 
 .headingContainer {
 	margin-top: 3%;
+	text-align: center;
 }
 
+
 .heading {
-	margin-left: 18%;
-	font-size: 40rpx;
+	font-size: 88rpx;
+	/* margin-left: 18%; */
 	font-weight: 800;
 	color: #ba0000;
 	text-shadow: 2rpx 2rpx 2rpx #ffc700;
@@ -19,7 +21,7 @@
 	display: flex;
 	flex-direction: row;
 	border-top: #ba0000 solid 10rpx;
-	height: 270rpx;
+
 }
 
 .welcomeContainer .welcomeContainer2 {
@@ -31,7 +33,6 @@
 	margin-top: 70rpx;
 	margin-left: 30rpx;
 	background-color: #ba0000;
-	height: 110rpx;
 	width: 280rpx;
 }
 
@@ -56,7 +57,6 @@
 	margin-left: 344rpx;
 	background-color: #ffc700;
 	width: 310rpx;
-	height: 100rpx;
 }
 
 .welcomeContainer .userName {
@@ -73,18 +73,19 @@
 }
 
 .contactContainer {
-	height: 100%;
 	background-color: #ffeca8;
+	padding-bottom: 8%;
 }
 
 .claim {
 	margin-left: 13%;
+	margin-top: 4%;
 	width: 75%;
 	text-align: center;
-	font-size: 36rpx;
-	font-weight: 400;
-	border-style: dotted;
-	border-color: #ffc700;
+	font-size: 40rpx;
+	font-weight: 700;
+	/* border-style: dotted; */
+	/* border-color: #ffc700; */
 }
 
 image {

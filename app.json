@@ -2,18 +2,18 @@
 	"pages": [
 		"pages/home/home",
 		"pages/contact/contact",
+		"pages/welcome/welcome",
+		"pages/personalChoice/personalChoice",
 		"pages/allmenu/allmenu",
 		"pages/tutorial/tutorial",
-		"pages/personalChoice/personalChoice",
 		"pages/personal/personal",
-		"pages/welcome/welcome",
 		"pages/index/index",
 		"pages/logs/logs",
 		"pages/logo/logo"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#BA0000",
+		"navigationBarBackgroundColor": "#0000",
 		"navigationBarTitleText": "TrojanEat",
 		"navigationBarTextStyle": "black"
 	},
