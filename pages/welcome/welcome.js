@@ -13,7 +13,7 @@ Page({
 		await request(`/personal/newuser/openid/${this.data.openid}`, {}, "POST");
 		// 跳转教程
 		wx.navigateTo({
-			url: "/pages/personalChoice/personalChoice",
+			url: "/pages/tutorial/tutorial",
 		});
 	},
 	/**

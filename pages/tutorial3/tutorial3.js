@@ -1,4 +1,4 @@
-// pages/tutorial/tutorial.js
+// pages/tutorial3/tutorial3.js
 Page({
 
   /**
@@ -11,16 +11,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  goNext() {
-    wx.redirectTo({
-      url: '/pages/tutorial2/tutorial2',
-    })
-  },
 
   onLoad: function (options) {
 
   },
-
+  goNext() {
+    wx.redirectTo({
+      url: '/pages/tutorial4/tutorial4',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

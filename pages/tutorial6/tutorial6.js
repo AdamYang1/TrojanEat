@@ -1,4 +1,4 @@
-// pages/tutorial/tutorial.js
+// pages/tutorial6/tutorial6.js
 Page({
 
   /**
@@ -7,16 +7,14 @@ Page({
   data: {
 
   },
-
+  goNext() {
+    wx.redirectTo({
+      url: '/pages/personalChoice/personalChoice',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  goNext() {
-    wx.redirectTo({
-      url: '/pages/tutorial2/tutorial2',
-    })
-  },
-
   onLoad: function (options) {
 
   },
