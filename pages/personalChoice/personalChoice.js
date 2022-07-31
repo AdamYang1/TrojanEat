@@ -134,7 +134,8 @@ Page({
 		app.globalData.pksDish = [];
 		app.globalData.vlgCate = [];
 		app.globalData.vlgDish = [];
-		// await request(`/recommend/openid/${app.globalData.openid}`, {}, "GET");
+		//avoid bugg....
+		await request(`/recommend/openid/${app.globalData.openid}`, {}, "GET");
 
 		app.onLaunch();
 		wx.switchTab({
