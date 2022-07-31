@@ -13,7 +13,7 @@ const pks_c = [
 	"Americana",
 	"Bistro",
 	"Pizza/Salad Bar",
-	"Allergen Awareness Zone",
+	"Allergen Awareness Zone (must register for access)",
 	"Eurasia",
 ];
 
