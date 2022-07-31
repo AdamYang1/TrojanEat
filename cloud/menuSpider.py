@@ -41,6 +41,7 @@ class MenuSpider:
             for i, type in enumerate(types):
                 foods = div.xpath('.//ul[%d]/li' % (i + 1))
                 food_list = []
+                # print(foods)
                 for food in foods:
                     food_str = food.xpath('./text()')[0].strip()
                     food_trans = client.translate(food_str)

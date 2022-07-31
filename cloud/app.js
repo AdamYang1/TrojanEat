@@ -13,6 +13,19 @@ const db = require("../cloud/routes/db");
 const port = process.env.PORT || 5000;
 
 //!!! get data
+
+const checkLimit = function (req, res, next) {
+	console.log(db._allConnections.length);
+	if (db._allConnections.length < 8) {
+		next();
+	} else {
+		setTimeout(() => {
+			next();
+		}, "1500");
+	}
+};
+
+app.use(checkLimit);
 // ======================== get menu ===============================================
 const menu = require("../cloud/routes/menu");
 app.use("/menu", menu);
