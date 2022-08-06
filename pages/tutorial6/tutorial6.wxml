@@ -1,6 +1,6 @@
 <view class="tutorial" bindtap="goNext">
   <view class="next">点击屏幕任意处继续</view>
-  <image src="https://s2.loli.net/2022/07/30/lTY3IJSFhZXc95M.png" 
+  <image src="https://s2.loli.net/2022/08/06/3VuEsUl5YyCk49D.png" 
 style="width: 100%; height:100%;"
 alt=""/>
 </view>
