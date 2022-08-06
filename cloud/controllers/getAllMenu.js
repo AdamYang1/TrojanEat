@@ -1,6 +1,15 @@
 // const Async = require("async");
 const db = require("../routes/db");
 const { vlg_c, pks_c, evk_c } = require("../static/categories");
+
+/**
+ *
+ * @param  dh evk, pks, vlg
+ * @param  cate different categories in different dh
+ * @param  date
+ * @param mealtime
+ * @returns processed food list
+ */
 async function getLikeMenu(dh, date, mealtime) {
 	let resultdic = {};
 	let foodList = [];
@@ -22,6 +31,14 @@ async function getLikeMenu(dh, date, mealtime) {
 	return resultdic;
 }
 
+/**
+ *
+ * @param  dh evk, pks, vlg
+ * @param  cate like categories
+ * @param  date
+ * @param mealtime
+ * @returns raw food list
+ */
 function getFoodList(dh, cate, date, mealtime) {
 	return new Promise((resolve, reject) => {
 		let sql = `select food_ch from ${dh} where category = '${cate}' and meal_time = '${mealtime}' and time = '${date}';`;
@@ -32,6 +49,14 @@ function getFoodList(dh, cate, date, mealtime) {
 	});
 }
 
+/**
+ *
+ * @param  dh evk, pks, vlg
+ * @param  cate different categories in different dh
+ * @param  date
+ * @param mealtime
+ * @returns processed food list
+ */
 async function getFood(dh, cate, date, mealtime) {
 	return new Promise(async (resolve, reject) => {
 		let foodList = [];

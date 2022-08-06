@@ -1,6 +1,16 @@
 // const Async = require("async");
 const db = require("../routes/db");
 
+/**
+ *
+ * @param openid user wechat open id
+ * @param allergens list of allergic types
+ * @param date self-explain
+ * @param mealtime breakfast, lunch, dinner
+ * @param dh evk, pks, vlg
+ * @returns a list of json object
+ * 			{"evk":[], "pks":[], "vlg":[]}
+ */
 async function getAllergenMenu(openid, allergens, date, mealtime, dh) {
 	let resultdic = {};
 	let foodList = [];
@@ -18,6 +28,16 @@ async function getAllergenMenu(openid, allergens, date, mealtime, dh) {
 	}
 	return resultdic;
 }
+
+/**
+ *
+ * @param  dh evk, pks, vlg
+ * @param  allergen allergic types
+ * @param  openid user wechat openid
+ * @param  date
+ * @param  mealtime breakfast, lunch, dinner
+ * @returns a list of foods query from sql
+ */
 
 function getResult(dh, allergen, openid, date, mealtime) {
 	return new Promise((resolve, reject) => {
@@ -37,6 +57,15 @@ function getResult(dh, allergen, openid, date, mealtime) {
 	});
 }
 
+/**
+ *
+ * @param  dh evk, pks, vlg
+ * @param  allergen allergic types
+ * @param  openid user wechat open id
+ * @param  date
+ * @param  mealtime breakfast, lunch, dinner
+ * @returns a list of allergic foods
+ */
 async function getFood(dh, allergen, openid, date, mealtime) {
 	return new Promise(async (resolve, reject) => {
 		let foodList = [];
