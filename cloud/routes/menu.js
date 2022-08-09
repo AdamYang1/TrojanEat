@@ -4,6 +4,7 @@ const db = require("../routes/db");
 const getLikeMenu = require("../controllers/getLikeMenu");
 const getAllLikeMenu = require("../controllers/getAllMenu");
 const getAllergenMenu = require("../controllers/getAllergenMenu");
+const getAllergenMenuEng = require("../controllers/getAllergenMenuEng");
 
 // const getLikeMenu = require("../controllers/getLikeMenu");
 
@@ -31,6 +32,18 @@ router.get(
 		res.end();
 	}
 );
+
+router.get(
+	"/openid/:openid/options/:options/date/:date/mealtime/:mealtime/dh/:dh",
+	async (req, res) => {
+		const { openid, options, date, mealtime, dh } = req.params;
+		let likeMenu = await getLikeMenuEng(openid, options, date, mealtime, dh);
+		JSON.stringify(likeMenu);
+		res.status(200).send(likeMenu);
+		res.end();
+	}
+);
+
 //!!!allergen menu!!! 记得传入allergens
 //!!!一次只能返回一个餐厅的menu
 router.get(
