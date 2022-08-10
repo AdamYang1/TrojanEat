@@ -60,10 +60,12 @@ Page({
 		dhRank: [],
 		dhArr: ["EVK", "PKS", "VLG"],
 		dhRec: [],
+		dhRecEng: [],
 		displayRecTypes: [],
 		recDish: [],
 		otherDh: [],
 		otherDhRec: [],
+		otherDhRecEng: [],
 		vlgRec: [],
 		evkMenu: [],
 		pksMenu: [],
@@ -118,8 +120,10 @@ Page({
 				dhRec: app.globalData.dhRec,
 				displayRecTypes: app.globalData.displayRecTypes,
 				recDish: app.globalData.recDish,
+				recDishEng: app.globalData.recDishEng,
 				otherDh: app.globalData.otherDh,
 				otherDhRec: app.globalData.otherDhRec,
+				otherDhRecEng: app.globalData.otherDhRecEng,
 				havePreference: app.globalData.havePreference,
 			});
 			console.log(this.data.havePreference);
@@ -133,8 +137,10 @@ Page({
 						dhRec: app.globalData.dhRec,
 						displayRecTypes: app.globalData.displayRecTypes,
 						recDish: app.globalData.recDish,
+						recDishEng: app.globalData.recDishEng,
 						otherDh: app.globalData.otherDh,
 						otherDhRec: app.globalData.otherDhRec,
+						otherDhRecEng: app.globalData.otherDhRecEng,
 						havePreference: app.globalData.havePreference,
 					});
 					console.log(this.data.havePreference);
