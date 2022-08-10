@@ -4,7 +4,7 @@ const db = require("../routes/db");
 const getLikeMenu = require("../controllers/getLikeMenu");
 const getAllLikeMenu = require("../controllers/getAllMenu");
 const getAllergenMenu = require("../controllers/getAllergenMenu");
-const getAllergenMenuEng = require("../controllers/getAllergenMenuEng");
+const getLikeMenuEng = require("../controllers/getLikeMenuEng");
 
 // const getLikeMenu = require("../controllers/getLikeMenu");
 
@@ -34,7 +34,7 @@ router.get(
 );
 
 router.get(
-	"/openid/:openid/options/:options/date/:date/mealtime/:mealtime/dh/:dh",
+	"/openid/:openid/options/:options/date/:date/mealtime/:mealtime/dh/:dh/eng",
 	async (req, res) => {
 		const { openid, options, date, mealtime, dh } = req.params;
 		let likeMenu = await getLikeMenuEng(openid, options, date, mealtime, dh);

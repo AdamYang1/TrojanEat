@@ -1,6 +1,6 @@
 const db = require("../routes/db");
 
-async function getLikeMenu(openid, options, date, mealtime, dh) {
+async function getLikeMenuEng(openid, options, date, mealtime, dh) {
 	let resultdic = {};
 	let optiondic = [];
 	let foodList = [];
