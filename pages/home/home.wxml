@@ -16,25 +16,52 @@
   </view>
   <view style="margin-top: 3%;" class="recMenuContainer">
     <view class="typeRecContainer">
-      <view wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;"> >>> </view>
+      <!-- <view class="recTitle">中文</view> -->
+      <view wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;"> 中文</view>
       <view class="recContainer">
       <view wx:if="{{!recDish.length}}" class="noRec" style="font-size: 56rpx; font-weight: 800; width: 600rpx; height: 800rpx; margin-left: 18%;">
         <text>正在加载 . . .</text>
       </view>
         <view wx:for="{{recDish}}" wx:key="index" style="margin-top: 2%;" class="typeRec">
           <view class="recTitle">{{dhRec[0]}} - {{displayRecTypes[index]}}</view>
-          <view class="dishName" wx:for="{{recDish[index]}}" wx:key="index">{{index+1}}. {{item}}</view>
-          <view class="dishName" wx:for="{{recDishEng[index]}}" wx:key="index">{{index+1}}. {{item}}</view>
+          <view class="dishName" wx:for="{{recDish[index]}}" wx:key="index">
+            {{index+1}}. {{item}}
+          </view>
           <view class="noRec" wx:if="{{!recDish[index].length}}">没有这个种类的菜 :(</view>
         </view>
       </view>
-      <view wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;"> >>> </view>
+      <view wx:if="{{recDish.length}}" style="margin-left: 5.5%; font-weight: 800;"> > > >
+      </view>
+      <!-- <view class="recTitle" wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;">其他餐厅</view> -->
       <view wx:for="{{otherDhRec}}" wx:key="index" class="other">
         <view wx:for="{{item.types}}" wx:key="index" wx:for-item="type" class="typeRec">
           <view class="recTitle">{{item.dh}} - {{type}}</view>
           <view class="dishName" wx:for="{{item.rec[index]}}" wx:key="index"
           wx:for-item="dish" wx:if="{{dish.length}}">{{dish}}</view>
         </view>
+      </view>
+      <!-- <view wx:for="{{otherDhRecEng}}" wx:key="index" class="other">
+        <view wx:for="{{item.types}}" wx:key="index" wx:for-item="type" class="typeRec">
+          <view class="recTitle">{{item.dh}} - {{type}}</view>
+          <view class="dishName" wx:for="{{item.rec[index]}}" wx:key="index"
+          wx:for-item="dish" wx:if="{{dish.length}}">{{dish}}</view>
+        </view>
+      </view> -->
+      <view wx:if="{{recDish.length}}" style="margin-left: 5.5%; font-weight: 800;"> ====================== </view>
+      
+      
+      <!-- 英文菜单 -->
+      <view wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;"> English </view>
+      <view class="recContainer">
+        <view wx:for="{{recDishEng}}" wx:key="index" style="margin-top: 2%;" class="typeRec">
+          <view class="recTitle">{{dhRec[0]}} - {{displayRecTypes[index]}}</view>
+          <view class="dishName" wx:for="{{recDishEng[index]}}" wx:key="index">
+            {{index+1}}. {{item}}
+          </view>
+          <view class="noRec" wx:if="{{!recDishEng[index].length}}">没有这个种类的菜 :(</view>
+        </view>
+      </view>
+      <view wx:if="{{recDish.length}}" style="margin-left: 5.5%; font-weight: 800;"> > > >
       </view>
       <view wx:for="{{otherDhRecEng}}" wx:key="index" class="other">
         <view wx:for="{{item.types}}" wx:key="index" wx:for-item="type" class="typeRec">
@@ -43,14 +70,11 @@
           wx:for-item="dish" wx:if="{{dish.length}}">{{dish}}</view>
         </view>
       </view>
-      <view wx:if="{{recDish.length}}" style="margin-left: 8%; font-weight: 800;"> >>> </view>
+
+
 
     </view>
   </view>
-</view>
-
-<view class="recommendContainer" wx:if="{{isOpen}}">
-  测试！！！
 </view>
 
 <!-- no preference -->
