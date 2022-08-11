@@ -49,6 +49,10 @@
   </view>
 </view>
 
+<view class="recommendContainer" wx:if="{{isOpen}}">
+  测试！！！
+</view>
+
 <!-- no preference -->
 <view wx:if="{{!havePreference}}" class="recommendContainer">
     <view class="recMenuContainer">

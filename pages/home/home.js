@@ -32,6 +32,9 @@ Page({
 			app.globalData.pksDish = [];
 			app.globalData.vlgCate = [];
 			app.globalData.vlgDish = [];
+			app.globalData.recDishEng = [];
+			app.globalData.otherDhRecEng = [];
+			app.globalData.isOpen = true;
 			app.onLaunch();
 		} else {
 			wx.showToast({
@@ -49,6 +52,7 @@ Page({
 		havePreference: true,
 		myDate: "0000-00-00",
 		mealIndex: -1,
+		isOpen: false,
 		isFirst: true,
 		isWeekDay: true,
 		isBreakfast: false,
@@ -125,8 +129,9 @@ Page({
 				otherDhRec: app.globalData.otherDhRec,
 				otherDhRecEng: app.globalData.otherDhRecEng,
 				havePreference: app.globalData.havePreference,
+				isOpen: app.globalData.isOpen,
 			});
-			console.log(this.data.havePreference);
+			console.log(this.data.isOpen);
 		} else {
 			app.userCallBack = (res) => {
 				if (res) {
@@ -142,8 +147,9 @@ Page({
 						otherDhRec: app.globalData.otherDhRec,
 						otherDhRecEng: app.globalData.otherDhRecEng,
 						havePreference: app.globalData.havePreference,
+						isOpen: app.globalData.isOpen,
 					});
-					console.log(this.data.havePreference);
+					console.log(this.data.isOpen);
 				}
 			};
 		}

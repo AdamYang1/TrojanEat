@@ -70,7 +70,7 @@ App({
 		}
 		that.globalData.myDate = myDate;
 		/* 日期 */
-
+		console.log(that.globalData.mealIndex);
 		/* 登陆获取信息 */
 		// 登录
 		wx.login({
@@ -89,10 +89,11 @@ App({
 					{}
 				);
 				that.globalData.isFirst = customerInfo.length == 0 ? true : false;
-
 				// 若不是，获取用户喜好并跳转页面
 				if (!that.globalData.isFirst) {
 					if (that.globalData.mealIndex != -1) {
+						that.globalData.isOpen = true;
+						console.log(that.globalData.isOpen);
 						/* 获取用户信息 ===============================================*/
 						let user = await request(
 							`/personal/openid/${that.globalData.openid}`,
@@ -368,6 +369,9 @@ App({
 						} else {
 							that.globalData.havePreference = false;
 						}
+					} else {
+						that.globalData.isOpen = false;
+						console.log(that.globalData.isOpen);
 					}
 				}
 
@@ -381,6 +385,8 @@ App({
 		});
 	},
 	globalData: {
+		/* open */
+		isOpen: true,
 		/* user info */
 		havePreference: true,
 		isFirst: false,
