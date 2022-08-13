@@ -142,6 +142,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 - [![html][html]][html-url]
 - [![css][css]][css-url]
 - [![postman][postman]][postman-url]
+- [![figma][figma]][figma-url]
 - [![heroku][heroku]][heroku-url]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -193,3 +194,5 @@ This project is largely based on the menu released by [USC Dining](https://hospi
 [license-url]: https://github.com/AdamYang1/TrojanEat/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=social&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/shixiang-yang-60b46a219/
+[figma]: https://img.shields.io/badge/style=for-the-badge&logo=figma
+[figma-url]: https://www.figma.com/
