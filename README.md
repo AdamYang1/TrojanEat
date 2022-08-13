@@ -194,5 +194,5 @@ This project is largely based on the menu released by [USC Dining](https://hospi
 [license-url]: https://github.com/AdamYang1/TrojanEat/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=social&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/shixiang-yang-60b46a219/
-[figma]: https://img.shields.io/badge?style=for-the-badge&logo=Figma
+[figma]: https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma
 [figma-url]: https://www.figma.com/
