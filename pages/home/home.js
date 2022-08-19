@@ -131,7 +131,7 @@ Page({
 				havePreference: app.globalData.havePreference,
 				isOpen: app.globalData.isOpen,
 			});
-			console.log(this.data.isOpen);
+			console.log(this.data.otherDhRecEng);
 		} else {
 			app.userCallBack = (res) => {
 				if (res) {

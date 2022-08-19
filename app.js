@@ -351,7 +351,7 @@ App({
 										objEng.rec = that.globalData.pksRecEng;
 									}
 									that.globalData.otherDhRec.push(obj);
-									that.globalData.otherDhRecEng.push(obj);
+									that.globalData.otherDhRecEng.push(objEng);
 								}
 							}
 							/* 获取全部餐厅信息 =*/
