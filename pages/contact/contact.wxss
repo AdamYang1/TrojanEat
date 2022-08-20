@@ -91,5 +91,5 @@
 image {
 	margin-left: 10%;
 	width: 600rpx;
-	height: 780rpx;
+	height: 600rpx;
 }
