@@ -6,7 +6,7 @@
       <text class="eatName1" style="color: #FFC700; font-size: 78rpx; font-weight: 800;">Trojan</text>
       <text class="eatName2" style="color: #BA0000; font-size: 78rpx; font-weight: 800;">Eats</text>
     </view>
-    <button class="start" style="margin-top: 40%; padding-top: 5%; height: 186rpx; width:368rpx; font-size: 58rpx;"
+    <button class="start" style="margin-top: 40%; padding-top: 5%; height: 186rpx; width:374rpx; font-size: 58rpx;"
     bindtap="handleStart">点击开始</button>
   </view>
 </view>
