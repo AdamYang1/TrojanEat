@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/contact/contact",
     "pages/welcome/welcome",
+    "pages/contact/contact",
     "pages/tutorial/tutorial",
     "pages/personalChoice/personalChoice",
     "pages/allmenu/allmenu",

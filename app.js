@@ -67,8 +67,9 @@ App({
 			that.globalData.mealIndex = 2;
 		} else {
 			that.globalData.mealIndex = -1;
-		}
-		that.globalData.myDate = myDate;
+    }
+    that.globalData.myDate = myDate;
+		// that.globalData.myDate = "2022-08-23";
 		/* 日期 */
 		console.log(that.globalData.mealIndex);
 		/* 登陆获取信息 */
