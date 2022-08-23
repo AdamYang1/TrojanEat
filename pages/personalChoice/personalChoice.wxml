@@ -1,7 +1,7 @@
 <!-- pages/personalChoice/personalChoice.wxml -->
 
 <view class="headingContainer">
-    <text class="heading">请选择4个喜爱食物:</text>
+    <text class="heading">请选择1-4个喜爱食物:</text>
 </view>
 
 <!-- welcome -->
