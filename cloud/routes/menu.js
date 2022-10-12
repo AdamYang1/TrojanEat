@@ -56,11 +56,23 @@ router.get(
 		res.end();
 	}
 );
+// test
+router.get("/evk", (req, res) => {
+	let temp = {
+		id: "1",
+		Hot_Line: "1000",
+		Fresh_from_the_Farm: "2000",
+	};
+	JSON.stringify(temp);
+	res.status(200).send(temp);
+	res.end;
+});
 
 // get all menu
 router.get("/date/:date/mealtime/:mealtime/dh/:dh", async (req, res) => {
 	const { date, mealtime, dh } = req.params;
 	let allMenu = await getAllLikeMenu(dh, date, mealtime);
+	console.log(allMenu);
 	JSON.stringify(allMenu);
 	res.status(200).send(allMenu);
 	res.end();
